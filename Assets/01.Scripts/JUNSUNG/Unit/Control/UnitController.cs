@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitFSMMachine : MonoBehaviour
+public class UnitController : MonoBehaviour
 {
     private Dictionary<string, UnitState> stateDictionary = new Dictionary<string, UnitState>();
 
@@ -17,6 +17,7 @@ public class UnitFSMMachine : MonoBehaviour
         {
             if(stateTrm.TryGetComponent<UnitState>(out UnitState state))
             {
+                state.InitState(transform);
                 stateDictionary.Add(stateTrm.name, state);
             }
         }
