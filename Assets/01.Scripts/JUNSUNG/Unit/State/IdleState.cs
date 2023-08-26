@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveState : UnitState
+public class IdleState : UnitState
 {
     public override void EnterState()
     {
@@ -11,12 +11,11 @@ public class MoveState : UnitState
     public override void UpdateState()
     {
         base.UpdateState();
-
-        controller.Movement.Move();    
     }
 
     public override void ExitState()
     {
         
     }
+
 }

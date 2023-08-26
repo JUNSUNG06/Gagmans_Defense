@@ -4,5 +4,15 @@ using UnityEngine;
 
 public abstract class UnitDecision : MonoBehaviour
 {
+    [SerializeField]
+    protected bool reverse;
+    protected bool result;
+
+    protected UnitController controller;
+
+    public virtual void Init(UnitController _controller)
+    {
+        controller = _controller;
+    }
     public abstract bool Decision();
 }
