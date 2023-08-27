@@ -14,9 +14,11 @@ public abstract class UnitState : MonoBehaviour
 
         foreach (Transform child in transform)
         {
-            UnitStateTransition transition = child.GetComponent<UnitStateTransition>();
-            transition.Init(controller);
-            transitions.Add(transition);
+            if(child.TryGetComponent<UnitStateTransition>(out UnitStateTransition transition))
+            {
+                transition.Init(controller);
+                transitions.Add(transition);
+            }
         }
     }
 

@@ -13,7 +13,7 @@ public class UnitStateTransition : MonoBehaviour
     {
         controller = _controller;
         GetComponents<UnitDecision>(decisions);
-        Debug.Log(decisions);
+        
         foreach(UnitDecision decision in decisions)
         {
             decision.Init(controller);

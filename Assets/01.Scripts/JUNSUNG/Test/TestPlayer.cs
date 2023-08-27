@@ -4,23 +4,42 @@ using UnityEngine;
 
 public class TestPlayer : MonoBehaviour
 {
-    public UnitStateMachine Unit;
+    public UnitController Unit;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            
-            if(hit.transform.TryGetComponent<UnitStateMachine>(out UnitStateMachine unit))
+            bool findUnit = false;
+            RaycastHit2D[] hits = Physics2D.RaycastAll(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            foreach(RaycastHit2D hit in hits)
             {
-                Unit = unit;
-            }
-            else
-            {
-                if(Unit != null)
+                if (hit.transform.TryGetComponent<UnitController>(out UnitController unit))
                 {
-                    Unit.GetComponent<UnitMovement>().SetTargetPos(hit.point);
+                    if(unit.Type == UnitType.Soldier)
+                    {
+                        Unit = unit;
+                    }
+                    else if(unit.Type == UnitType.Enemy)
+                    {
+                        if(Unit != null)
+                        {
+                            Unit.Target = unit.transform;
+                        }
+                    }
+
+                    findUnit = true;
+                    break;
+                }
+            }
+
+            if(!findUnit)
+            {
+                if (Unit != null)
+                {
+                    Unit.Target = null;
+                    Unit.GetComponent<UnitMovement>().SetTargetPos(hits[0].point);
                 }
             }
         }

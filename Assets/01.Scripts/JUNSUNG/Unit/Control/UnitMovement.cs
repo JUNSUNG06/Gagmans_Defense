@@ -9,8 +9,27 @@ public class UnitMovement : MonoBehaviour
     private bool movable = true;
     private Vector2 targetPos;
     private Vector2 moveDir;
+    private UnitController controller;
 
     public Vector2 TargetPos => targetPos;
+
+    private void Awake()
+    {
+        controller = GetComponent<UnitController>();
+    }
+
+    private void Start()
+    {
+        targetPos = transform.position;
+    }
+
+    private void Update()
+    {
+        Transform target = controller.Target;
+
+        if (target != null)
+            SetTargetPos(target.position);
+    }
 
     public void SetMovable(bool value)
     {
@@ -33,7 +52,6 @@ public class UnitMovement : MonoBehaviour
 
     public void Stop()
     {
-        //moveDir = Vector2.zero;
         targetPos = transform.position;
     }
 }

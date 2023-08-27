@@ -18,6 +18,7 @@ public class UnitStateMachine : MonoBehaviour
 
     [SerializeField]
     private UnitState currentState;
+    public UnitState CurrentState => currentState;
 
     private void Awake()
     {
@@ -27,11 +28,16 @@ public class UnitStateMachine : MonoBehaviour
     private void Update()
     {
         currentState?.UpdateState();
-    }
+    }   
 
     public void ChangeState(UnitStateType type)
     {
-        UnitState nextState = stateDictionary[type];
+        UnitState nextState;
+
+        if (stateDictionary.ContainsKey(type))
+            nextState = stateDictionary[type];
+        else
+            return;
 
         if (nextState == currentState)
             return;
@@ -39,6 +45,11 @@ public class UnitStateMachine : MonoBehaviour
         currentState?.ExitState();
         currentState = nextState;
         currentState?.EnterState();
+    }
+
+    public UnitState GetState(UnitStateType type)
+    {
+        return stateDictionary[type];
     }
 
     private void SetState()
