@@ -5,8 +5,8 @@ using UnityEngine;
 public abstract class UnitAttackType : MonoBehaviour
 {
     [SerializeField]
-    protected int damage;
-    public int CoolTime;
+    protected float damage;
+    public float CoolTime;
     [SerializeField]
     protected float currentCoolTime = 0f;
     protected bool CanAttack = true;
