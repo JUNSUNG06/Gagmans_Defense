@@ -32,5 +32,5 @@ public enum StatusType
 public class Status
 {
     public StatusType Type;
-    public float Value;
+    public int Value;
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnitMovement : MonoBehaviour
 {
+    private const int DefaultMoveSpeed = 2;
+
     [SerializeField]
     private float moveSpped = 5f;
     private bool movable = true;

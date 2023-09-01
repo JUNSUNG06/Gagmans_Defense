@@ -6,6 +6,7 @@ using UnityEngine;
 public class UnitStateMachine : MonoBehaviour
 {
     private Dictionary<UnitStateType, UnitState> stateDictionary = new Dictionary<UnitStateType, UnitState>();
+    private UnitStateTransition anyStateTransition;
 
     [SerializeField]
     private UnitState currentState;

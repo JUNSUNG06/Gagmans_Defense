@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class UnitAttackType : MonoBehaviour
 {
+    private const float DefaultDamage = 10;
+    private const float DefaultCoolTime = 1;
+    private const float DefaultCriticalProb = 10;
+
     [SerializeField]
     protected float damage;
     public float CoolTime;
