@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 375571109}
   - component: {fileID: 375571111}
   - component: {fileID: 375571112}
+  - component: {fileID: 375571113}
   m_Layer: 0
   m_Name: TestSoldier
   m_TagString: Untagged
@@ -470,6 +471,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac686f7e511a20b44a09922c6dde2cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &375571113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375571103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147ffad2e282df44a9a261a30c5478d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusInfo: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
 --- !u!1 &379889841
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +500,7 @@ GameObject:
   - component: {fileID: 379889847}
   - component: {fileID: 379889846}
   - component: {fileID: 379889845}
+  - component: {fileID: 379889850}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -653,6 +668,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: {fileID: 0}
+--- !u!114 &379889850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379889841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147ffad2e282df44a9a261a30c5478d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StatusInfo: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
 --- !u!1 &552824515
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718bf36fc94952445a3c83e131ecb99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reverse: 1
+  reverse: 0
   distance: 0.1
 --- !u!114 &552824518
 MonoBehaviour:

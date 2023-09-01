@@ -3,15 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UnitStateType
-{
-    Idle,
-    Move,
-    Attack,
-    Stun,
-    Die,
-}
-
 public class UnitStateMachine : MonoBehaviour
 {
     private Dictionary<UnitStateType, UnitState> stateDictionary = new Dictionary<UnitStateType, UnitState>();

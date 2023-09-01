@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StatusSO : MonoBehaviour
+[CreateAssetMenu(menuName ="SO/StatusSO")]
+public class StatusSO : ScriptableObject
 {
-    
+    public List<Status> StatusInfo = new List<Status>();
 }

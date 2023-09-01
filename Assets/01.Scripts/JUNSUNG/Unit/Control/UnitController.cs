@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UnitType
-{
-    Soldier,
-    Enemy,
-}
-
-
 [RequireComponent(typeof(UnitStateMachine))]
 [RequireComponent(typeof(UnitMovement))]
 [RequireComponent(typeof(UnitAttack))]
+[RequireComponent(typeof(UnitStatus))]
 public class UnitController : MonoBehaviour
 {
     private UnitStateMachine stateMachine;
     private UnitMovement movement;
     private UnitAttack attack;
     private UnitAnimation anim;
+    private UnitStatus status;
     [SerializeField]
     private Transform target;
 
@@ -25,6 +20,7 @@ public class UnitController : MonoBehaviour
     public UnitMovement Movement => movement;
     public UnitAttack Attack => attack;
     public UnitAnimation Anim => anim;
+    public UnitStatus Stat => status;
     public Transform Target 
     { 
         get => target; 
@@ -45,5 +41,6 @@ public class UnitController : MonoBehaviour
         movement = GetComponent<UnitMovement>();
         attack = GetComponent<UnitAttack>();
         anim = GetComponent<UnitAnimation>();
+        status = GetComponent<UnitStatus>();
     }
 }
