@@ -10,9 +10,12 @@ public abstract class UnitAttackType : MonoBehaviour
 
     [SerializeField]
     protected float damage;
-    public float CoolTime;
+    [SerializeField]
+    protected float CoolTime;
     [SerializeField]
     protected float currentCoolTime = 0f;
+    [SerializeField]
+    protected float criticalProb;
     protected bool CanAttack = true;
     protected List<UnitDecision> decisions = new List<UnitDecision>();
     protected UnitController controller;

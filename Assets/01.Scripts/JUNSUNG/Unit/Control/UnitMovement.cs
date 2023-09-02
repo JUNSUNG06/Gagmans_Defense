@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UnitMovement : MonoBehaviour
 {
-    private const int DefaultMoveSpeed = 2;
+    private const float DefaultMoveSpeed = 2;
 
     [SerializeField]
     private float moveSpped = 5f;

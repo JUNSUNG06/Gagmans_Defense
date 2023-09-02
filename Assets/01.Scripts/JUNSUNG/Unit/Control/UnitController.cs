@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitMovement))]
 [RequireComponent(typeof(UnitAttack))]
 [RequireComponent(typeof(UnitStatus))]
+[RequireComponent(typeof(UnitHealth))]
 public class UnitController : MonoBehaviour
 {
     private UnitStateMachine stateMachine;
@@ -13,6 +14,7 @@ public class UnitController : MonoBehaviour
     private UnitAttack attack;
     private UnitAnimation anim;
     private UnitStatus status;
+    private UnitHealth health;
     [SerializeField]
     private Transform target;
 
@@ -21,6 +23,7 @@ public class UnitController : MonoBehaviour
     public UnitAttack Attack => attack;
     public UnitAnimation Anim => anim;
     public UnitStatus Stat => status;
+    public UnitHealth Health => health;
     public Transform Target 
     { 
         get => target; 
@@ -42,5 +45,6 @@ public class UnitController : MonoBehaviour
         attack = GetComponent<UnitAttack>();
         anim = GetComponent<UnitAnimation>();
         status = GetComponent<UnitStatus>();
+        health = GetComponent<UnitHealth>();
     }
 }

@@ -21,7 +21,7 @@ public enum StatusType
 {
     AttackPower,
     AttackSpee,
-    Defens,
+    Defense,
     Health,
     CriticalProb,
     MoveSpeed,
@@ -32,5 +32,5 @@ public enum StatusType
 public class Status
 {
     public StatusType Type;
-    public int Value;
+    public float Value;
 }

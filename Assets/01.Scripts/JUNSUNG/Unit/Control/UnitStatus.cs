@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
+    private const int MaxStatusValue = 5;
+
     public StatusSO StatusInfo;
 
     private Dictionary<StatusType, float> statusDictionary = new Dictionary<StatusType, float>();
-    private const int MaxStatusValue = 5;
 
     private void Awake()
     {

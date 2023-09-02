@@ -9,5 +9,9 @@ public class TestAttack : UnitAttackType
         base.Attack();
         Debug.Log("attack");
         controller.Attack.IsAttack = false;
+        if(controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
+        {
+            t.GetDamaged(damage);
+        }
     }
 }

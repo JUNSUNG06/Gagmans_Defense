@@ -264,9 +264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ecc0d0c39cd9d4486c2027461435e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
   CoolTime: 3
   currentCoolTime: 0
+  criticalProb: 0
 --- !u!1 &375571103
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +286,7 @@ GameObject:
   - component: {fileID: 375571111}
   - component: {fileID: 375571112}
   - component: {fileID: 375571113}
+  - component: {fileID: 375571114}
   m_Layer: 0
   m_Name: TestSoldier
   m_TagString: Untagged
@@ -486,6 +488,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusInfo: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
+--- !u!114 &375571114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375571103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21430c524c4ff0644b496920a4748ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Recovery: 0
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealth: 100
+  currentHealth: 0
+  defense: 0
 --- !u!1 &379889841
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,6 +527,7 @@ GameObject:
   - component: {fileID: 379889846}
   - component: {fileID: 379889845}
   - component: {fileID: 379889850}
+  - component: {fileID: 379889851}
   m_Layer: 0
   m_Name: TestEnemy
   m_TagString: Untagged
@@ -683,6 +708,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StatusInfo: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
+--- !u!114 &379889851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379889841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21430c524c4ff0644b496920a4748ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Recovery: 0
+  OnHitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  maxHealth: 100
+  currentHealth: 0
+  defense: 50
 --- !u!1 &450289748
 GameObject:
   m_ObjectHideFlags: 0
