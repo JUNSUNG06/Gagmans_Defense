@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UnitHealth : MonoBehaviour, IDamageable
+public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
 {
     private const float DefaultHealth = 100;
     private const float DefaultHealthRecovery = 5;
@@ -21,6 +21,8 @@ public class UnitHealth : MonoBehaviour, IDamageable
     private float maxHealth;
     [SerializeField]
     private float currentHealth;
+    [SerializeField]
+    private float healthRecovery;
     [SerializeField]
     private float defense;
 
@@ -57,5 +59,21 @@ public class UnitHealth : MonoBehaviour, IDamageable
         isDie = true;
         OnDieEvent?.Invoke();
         Destroy(gameObject);
+    }
+
+    public void OnStatusChange(StatusType type, int value)
+    {
+        switch(type)
+        {
+            case StatusType.Health:
+                maxHealth = DefaultHealth * value;
+                break;
+            case StatusType.HealthRecovery:
+                healthRecovery = DefaultHealthRecovery * value;
+                break;
+            case StatusType.Defense:
+                defense = DefaultDefense * value;
+                break;
+        }
     }
 }

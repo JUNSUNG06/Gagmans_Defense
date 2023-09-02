@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitMovement : MonoBehaviour
+public class UnitMovement : MonoBehaviour, IAffectedStatus
 {
     private const float DefaultMoveSpeed = 2;
 
     [SerializeField]
-    private float moveSpped = 5f;
+    private float moveSpeed = 5f;
     private bool movable = true;
     private Vector2 targetPos;
     private Vector2 moveDir;
@@ -49,7 +49,7 @@ public class UnitMovement : MonoBehaviour
         if (!movable)
             return;
 
-        transform.Translate(moveDir * moveSpped * Time.deltaTime);
+        transform.Translate(moveDir * moveSpeed * Time.deltaTime);
     }
 
     public void Stop()
@@ -57,8 +57,9 @@ public class UnitMovement : MonoBehaviour
         targetPos = transform.position;
     }
 
-    private void OnStatusChange()
+    public void OnStatusChange(StatusType type, int value)
     {
-
+        if (type == StatusType.MoveSpeed)
+            moveSpeed = DefaultMoveSpeed * value;
     }
 }

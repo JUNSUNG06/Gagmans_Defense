@@ -17,6 +17,22 @@ public class UnitStatus : MonoBehaviour
         {
             statusDictionary.Add(status.Type, status.Value);
         }
+
+        List<IAffectedStatus> affectedStatuses = new List<IAffectedStatus>();
+        GetComponents<IAffectedStatus>(affectedStatuses);
+        foreach (IAffectedStatus a in affectedStatuses)
+        {
+            OnStatusChange += a.OnStatusChange;
+        }
+        foreach(StatusType t in Enum.GetValues(typeof(StatusType)))
+        {
+            OnStatusChange?.Invoke(t, statusDictionary[t]);
+        }
+    }
+
+    private void Start()
+    {
+        ChangeStatus(StatusType.Health, 2);
     }
 
     public float GetStatus(StatusType type)
@@ -26,6 +42,8 @@ public class UnitStatus : MonoBehaviour
 
     public void ChangeStatus(StatusType type, int value)
     {
-        OnStatusChange?.Invoke(type, value);
+        statusDictionary[type] += value;
+        statusDictionary[type] = Mathf.Max(1, statusDictionary[type]);
+        OnStatusChange?.Invoke(type, statusDictionary[type]);
     }
 }
