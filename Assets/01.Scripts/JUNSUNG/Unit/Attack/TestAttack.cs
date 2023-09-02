@@ -11,7 +11,13 @@ public class TestAttack : UnitAttackType
         controller.Attack.IsAttack = false;
         if(controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
         {
-            t.GetDamaged(damage);
+            t.GetDamaged(damage, out bool isKill);
+
+            if(isKill)
+            {
+                controller.Target = null;
+                controller.Movement.Stop();
+            }
         }
     }
 }

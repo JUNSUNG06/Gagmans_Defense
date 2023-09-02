@@ -29,7 +29,7 @@ public class UnitHealth : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
     }
 
-    public void GetDamaged(float damage)
+    public void GetDamaged(float damage, out bool isKill)
     {
         float calcDamage = damage - (damage * 0.01f * defense);
         currentHealth = Mathf.Clamp(currentHealth - calcDamage, 0, maxHealth);
@@ -37,7 +37,13 @@ public class UnitHealth : MonoBehaviour, IDamageable
         Debug.Log(damage);
 
         if (currentHealth == 0)
+        {
+            isKill = true;
             Die();
+            return;
+        }
+
+        isKill = false;
     }
 
     public void Heal(float value)
