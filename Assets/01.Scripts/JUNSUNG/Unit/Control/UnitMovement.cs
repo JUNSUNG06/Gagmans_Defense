@@ -56,4 +56,9 @@ public class UnitMovement : MonoBehaviour
     {
         targetPos = transform.position;
     }
+
+    private void OnStatusChange()
+    {
+
+    }
 }

@@ -1,14 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitStatus : MonoBehaviour
 {
-    private const int MaxStatusValue = 5;
-
     public StatusSO StatusInfo;
 
-    private Dictionary<StatusType, float> statusDictionary = new Dictionary<StatusType, float>();
+    private Dictionary<StatusType, int> statusDictionary = new Dictionary<StatusType, int>();
+
+    public Action<StatusType, int> OnStatusChange;
 
     private void Awake()
     {
@@ -23,8 +24,8 @@ public class UnitStatus : MonoBehaviour
         return statusDictionary[type];
     }
 
-    public void ChangeStatus(StatusType type, float value)
+    public void ChangeStatus(StatusType type, int value)
     {
-        statusDictionary[type] = Mathf.Clamp(statusDictionary[type] += value, 0, MaxStatusValue);
+        OnStatusChange?.Invoke(type, value);
     }
 }
