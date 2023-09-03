@@ -28,9 +28,20 @@ public enum StatusType
     HealthRecovery,
 }
 
+public enum EquipmentType
+{
+    Helmet,
+    Cloths,
+    Pants,
+    Armor,
+    Back,
+    Weapon, 
+}
+
 [System.Serializable]
 public class Status
 {
     public StatusType Type;
+    [Range(0, 5)]
     public int Value;
 }
