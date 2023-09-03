@@ -9,7 +9,7 @@ public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
     private const float DefaultHealthRecovery = 5;
     private const float DefaultDefense = 5;
 
-    public bool Recovery;
+    public bool RecoveryOption;
 
     private bool isDie = false;
     public bool IsDie => isDie;
@@ -17,18 +17,19 @@ public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
     public UnityEvent OnHitEvent;
     public UnityEvent OnDieEvent;
 
-    [SerializeField]
     private float maxHealth;
-    [SerializeField]
     private float currentHealth;
-    [SerializeField]
-    private float healthRecovery;
-    [SerializeField]
+    private float recoveryHealthValue;
+    private float recoveryCool;
     private float defense;
+
+    private Coroutine recovery;
+    private WaitForSeconds recoveryTime;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        recoveryTime = new WaitForSeconds(recoveryCool);
     }
 
     public void GetDamaged(float damage, out bool isKill)
@@ -61,6 +62,23 @@ public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
         Destroy(gameObject);
     }
 
+    private IEnumerator Recovery()
+    {
+        Heal(recoveryHealthValue);
+        yield return recoveryTime;
+    }
+
+    public void StartRecovery()
+    {
+        recovery = StartCoroutine(Recovery());
+    }
+
+    public void StopRecovery()
+    {
+        StopCoroutine(recovery);
+        recovery = null;
+    }
+
     public void OnStatusChange(StatusType type, int value)
     {
         switch(type)
@@ -69,7 +87,7 @@ public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
                 maxHealth = DefaultHealth * value;
                 break;
             case StatusType.HealthRecovery:
-                healthRecovery = DefaultHealthRecovery * value;
+                recoveryHealthValue = DefaultHealthRecovery * value;
                 break;
             case StatusType.Defense:
                 defense = DefaultDefense * value;
