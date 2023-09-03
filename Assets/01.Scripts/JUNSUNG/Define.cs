@@ -45,3 +45,10 @@ public class Status
     [Range(0, 5)]
     public int Value;
 }
+
+[System.Serializable]
+public class EquipList
+{
+    public EquipmentType type;
+    public List<EquipmentSO> equipSOList;
+}
