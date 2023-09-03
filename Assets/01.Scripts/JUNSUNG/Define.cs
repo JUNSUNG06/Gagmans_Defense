@@ -52,3 +52,15 @@ public class EquipList
     public EquipmentType type;
     public List<EquipmentSO> equipSOList;
 }
+
+[System.Serializable]
+public class Equipment
+{
+    private EquipmentSO info;
+    public EquipmentSO Info => info;
+
+    public Equipment(EquipmentType type, string name)
+    {
+        info = EquipmentManager.Instance.GetEquipSO(type, name);
+    }
+}
