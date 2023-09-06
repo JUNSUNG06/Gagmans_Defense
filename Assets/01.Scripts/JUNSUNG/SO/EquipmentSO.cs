@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="SO/EquipmentSO")]
-public class EquipmentSO : ScriptableObject
+public class EquipmentSO : ItemSO
 {
     public StatusSO status;
-    public Sprite sprite;
     public EquipmentType type;
-    public string equipName;
 }

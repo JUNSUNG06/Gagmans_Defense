@@ -35,7 +35,14 @@ public enum EquipmentType
     Pants,
     Armor,
     Back,
-    Weapon, 
+    Weapon,
+}
+
+public enum ItemType
+{
+    Equipment,
+    Stuff,
+    Etc
 }
 
 [System.Serializable]
@@ -56,11 +63,18 @@ public class EquipList
 [System.Serializable]
 public class Equipment
 {
-    private EquipmentSO info;
-    public EquipmentSO Info => info;
+    public string equipName;
+    public Sprite sprite;
+    public StatusSO status;
+    public EquipmentType type;
 
     public Equipment(EquipmentType type, string name)
     {
-        info = EquipmentManager.Instance.GetEquipSO(type, name);
+        EquipmentSO info = EquipmentManager.Instance.GetEquipSO(type, name);
+
+        equipName = info.equipName;
+        sprite = info.sprite;
+        status = info.status;
+        this.type = info.type;
     }
 }
