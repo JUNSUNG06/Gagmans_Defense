@@ -5,6 +5,15 @@ using UnityEngine;
 public class TestPlayer : MonoBehaviour
 {
     public UnitController Unit;
+    public GameObject player;
+
+    private void Awake()
+    {
+        for(int i = 0; i < 1000; i++)
+        {
+            Instantiate(player);
+        }
+    }
 
     private void Update()
     {

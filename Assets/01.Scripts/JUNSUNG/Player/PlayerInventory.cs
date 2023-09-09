@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Dictionary<ItemType, ItemSO> itemDictionary = new Dictionary<ItemType, ItemSO>();
 
-    // Update is called once per frame
-    void Update()
+    public void GetItem(ItemType type)
     {
-        
+        if(!itemDictionary.ContainsKey(type))
+        {
+
+        }
     }
 }
