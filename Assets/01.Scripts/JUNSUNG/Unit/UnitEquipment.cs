@@ -8,15 +8,11 @@ public class UnitEquipment : MonoBehaviour
 
     public Equipment ChangeEquipment(Equipment equip)
     {
-        if(equipments.ContainsKey(equip.type))
-        {
-            Equipment beforeEquip = equipments[equip.type];
-            equipments[equip.type] = equip;
+        Equipment beforeEquip = equipments.ContainsKey(equip.equipType) ? equipments[equip.equipType] : null;
 
-            return beforeEquip;
-        }
+        equipments[equip.equipType] = equip;
 
-        return null;
+        return beforeEquip;
     }
 
     public Equipment ReleaseEquipment(EquipmentType type)

@@ -6,5 +6,5 @@ using UnityEngine;
 public class EquipmentSO : ItemSO
 {
     public StatusSO status;
-    public EquipmentType type;
+    public EquipmentType equipType;
 }
