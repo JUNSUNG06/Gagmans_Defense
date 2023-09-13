@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    private Dictionary<ItemType, ItemSO> itemDictionary = new Dictionary<ItemType, ItemSO>();
+    private Dictionary<string, Item> itemDictionary = new Dictionary<string, Item>();
 
-    public void GetItem(ItemType type)
+    public void AddItem(ItemType type)
     {
-        if(!itemDictionary.ContainsKey(type))
-        {
 
-        }
+    }
+
+    public void RemoveItem()
+    {
+
     }
 }
