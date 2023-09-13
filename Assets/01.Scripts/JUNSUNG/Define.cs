@@ -35,7 +35,13 @@ public enum EquipmentType
     Pants,
     Armor,
     Back,
-    Weapon, 
+    Weapon,
+}
+
+public enum ItemType
+{
+    Equipment,
+    Ingredient
 }
 
 [System.Serializable]
@@ -54,13 +60,56 @@ public class EquipList
 }
 
 [System.Serializable]
-public class Equipment
+public class Item
 {
-    private EquipmentSO info;
-    public EquipmentSO Info => info;
+    public string name;
+    public ItemType type;
+    public Sprite image;
 
-    public Equipment(EquipmentType type, string name)
+    public Item(ItemType _type, string _name)
     {
-        info = EquipmentManager.Instance.GetEquipSO(type, name);
+        type = _type;
+        name = _name;
     }
 }
+
+[System.Serializable]
+public class Ingredient : Item
+{
+    public Ingredient(ItemType _type, string _name) : base(_type, _name)
+    {
+
+    }
+}
+
+[System.Serializable]
+public class Equipment : Item
+{
+    private int rank;
+    public int Rank => rank;
+    public EquipmentType equipType;
+
+    public Equipment(ItemType _type, string _name, EquipmentType _equipType) : base(_type, _name)
+    {
+        equipType = _equipType;
+    }
+}
+
+//[System.Serializable]
+//public class Equipment
+//{
+//    public string equipName;
+//    public Sprite sprite;
+//    public StatusSO status;
+//    public EquipmentType type;
+
+//    public Equipment(EquipmentType type, string name)
+//    {
+//        EquipmentSO info = EquipmentManager.Instance.GetEquipSO(type, name);
+
+//        equipName = info.equipName;
+//        sprite = info.sprite;
+//        status = info.status;
+//        this.type = info.type;
+//    }
+//}

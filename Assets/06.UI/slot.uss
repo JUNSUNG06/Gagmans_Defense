@@ -1,0 +1,7 @@
+.btn {
+    height: 25%;
+}
+
+.visual {
+    height: 75%;
+}

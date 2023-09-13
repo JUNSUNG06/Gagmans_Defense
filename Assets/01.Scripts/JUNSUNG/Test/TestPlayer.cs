@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestPlayer : MonoBehaviour
 {
     public UnitController Unit;
+    public GameObject player;
 
     private void Update()
     {

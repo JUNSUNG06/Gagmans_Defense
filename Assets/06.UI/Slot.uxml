@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd">
+    <Style src="project://database/Assets/06.UI/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <ui:VisualElement name="root" style="width: 300px; height: 480px;">
+        <ui:VisualElement name="visual" class="visual" style="flex-grow: 5;" />
+        <ui:Button text="Button" display-tooltip-when-elided="true" name="buyBtn" class="btn" />
+        <ui:Slider picking-mode="Ignore" value="0" high-value="100" focusable="true" show-input-field="false" />
+    </ui:VisualElement>
+</ui:UXML>
