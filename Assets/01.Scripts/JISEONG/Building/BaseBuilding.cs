@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public abstract class BaseBuilding : MonoBehaviour, IDamageable
+using UnityEngine.Events;
+public abstract class BaseBuilding : MonoBehaviour
 {
     [SerializeField] protected BuildingDataSO buildingDataSO;
-    public abstract void GetDamaged(float damage, out bool isKill);
-
+    [SerializeField] protected UnityEvent UpgradeEvent;
     public abstract void Upgrade();
+    public abstract void StopWorking();
 }
