@@ -10,6 +10,7 @@ public abstract class UnitState : MonoBehaviour
 
     public virtual void InitState(UnitController _controller)
     {
+        throw new System.Exception("º´½Å ¤»¤»");
         controller = _controller;
 
         foreach (Transform child in transform)
