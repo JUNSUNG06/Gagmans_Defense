@@ -1,8 +1,10 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/06.UI/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
-    <ui:VisualElement name="root" style="width: 300px; height: 480px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 3px; border-right-width: 3px; border-top-width: 3px; border-bottom-width: 3px;">
-        <ui:VisualElement name="visual" class="visual" />
+    <Style src="project://database/Assets/06.UI/slot/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <ui:VisualElement name="root" class="rooy" style="width: 300px; height: 480px;">
+        <ui:VisualElement name="visual" class="visual">
+            <ui:VisualElement name="image" style="background-image: url(&apos;project://database/Assets/SPUM/SPUM_Sprites/Items/5_Armor/Armor_5.png?fileID=2800000&amp;guid=304386aad927e4d3281f05c505bb4f54&amp;type=3#Armor_5&apos;);" />
+        </ui:VisualElement>
         <ui:Button text="buy" display-tooltip-when-elided="true" name="buyBtn" class="btn" />
-        <ui:ProgressBar name="timer" title="00:00" class="timer" />
+        <ui:ProgressBar name="timer" title="00:00" value="0" class="timer" />
     </ui:VisualElement>
 </ui:UXML>
