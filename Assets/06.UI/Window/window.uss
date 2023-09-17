@@ -6,35 +6,50 @@
     translate: -50% -50%;
 }
 
-.background {
+.w_background {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.btn {
+.w_btn {
     width: 60px;
     height: 60px;
-    translate: -50% -50%;
-    left: 100%;
-    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&guid=d82c8cc2aaf6b4c80999cfe184bdfd90&type=3#Spum_Icon98');
 }
 
-.title {
+.w_btn.red {
+    background-color: rgb(190, 3, 3);
+}
+
+.w_btn:hover {
+    background-color: rgb(38, 38, 38);
+    -unity-background-image-tint-color: rgba(106, 106, 106, 255);
+}
+
+.w_title {
     background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/04_Popup_Inventory/Title_Inven.png?fileID=2800000&guid=9adff786fe0d540ab896f2aac7bb24ee&type=3#Title_Inven');
     height: 60.87px;
     align-items: center;
 }
 
-.title > #text {
+.w_title > #text {
     -unity-text-align: middle-center;
     font-size: 45px;
     top: 0;
     width: 22%;
-    color: rgba(0, 0, 0, 255);
-    background-color: rgba(224, 159, 113, 255);
+    color: rgb(0, 0, 0);
+    background-color: rgb(224, 159, 113);
 }
 
-.contents {
+.w_contents {
     flex-grow: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: rgb(224, 159, 113);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

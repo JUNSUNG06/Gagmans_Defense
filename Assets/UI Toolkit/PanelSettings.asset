@@ -28,7 +28,7 @@ MonoBehaviour:
   m_ColorClearValue: {r: 0, g: 0, b: 0, a: 0}
   m_DynamicAtlasSettings:
     m_MinAtlasSize: 64
-    m_MaxAtlasSize: 4096
+    m_MaxAtlasSize: 8192
     m_MaxSubTextureSize: 64
     m_ActiveFilters: 31
   m_AtlasBlitShader: {fileID: 9101, guid: 0000000000000000f000000000000000, type: 0}
