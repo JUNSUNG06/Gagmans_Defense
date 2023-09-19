@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     public Vector2 _addPos;
     public int _columnNum;
 
-    public Transform _playerPool;
+    //public Transform _playerPool;
     public List<PlayerObj> _playerList = new List<PlayerObj>();
     public PlayerObj _nowObj;
     public Transform _playerObjCircle;
@@ -33,71 +33,77 @@ public class PlayerManager : MonoBehaviour
     public ScreenShotSize _screenShotSize = ScreenShotSize.HD;
     void Start()
     {
-        
+        GetPlayerList();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if(_generate)
-        {
-            GetPlayerList();
-            _generate = false;
-        }
+    //void Update()
+    //{
+    //    if(_generate)
+    //    {
+    //        //GetPlayerList();
+    //        _generate = false;
+    //    }
 
-        if(_screenShot)
-        {
-            SetScreenShot();
-            _screenShot = false;
-        }
+    //    if(_screenShot)
+    //    {
+    //        SetScreenShot();
+    //        _screenShot = false;
+    //    }
 
-        if(Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.collider != null)
-            {
-                if(hit.collider.CompareTag("Player"))
-                {
-                    _nowObj = hit.collider.GetComponent<PlayerObj>();
-                }
-                else
-                {
-                    //Set move Player object to this point
-                    if(_nowObj!=null)
-                    {
-                        Vector2 goalPos = hit.point;
-                        _goalObjCircle.transform.position = hit.point;
-                        _nowObj.SetMovePos(goalPos);
-                    }
-                }
-            }
-        }
+    //    if(Input.GetMouseButtonDown(0))
+    //    {
+    //        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+    //        if(hit.collider != null)
+    //        {
+    //            if(hit.collider.CompareTag("Player"))
+    //            {
+    //                _nowObj = hit.collider.GetComponent<PlayerObj>();
+    //            }
+    //            else
+    //            {
+    //                //Set move Player object to this point
+    //                if(_nowObj!=null)
+    //                {
+    //                    Vector2 goalPos = hit.point;
+    //                    _goalObjCircle.transform.position = hit.point;
+    //                    //_nowObj.SetMovePos(goalPos);
+    //                }
+    //            }
+    //        }
+    //    }
 
-        if(_nowObj!=null)
-        {
-            _playerObjCircle.transform.position = _nowObj.transform.position;
-        }
-    }
+    //    if(_nowObj!=null)
+    //    {
+    //        _playerObjCircle.transform.position = _nowObj.transform.position;
+    //    }
+    //}
 
     public void GetPlayerList()
     {
         //reset list.
-        List<GameObject> tList = new List<GameObject>();
-        for(var i =0; i < _playerPool.transform.childCount; i++)
-        {
-            GameObject tOBjj = _playerPool.transform.GetChild(i).gameObject;
-            tList.Add(tOBjj);
-        }
-        foreach(var obj in tList)
-        {
-            DestroyImmediate(obj);
-        }
+        //List<GameObject> tList = new List<GameObject>();
+        //for(var i =0; i < _playerPool.transform.childCount; i++)
+        //{
+        //    GameObject tOBjj = _playerPool.transform.GetChild(i).gameObject;
+        //    tList.Add(tOBjj);
+        //}
+        //foreach(var obj in tList)
+        //{
+        //    DestroyImmediate(obj);
+        //}
 
         //net Edited. 2022.01.18
+        //for(int i = 0; i < _playerList.Count; i++)
+        //{
+        //    Destroy(_playerList[i].gameObject);
+        //}
         _playerList.Clear();
         _savedUnitList.Clear();
+        
 
         var saveArray = Resources.LoadAll<GameObject>("SPUM/SPUM_Units");
+        
         _savedUnitList.AddRange(saveArray);
         //
 
@@ -122,7 +128,7 @@ public class PlayerManager : MonoBehaviour
             }
             
             GameObject ttObj = Instantiate(_prefabObj.gameObject) as GameObject;
-            ttObj.transform.SetParent(_playerPool);
+            ttObj.transform.SetParent(transform);
             ttObj.transform.localScale = new Vector3(1,1,1);
             
 
@@ -142,6 +148,11 @@ public class PlayerManager : MonoBehaviour
             _playerList.Add(tObjST);
             
         }
+    }
+
+    private void OnDisable()
+    {
+        
     }
 
     //스크린샷 찍기
