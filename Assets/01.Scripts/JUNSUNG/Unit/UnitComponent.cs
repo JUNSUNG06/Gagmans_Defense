@@ -23,8 +23,4 @@ public class UnitComponent : MonoBehaviour
 
         UnitUpdate();
     }
-
-    //UnitUpdate만들고
-    //UnitUpdate를 여기 Update에서 돌리셈
-    //isInit == false면 리턴하고 아니면 실행하고
 }

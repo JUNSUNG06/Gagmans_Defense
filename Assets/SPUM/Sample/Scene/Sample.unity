@@ -448,8 +448,7 @@ MonoBehaviour:
   _startPos: {x: 0, y: -2.5}
   _addPos: {x: 1.5, y: 2.5}
   _columnNum: 5
-  _playerList:
-  - {fileID: 0}
+  _playerList: []
   _nowObj: {fileID: 0}
   _playerObjCircle: {fileID: 148904907}
   _goalObjCircle: {fileID: 1395584150}

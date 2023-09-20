@@ -53,10 +53,5 @@ public class UnitController : MonoBehaviour
         status.Init();
         health = GetComponent<UnitHealth>();
         health.Init();
-
-        //나중에 지우셈
-
-        Debug.Log(GameObject.Find("TestEnemy").transform);
-        Target = GameObject.Find("TestEnemy").transform;
     }
 }
