@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitAttack))]
 [RequireComponent(typeof(UnitStatus))]
 [RequireComponent(typeof(UnitHealth))]
+[RequireComponent(typeof(UnitAnimation))]
 public class UnitController : MonoBehaviour
 {
     private UnitStateMachine stateMachine;
@@ -38,13 +39,24 @@ public class UnitController : MonoBehaviour
 
     public UnitType Type;
 
-    private void Awake()
+    public void Init()
     {
         stateMachine = GetComponent<UnitStateMachine>();
+        stateMachine.Init();
         movement = GetComponent<UnitMovement>();
+        movement.Init();
         attack = GetComponent<UnitAttack>();
+        attack.Init();
         anim = GetComponent<UnitAnimation>();
+        anim.Init();
         status = GetComponent<UnitStatus>();
+        status.Init();
         health = GetComponent<UnitHealth>();
+        health.Init();
+
+        //나중에 지우셈
+
+        Debug.Log(GameObject.Find("TestEnemy").transform);
+        Target = GameObject.Find("TestEnemy").transform;
     }
 }

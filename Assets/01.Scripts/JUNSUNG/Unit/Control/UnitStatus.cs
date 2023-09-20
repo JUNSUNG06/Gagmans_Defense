@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitStatus : MonoBehaviour
+public class UnitStatus : UnitComponent
 {
     public StatusSO StatusInfo;
 
@@ -11,8 +11,9 @@ public class UnitStatus : MonoBehaviour
 
     public Action<StatusType, int> OnStatusChange;
 
-    private void Awake()
+    public override void Init()
     {
+        base.Init();
         foreach (Status status in StatusInfo.StatusInfo)
         {
             statusDictionary.Add(status.Type, status.Value);
@@ -28,10 +29,7 @@ public class UnitStatus : MonoBehaviour
         {
             OnStatusChange?.Invoke(t, statusDictionary[t]);
         }
-    }
 
-    private void Start()
-    {
         ChangeStatus(StatusType.Health, 2);
     }
 

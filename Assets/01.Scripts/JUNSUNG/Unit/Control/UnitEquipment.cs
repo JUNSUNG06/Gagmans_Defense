@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitEquipment : MonoBehaviour
+public class UnitEquipment : UnitComponent
 {
     private Dictionary<EquipmentType, Equipment> equipments = new Dictionary<EquipmentType, Equipment>();
+
+    public override void Init()
+    {
+        base.Init();
+    }
 
     public Equipment ChangeEquipment(Equipment equip)
     {

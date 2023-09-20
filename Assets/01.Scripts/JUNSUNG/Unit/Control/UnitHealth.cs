@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
+public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
 {
     private const float DefaultHealth = 100;
     private const float DefaultHealthRecovery = 5;
@@ -26,8 +26,10 @@ public class UnitHealth : MonoBehaviour, IDamageable, IAffectedStatus
     private Coroutine recovery;
     private WaitForSeconds recoveryTime;
 
-    private void Start()
+    public override void Init()
     {
+        base.Init();
+
         currentHealth = maxHealth;
         recoveryTime = new WaitForSeconds(recoveryCool);
     }

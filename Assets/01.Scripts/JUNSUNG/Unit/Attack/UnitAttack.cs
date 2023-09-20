@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitAttack : MonoBehaviour
+public class UnitAttack : UnitComponent
 {
     [field: SerializeField]
     public bool IsAttack { get; set; }
 
     private List<UnitAttackType> attacks = new List<UnitAttackType>();
 
-    private void Awake()
+    public override void Init()
     {
+        base.Init();
+
         Transform attackContainer = transform.Find("AttackContainer");
 
         foreach (Transform child in attackContainer)

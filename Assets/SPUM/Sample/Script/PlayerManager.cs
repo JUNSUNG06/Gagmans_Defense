@@ -133,6 +133,7 @@ public class PlayerManager : MonoBehaviour
             
 
             GameObject tObj = Instantiate(_savedUnitList[i]) as GameObject;
+            tObj.gameObject.name = tObj.gameObject.name.Replace(tObj.gameObject.name, "Visual");
             tObj.transform.SetParent(ttObj.transform);
             tObj.transform.localScale = new Vector3(1,1,1);
             tObj.transform.localPosition = Vector3.zero;
@@ -146,7 +147,7 @@ public class PlayerManager : MonoBehaviour
 
             ttObj.transform.localPosition = new Vector3(numXStart + numX * i,numYStart+ttV,0);
             _playerList.Add(tObjST);
-            
+            ttObj.GetComponent<UnitController>().Init();
         }
     }
 
