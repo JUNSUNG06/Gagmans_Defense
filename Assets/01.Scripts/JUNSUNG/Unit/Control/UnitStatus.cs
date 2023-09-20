@@ -11,9 +11,9 @@ public class UnitStatus : UnitComponent
 
     public Action<StatusType, int> OnStatusChange;
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
         foreach (Status status in StatusInfo.StatusInfo)
         {
             statusDictionary.Add(status.Type, status.Value);

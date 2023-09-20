@@ -10,9 +10,9 @@ public class UnitAnimation : UnitComponent
 
     private Animator anim;
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
         anim = transform.Find("Visual/UnitRoot").GetComponent<Animator>();
     }
 }

@@ -9,9 +9,9 @@ public class UnitAttack : UnitComponent
 
     private List<UnitAttackType> attacks = new List<UnitAttackType>();
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
 
         Transform attackContainer = transform.Find("AttackContainer");
 

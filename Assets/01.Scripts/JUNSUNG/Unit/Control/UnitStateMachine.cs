@@ -12,9 +12,9 @@ public class UnitStateMachine : UnitComponent
     private UnitState currentState;
     public UnitState CurrentState => currentState;
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
         SetState();
     }
 

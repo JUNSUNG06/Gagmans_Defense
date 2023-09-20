@@ -8,9 +8,9 @@ public class UnitComponent : MonoBehaviour
     protected UnitController controller;
     protected bool isInit = false;
 
-    public virtual void Init()
+    public virtual void Init(UnitController _controller)
     {
-        controller = GetComponent<UnitController>();
+        controller = _controller;
         isInit = true;
     }
 

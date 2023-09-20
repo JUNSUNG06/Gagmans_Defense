@@ -14,9 +14,9 @@ public class UnitMovement : UnitComponent, IAffectedStatus
 
     public Vector2 TargetPos => targetPos;
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
         targetPos = transform.position;
     }
 

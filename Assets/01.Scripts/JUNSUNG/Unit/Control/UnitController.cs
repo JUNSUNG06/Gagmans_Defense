@@ -8,6 +8,8 @@ using UnityEngine;
 [RequireComponent(typeof(UnitStatus))]
 [RequireComponent(typeof(UnitHealth))]
 [RequireComponent(typeof(UnitAnimation))]
+[RequireComponent(typeof(UnitEquipment))]
+
 public class UnitController : MonoBehaviour
 {
     private UnitStateMachine stateMachine;
@@ -16,6 +18,8 @@ public class UnitController : MonoBehaviour
     private UnitAnimation anim;
     private UnitStatus status;
     private UnitHealth health;
+    private UnitEquipment equipment;
+    private SPUM_SpriteList spriteList;
     [SerializeField]
     private Transform target;
 
@@ -25,6 +29,7 @@ public class UnitController : MonoBehaviour
     public UnitAnimation Anim => anim;
     public UnitStatus Stat => status;
     public UnitHealth Health => health;
+    public UnitEquipment Equipment => equipment;
     public Transform Target 
     { 
         get => target; 
@@ -42,16 +47,20 @@ public class UnitController : MonoBehaviour
     public void Init()
     {
         stateMachine = GetComponent<UnitStateMachine>();
-        stateMachine.Init();
+        stateMachine.Init(this);
         movement = GetComponent<UnitMovement>();
-        movement.Init();
+        movement.Init(this);
         attack = GetComponent<UnitAttack>();
-        attack.Init();
+        attack.Init(this);
         anim = GetComponent<UnitAnimation>();
-        anim.Init();
+        anim.Init(this);
         status = GetComponent<UnitStatus>();
-        status.Init();
+        status.Init(this);
         health = GetComponent<UnitHealth>();
-        health.Init();
+        health.Init(this);
+        equipment = GetComponent<UnitEquipment>();
+        equipment.Init(this);
+        spriteList = transform.Find("Visual/UnitRoot/Root").GetComponent<SPUM_SpriteList>();
+        spriteList.Init(this);
     }
 }

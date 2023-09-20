@@ -26,9 +26,9 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
     private Coroutine recovery;
     private WaitForSeconds recoveryTime;
 
-    public override void Init()
+    public override void Init(UnitController _controller)
     {
-        base.Init();
+        base.Init(_controller);
 
         currentHealth = maxHealth;
         recoveryTime = new WaitForSeconds(recoveryCool);
