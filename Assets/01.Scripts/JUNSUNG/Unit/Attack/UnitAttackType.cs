@@ -38,6 +38,7 @@ public abstract class UnitAttackType : MonoBehaviour
     {
         CanAttack = false;
         currentCoolTime = 0f;
+        controller.Anim.PlayAttackAnimation();
         StartCoroutine(Cool());
     }
     public virtual bool CheckAttackable()
