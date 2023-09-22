@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/06.UI/slot/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <ui:VisualElement name="root" class="rooy" style="width: 200px; height: 300px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px;">
+        <ui:VisualElement name="visual" class="s_visual">
+            <ui:VisualElement name="image" style="background-image: url(&apos;project://database/Assets/SPUM/SPUM_Sprites/Items/5_Armor/Armor_5.png?fileID=2800000&amp;guid=304386aad927e4d3281f05c505bb4f54&amp;type=3#Armor_5&apos;);" />
+        </ui:VisualElement>
+        <ui:Button text="buy" display-tooltip-when-elided="true" name="buyBtn" class="s_btn" />
+        <ui:ProgressBar name="timer" title="00:00" value="0" class="s_timer" />
+    </ui:VisualElement>
+</ui:UXML>

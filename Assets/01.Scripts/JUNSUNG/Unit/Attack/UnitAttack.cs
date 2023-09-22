@@ -1,16 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitAttack : MonoBehaviour
+public class UnitAttack : UnitComponent
 {
     [field: SerializeField]
     public bool IsAttack { get; set; }
+    public UnitAttackType attack;
 
-    private List<UnitAttackType> attacks = new List<UnitAttackType>();
+    private List<UnitAttackType> attackTypes = new List<UnitAttackType>();
 
-    private void Awake()
+    public override void Init(UnitController _controller)
     {
+        base.Init(_controller);
+
         Transform attackContainer = transform.Find("AttackContainer");
 
         foreach (Transform child in attackContainer)
@@ -18,24 +22,34 @@ public class UnitAttack : MonoBehaviour
             if (child.TryGetComponent<UnitAttackType>(out UnitAttackType attack))
             {
                 attack.Init(GetComponent<UnitController>());
-                attacks.Add(attack);
+                attackTypes.Add(attack);
             }
         }
     }
 
-    public void Attack()
+    public void DoAttack()
+    {
+        if (attack == null)
+            return;
+        
+        attack.Attack();
+    }
+
+    public bool SelectAttack()
     {
         if (IsAttack)
-            return;
+            return false;
 
-        for (int i = 0; i < attacks.Count; i++)
+        for (int i = 0; i < attackTypes.Count; i++)
         {
-            if (attacks[i].CheckAttackable())
+            if (attackTypes[i].CheckAttackable())
             {
-                IsAttack = true;
-                attacks[i].Attack();
-                return;
+                attack = attackTypes[i];
+                return true;
             }
         }
+
+        attack = null;
+        return false;
     }
 }

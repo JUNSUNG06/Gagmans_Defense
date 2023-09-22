@@ -1,0 +1,155 @@
+.i_view {
+    flex-grow: 1;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(125, 89, 64);
+    flex-direction: row;
+}
+
+#unity-content-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+#unity-low-button {
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/04_Popup_Inventory/Button_Scroll_Up.png?fileID=21300000&guid=76a1d2d34211e4e6faf3643a9eaf6069&type=3#Button_Scroll_Up');
+    width: 22px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+    height: 22px;
+}
+
+#unity-high-button {
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/04_Popup_Inventory/Button_Scroll_Down.png?fileID=21300000&guid=d9311f806c4004d4db745dbb3a7d0570&type=3#Button_Scroll_Down');
+    width: 22px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    height: 22px;
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
+}
+
+#unity-tracker {
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/04_Popup_Inventory/Bar_Scroll.png?fileID=21300000&guid=8f56213fb46c54e7a9c1ad0b90a14b91&type=3#Bar_Scroll');
+    width: 22px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+#unity-dragger {
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/04_Popup_Inventory/Button_Scroll.png?fileID=21300000&guid=5749d94ee42ae49baa491709f751c310&type=3#Button_Scroll');
+    width: 16px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
+#unity-slider {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    width: 22px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.i_btn {
+    margin-left: 0;
+    margin-right: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-width: 0;
+}
+
+.i_btn:hover {
+    background-color: rgb(125, 89, 64);
+}
+
+.i_btn.selected {
+    background-color: rgb(125, 89, 64);
+}
+
+.i_slot {
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&Btn/Box_Basic2.png?fileID=2800000&guid=c101f34388d834d35973520d8d87d94c&type=3#Box_Basic2');
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.i_slot:hover {
+    background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&Btn/Box_Profile.png?fileID=21300000&guid=d049099c702c94379ab5445f1cd246b2&type=3#Box_Profile');
+}
+
+.unity-scroller {
+    width: 16px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitMovement : MonoBehaviour, IAffectedStatus
+public class UnitMovement : UnitComponent, IAffectedStatus
 {
     private const float DefaultMoveSpeed = 2;
 
@@ -11,21 +11,19 @@ public class UnitMovement : MonoBehaviour, IAffectedStatus
     private bool movable = true;
     private Vector2 targetPos;
     private Vector2 moveDir;
-    private UnitController controller;
 
     public Vector2 TargetPos => targetPos;
 
-    private void Awake()
-    {
-        controller = GetComponent<UnitController>();
-    }
+    private Transform visual;
 
-    private void Start()
+    public override void Init(UnitController _controller)
     {
+        base.Init(_controller);
         targetPos = transform.position;
+        visual = transform.Find("Visual").transform;
     }
 
-    private void Update()
+    protected override void UnitUpdate()
     {
         Transform target = controller.Target;
 
@@ -42,6 +40,11 @@ public class UnitMovement : MonoBehaviour, IAffectedStatus
     {
         targetPos = pos;
         moveDir = (targetPos - (Vector2)transform.position).normalized;
+
+        if (moveDir.x > 0)
+            visual.rotation = Quaternion.Euler(0, 180, 0);
+        else
+            visual.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void Move()

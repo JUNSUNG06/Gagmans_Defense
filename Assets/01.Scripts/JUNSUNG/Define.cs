@@ -30,13 +30,20 @@ public enum StatusType
 
 public enum EquipmentType
 {
-    Helmet,
-    Cloths,
-    Pants,
-    Armor,
-    Back,
-    Weapon,
+    Helmet,  //hair
+    Armor,  //armor
+    Back,  //back
+    Weapon,  //weapon
+    Shield  //weapon
 }
+
+public enum Direction
+{
+    None,
+    Right,
+    Left
+}
+
 
 public enum ItemType
 {
@@ -62,14 +69,12 @@ public class EquipList
 [System.Serializable]
 public class Item
 {
-    public string name;
     public ItemType type;
-    public Sprite image;
+    public ItemSO info;
 
     public Item(ItemType _type, string _name)
     {
         type = _type;
-        name = _name;
     }
 }
 
@@ -78,7 +83,7 @@ public class Ingredient : Item
 {
     public Ingredient(ItemType _type, string _name) : base(_type, _name)
     {
-
+        info = ItemSOContainer.Instance.GetIngredientSO(_name) as IngredientSO;
     }
 }
 
@@ -92,24 +97,8 @@ public class Equipment : Item
     public Equipment(ItemType _type, string _name, EquipmentType _equipType) : base(_type, _name)
     {
         equipType = _equipType;
+        info = ItemSOContainer.Instance.GetEquipSO(_equipType, _name) as EquipmentSO;
+        Debug.Log(info);
+        rank = 1;
     }
 }
-
-//[System.Serializable]
-//public class Equipment
-//{
-//    public string equipName;
-//    public Sprite sprite;
-//    public StatusSO status;
-//    public EquipmentType type;
-
-//    public Equipment(EquipmentType type, string name)
-//    {
-//        EquipmentSO info = EquipmentManager.Instance.GetEquipSO(type, name);
-
-//        equipName = info.equipName;
-//        sprite = info.sprite;
-//        status = info.status;
-//        this.type = info.type;
-//    }
-//}

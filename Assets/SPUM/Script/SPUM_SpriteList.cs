@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class SPUM_SpriteList : MonoBehaviour
+public class SPUM_SpriteList : UnitComponent
 {
     public List<SpriteRenderer> _itemList = new List<SpriteRenderer>();
     public List<SpriteRenderer> _eyeList = new List<SpriteRenderer>();
@@ -28,9 +28,14 @@ public class SPUM_SpriteList : MonoBehaviour
     public List<string> _pantListString = new List<string>();
     public List<string> _weaponListString = new List<string>();
     public List<string> _backListString = new List<string>();
-    
 
+    public override void Init(UnitController _controller)
+    {
+        base.Init(_controller);
+        _controller.Equipment.OnEquipChage += ChangeSprite;
+    }
 
+    #region SPEUM METHOD
     public void Reset()
     {
         for(var i = 0 ; i < _hairList.Count;i++)
@@ -165,6 +170,64 @@ public class SPUM_SpriteList : MonoBehaviour
             else
             {
                 _objList[i].sprite = null;
+            }
+        }
+    }
+    #endregion
+
+    public void ChangeSprite(Equipment e, Direction dir)
+    {
+        if(e.equipType == EquipmentType.Weapon || e.equipType == EquipmentType.Shield)
+        {
+            int idx = 0;
+
+            if (dir == Direction.Left)
+                idx += 2;
+
+            switch (e.equipType)
+            {
+                case EquipmentType.Weapon:
+                    _weaponList[idx].sprite = e.info.image;
+                    break;
+                case EquipmentType.Shield:
+                    _weaponList[idx + 1].sprite = e.info.image;
+                    break;
+            }
+        }
+        else
+        {
+            switch (e.equipType)
+            {
+                case EquipmentType.Helmet:
+                    Debug.Log(e.info);
+                    _hairList[1].sprite = e.info.image;
+                    break;
+                case EquipmentType.Armor:
+                    {
+                        Sprite[] images = Resources.LoadAll<Sprite>(name);
+
+                        for (int i = 0; i < images.Length; i++)
+                        {
+                            switch (images[i].name)
+                            {
+                                case "Body":
+                                    _armorList[0].sprite = images[i];
+                                    break;
+
+                                case "Left":
+                                    _armorList[1].sprite = images[i];
+                                    break;
+
+                                case "Right":
+                                    _armorList[2].sprite = images[i];
+                                    break;
+                            }
+                        }
+                    }
+                    break;
+                case EquipmentType.Back:
+                    _backList[0].sprite = e.info.image;
+                    break;
             }
         }
     }

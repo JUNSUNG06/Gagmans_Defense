@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitStateMachine : MonoBehaviour
+public class UnitStateMachine : UnitComponent
 {
     private Dictionary<UnitStateType, UnitState> stateDictionary = new Dictionary<UnitStateType, UnitState>();
     private UnitStateTransition anyStateTransition;
@@ -12,12 +12,13 @@ public class UnitStateMachine : MonoBehaviour
     private UnitState currentState;
     public UnitState CurrentState => currentState;
 
-    private void Awake()
+    public override void Init(UnitController _controller)
     {
+        base.Init(_controller);
         SetState();
     }
 
-    private void Update()
+    protected override void UnitUpdate()
     {
         currentState?.UpdateState();
     }   
