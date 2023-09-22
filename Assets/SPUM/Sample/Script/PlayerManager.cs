@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PlayerObj _prefabObj;
+    public UnitController _prefabObj;
     public List<GameObject> _savedUnitList = new List<GameObject>();
     public Vector2 _startPos;
     public Vector2 _addPos;
     public int _columnNum;
 
     //public Transform _playerPool;
-    public List<PlayerObj> _playerList = new List<PlayerObj>();
-    public PlayerObj _nowObj;
+    public List<UnitController> _playerList = new List<UnitController>();
+    public UnitController _nowObj;
     public Transform _playerObjCircle;
     public Transform _goalObjCircle;
     public Camera _camera;
@@ -139,10 +139,10 @@ public class PlayerManager : MonoBehaviour
 
             ttObj.name = _savedUnitList[i].name;
 
-            PlayerObj tObjST = ttObj.GetComponent<PlayerObj>();
-            SPUM_Prefabs tObjSTT = tObj.GetComponent<SPUM_Prefabs>();
+            UnitController tObjST = ttObj.GetComponent<UnitController>();
+            //SPUM_Prefabs tObjSTT = tObj.GetComponent<SPUM_Prefabs>();
 
-            tObjST._prefabs = tObjSTT;
+            //tObjST._prefabs = tObjSTT;
 
             ttObj.transform.localPosition = new Vector3(numXStart + numX * i,numYStart+ttV,0);
             _playerList.Add(tObjST);

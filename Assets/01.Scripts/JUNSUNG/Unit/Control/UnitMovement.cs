@@ -14,15 +14,17 @@ public class UnitMovement : UnitComponent, IAffectedStatus
 
     public Vector2 TargetPos => targetPos;
 
+    private Transform visual;
+
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
         targetPos = transform.position;
+        visual = transform.Find("Visual").transform;
     }
 
     protected override void UnitUpdate()
     {
-        Debug.Log(controller);
         Transform target = controller.Target;
 
         if (target != null)
@@ -38,6 +40,11 @@ public class UnitMovement : UnitComponent, IAffectedStatus
     {
         targetPos = pos;
         moveDir = (targetPos - (Vector2)transform.position).normalized;
+
+        if (moveDir.x > 0)
+            visual.rotation = Quaternion.Euler(0, 180, 0);
+        else
+            visual.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public void Move()

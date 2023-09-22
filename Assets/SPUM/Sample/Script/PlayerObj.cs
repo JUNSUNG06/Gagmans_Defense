@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [ExecuteInEditMode]
 public class PlayerObj : MonoBehaviour
 {
-    public SPUM_Prefabs _prefabs;
+    //public SPUM_Prefabs _prefabs;
     public float _charMS;
     public enum PlayerState
     {

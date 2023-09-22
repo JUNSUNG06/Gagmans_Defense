@@ -34,13 +34,13 @@ public abstract class UnitAttackType : MonoBehaviour
 
         CanAttack = true;
     }
+
     public virtual void Attack()
     {
         CanAttack = false;
-        currentCoolTime = 0f;
-        controller.Anim.PlayAttackAnimation();
         StartCoroutine(Cool());
     }
+
     public virtual bool CheckAttackable()
     {
         if (!CanAttack)
@@ -57,7 +57,9 @@ public abstract class UnitAttackType : MonoBehaviour
     
     protected IEnumerator Cool()
     {
-        while(currentCoolTime < CoolTime)
+        currentCoolTime = 0f;
+
+        while (currentCoolTime < CoolTime)
         {
             currentCoolTime += Time.deltaTime;
             yield return null;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class UnitAnimation : UnitComponent
 {
     public Action AnimationStartEvent;
+    public Action OnAnimationEvent;
     public Action AnimationEndEvent;
 
     private Animator anim;
@@ -19,7 +20,7 @@ public class UnitAnimation : UnitComponent
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
-        anim = transform.Find("Visual/UnitRoot").GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     public void SetRunAnimation(bool active)
@@ -46,4 +47,8 @@ public class UnitAnimation : UnitComponent
     {
         anim.SetTrigger(stunHash);
     }
+
+    public void PlayStartEvent() => AnimationStartEvent?.Invoke();
+    public void PlayEndEvent() => AnimationEndEvent?.Invoke();
+    public void OnPlayEvent() => OnAnimationEvent?.Invoke();
 }

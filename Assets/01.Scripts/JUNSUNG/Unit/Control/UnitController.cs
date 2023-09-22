@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(UnitStateMachine))]
@@ -7,7 +8,6 @@ using UnityEngine;
 [RequireComponent(typeof(UnitAttack))]
 [RequireComponent(typeof(UnitStatus))]
 [RequireComponent(typeof(UnitHealth))]
-[RequireComponent(typeof(UnitAnimation))]
 [RequireComponent(typeof(UnitEquipment))]
 
 public class UnitController : MonoBehaviour
@@ -52,7 +52,7 @@ public class UnitController : MonoBehaviour
         movement.Init(this);
         attack = GetComponent<UnitAttack>();
         attack.Init(this);
-        anim = GetComponent<UnitAnimation>();
+        anim = transform.Find("Visual/UnitRoot").AddComponent<UnitAnimation>();
         anim.Init(this);
         status = GetComponent<UnitStatus>();
         status.Init(this);
