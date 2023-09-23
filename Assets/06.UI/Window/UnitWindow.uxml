@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/06.UI/Window/unitWindow.uss?fileID=7433441132597879392&amp;guid=76f4a2574d8487d49911df5f7907c2c1&amp;type=3#unitWindow" />
+    <Style src="project://database/Assets/06.UI/Window/window.uss?fileID=7433441132597879392&amp;guid=b4a1ba0a2a1c28f44b90d7391fc715fd&amp;type=3#window" />
+    <Style src="project://database/Assets/06.UI/slot/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <ui:VisualElement name="window" class="window">
+        <ui:VisualElement name="background" class="w_background" />
+        <ui:VisualElement name="title" class="w_title">
+            <ui:Label text="Label" display-tooltip-when-elided="true" name="text" />
+        </ui:VisualElement>
+        <ui:VisualElement name="contents" class="w_contents">
+            <ui:VisualElement name="unitImage" style="height: 100%; width: 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); padding-left: 100px; padding-right: 100px; padding-top: 100px; padding-bottom: 100px;">
+                <ui:VisualElement name="image" style="flex-grow: 1; background-color: rgba(255, 255, 255, 255);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="equipmentWindow" style="height: 100%; width: 50%; align-items: center; justify-content: center;">
+                <ui:VisualElement name="helmetSlot" class="equipSlot" />
+                <ui:VisualElement name="armorSlot" class="equipSlot" />
+                <ui:VisualElement name="backSlot" class="equipSlot" />
+                <ui:VisualElement name="rightWeaponSlot" class="equipSlot" />
+                <ui:VisualElement name="leftWeaponSlot" class="equipSlot" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Button display-tooltip-when-elided="true" name="closeBtn" class="w_btn red" style="position: absolute; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&amp;guid=d82c8cc2aaf6b4c80999cfe184bdfd90&amp;type=3#Spum_Icon98&apos;); left: 100%; translate: -50% 50%;" />
+    </ui:VisualElement>
+</ui:UXML>
