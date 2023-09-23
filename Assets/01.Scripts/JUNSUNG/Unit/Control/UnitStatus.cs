@@ -44,4 +44,15 @@ public class UnitStatus : UnitComponent
         statusDictionary[type] = Mathf.Max(1, statusDictionary[type]);
         OnStatusChange?.Invoke(type, statusDictionary[type]);
     }
+
+    public void ChangeStatuses(StatusSO statSO, bool isIncreasement)
+    {
+        int sign = isIncreasement ? 1 : -1;
+
+        foreach(Status stat in statSO.StatusInfo)
+        {
+            ChangeStatus(stat.Type, stat.Value * sign);
+            Debug.Log(statusDictionary[stat.Type]);
+        }
+    }
 }

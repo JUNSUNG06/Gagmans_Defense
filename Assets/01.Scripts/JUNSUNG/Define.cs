@@ -70,11 +70,16 @@ public class EquipList
 public class Item
 {
     public ItemType type;
-    public ItemSO info;
+    protected ItemSO info;
 
     public Item(ItemType _type, string _name)
     {
         type = _type;
+    }
+
+    public T GetInfo<T>() where T : ItemSO
+    {
+        return info as T;
     }
 }
 
@@ -92,13 +97,10 @@ public class Equipment : Item
 {
     private int rank;
     public int Rank => rank;
-    public EquipmentType equipType;
 
     public Equipment(ItemType _type, string _name, EquipmentType _equipType) : base(_type, _name)
     {
-        equipType = _equipType;
         info = ItemSOContainer.Instance.GetEquipSO(_equipType, _name) as EquipmentSO;
-        Debug.Log(info);
         rank = 1;
     }
 }

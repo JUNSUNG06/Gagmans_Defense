@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Unity.VisualScripting;
 
 public class SPUM_SpriteList : UnitComponent
 {
@@ -32,7 +33,7 @@ public class SPUM_SpriteList : UnitComponent
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
-        _controller.Equipment.OnEquipChage += ChangeSprite;
+        _controller.Equipment.OnEquipChageVisual += ChangeSprite;
     }
 
     #region SPEUM METHOD
@@ -175,32 +176,31 @@ public class SPUM_SpriteList : UnitComponent
     }
     #endregion
 
-    public void ChangeSprite(Equipment e, Direction dir)
+    public void ChangeSprite(EquipmentType type, Sprite image, Direction dir)
     {
-        if(e.equipType == EquipmentType.Weapon || e.equipType == EquipmentType.Shield)
+        if (type == EquipmentType.Weapon || type == EquipmentType.Shield)
         {
             int idx = 0;
 
             if (dir == Direction.Left)
                 idx += 2;
 
-            switch (e.equipType)
+            switch (type)
             {
                 case EquipmentType.Weapon:
-                    _weaponList[idx].sprite = e.info.image;
+                    _weaponList[idx].sprite = image;
                     break;
                 case EquipmentType.Shield:
-                    _weaponList[idx + 1].sprite = e.info.image;
+                    _weaponList[idx + 1].sprite = image;
                     break;
             }
         }
         else
         {
-            switch (e.equipType)
+            switch (type)
             {
                 case EquipmentType.Helmet:
-                    Debug.Log(e.info);
-                    _hairList[1].sprite = e.info.image;
+                    _hairList[1].sprite = image;
                     break;
                 case EquipmentType.Armor:
                     {
@@ -226,7 +226,7 @@ public class SPUM_SpriteList : UnitComponent
                     }
                     break;
                 case EquipmentType.Back:
-                    _backList[0].sprite = e.info.image;
+                    _backList[0].sprite = image;
                     break;
             }
         }

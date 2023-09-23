@@ -15,5 +15,5 @@ MonoBehaviour:
   itemName: Test_Helmet
   image: {fileID: 21300000, guid: 6ec44698eb725bc438a13ef06a3e6284, type: 3}
   type: 0
-  status: {fileID: 0}
+  status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
   equipType: 0
