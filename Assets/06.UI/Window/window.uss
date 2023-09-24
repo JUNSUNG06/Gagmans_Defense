@@ -4,6 +4,7 @@
     left: 50%;
     top: 50%;
     translate: -50% -50%;
+    position: absolute;
 }
 
 .w_background {
@@ -23,7 +24,7 @@
 
 .w_btn:hover {
     background-color: rgb(38, 38, 38);
-    -unity-background-image-tint-color: rgba(106, 106, 106, 255);
+    -unity-background-image-tint-color: rgb(106, 106, 106);
 }
 
 .w_title {
