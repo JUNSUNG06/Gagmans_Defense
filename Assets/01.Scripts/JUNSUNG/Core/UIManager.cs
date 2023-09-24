@@ -67,17 +67,17 @@ public class UIManager : MonoBehaviour
 
     public void Show(Type type)
     {
-        foreach(var ui in uiDictionary)
-        {
-            ui.Value.Hide();
-        }
+        Hide();
 
         uiDictionary[type].Show();
     }
 
     public void Hide()
     {
-        currentUI.Hide();
+        foreach (var ui in uiDictionary)
+        {
+            ui.Value.Hide();
+        }
     }
 
     private TemplateContainer CreateWIndowUI(VisualTreeAsset ui)

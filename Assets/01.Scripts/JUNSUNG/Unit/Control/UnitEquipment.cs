@@ -50,6 +50,9 @@ public class UnitEquipment : UnitComponent
 
     public Equipment ReleaseEquipment(EquipmentType type)
     {
+        if (!equipments.ContainsKey(type) || equipments[type] == null)
+            return null;
+
         Equipment beforeEquip = equipments[type];
 
         equipments[type] = null;
