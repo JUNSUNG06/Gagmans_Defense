@@ -6,6 +6,8 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
     private Dictionary<Type, GameUI> uiDictionary = new Dictionary<Type, GameUI>();
     public GameUI currentUI;
     private UIDocument document;
@@ -25,6 +27,11 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
         document = GetComponent<UIDocument>();
         root = document.rootVisualElement.Q<VisualElement>("root");
         

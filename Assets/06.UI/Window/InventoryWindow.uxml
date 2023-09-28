@@ -10,6 +10,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="contents" class="w_contents" style="flex-direction: column;">
             <ui:VisualElement name="itemBtns" style="flex-direction: row; height: 60px;">
+                <ui:Button text="all" display-tooltip-when-elided="true" name="allBtm" class="i_btn w_btn" />
                 <ui:Button text="Equipment" display-tooltip-when-elided="true" name="equipBtn" class="i_btn w_btn" />
                 <ui:Button text="Ingredient" display-tooltip-when-elided="true" name="ingreBtn" class="w_btn i_btn" />
             </ui:VisualElement>

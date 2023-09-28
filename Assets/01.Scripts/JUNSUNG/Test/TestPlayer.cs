@@ -1,11 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TestPlayer : MonoBehaviour
 {
+    public static TestPlayer Instance;
+
     public UnitController Unit;
     public GameObject player;
+
+    public float doubleClickInterval = 0.3f;
+    private float lastClickTime = 0;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Update()
     {
@@ -20,7 +34,13 @@ public class TestPlayer : MonoBehaviour
                 {
                     if(unit.Type == UnitType.Soldier)
                     {
+                        if(Unit == unit && lastClickTime + doubleClickInterval > Time.time)
+                        {
+                            UIManager.Instance.Show(typeof(UnitUI));    
+                        }
+
                         Unit = unit;
+                        lastClickTime = Time.time;
                     }
                     else if(unit.Type == UnitType.Enemy)
                     {

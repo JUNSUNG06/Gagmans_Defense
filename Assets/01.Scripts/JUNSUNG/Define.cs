@@ -71,15 +71,11 @@ public class Item
 {
     public ItemType type;
     protected ItemSO info;
+    public ItemSO Info => info;
 
     public Item(ItemType _type, string _name)
     {
         type = _type;
-    }
-
-    public T GetInfo<T>() where T : ItemSO
-    {
-        return info as T;
     }
 }
 

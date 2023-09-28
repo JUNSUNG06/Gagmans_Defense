@@ -33,14 +33,14 @@ public class UnitEquipment : UnitComponent
 
     public Equipment ChangeEquipment(Equipment equip, Direction dir)
     {
-        EquipmentSO info = equip.GetInfo<EquipmentSO>();
+        EquipmentSO info = equip.Info as EquipmentSO;
 
         Equipment beforeEquip = equipments.ContainsKey(info.equipType) ? equipments[info.equipType] : null;
 
         equipments[info.equipType] = equip;
 
         if(beforeEquip != null)
-            OnEquipChageStatus?.Invoke(beforeEquip.GetInfo<EquipmentSO>().status, false);
+            OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
         OnEquipChageStatus?.Invoke(info.status, true);
 
         OnEquipChageVisual?.Invoke(info.equipType, info.image, dir);
@@ -57,7 +57,7 @@ public class UnitEquipment : UnitComponent
 
         equipments[type] = null;
 
-        OnEquipChageStatus?.Invoke(beforeEquip.GetInfo<EquipmentSO>().status, false);
+        OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
 
         OnEquipChageVisual?.Invoke(type, null, Direction.None);
 

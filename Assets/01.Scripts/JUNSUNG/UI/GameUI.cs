@@ -13,6 +13,10 @@ public abstract class GameUI
     {
         container = _container;
         root = container.Q("window");
+        root.Q<Button>("closeBtn").RegisterCallback<ClickEvent>(e =>
+        {
+            Hide();
+        });
     }
 
     public virtual void Show() 
