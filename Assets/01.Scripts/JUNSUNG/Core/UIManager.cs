@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset pubUI;
     private PubUI pub;
 
+    public bool isUIOpen = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -76,7 +78,9 @@ public class UIManager : MonoBehaviour
     {
         Hide();
 
-        uiDictionary[type].Show();
+        currentUI = uiDictionary[type];
+        currentUI.Show();
+        isUIOpen = true;
     }
 
     public void Hide()
@@ -85,6 +89,8 @@ public class UIManager : MonoBehaviour
         {
             ui.Value.Hide();
         }
+
+        isUIOpen = false;
     }
 
     private TemplateContainer CreateWIndowUI(VisualTreeAsset ui)

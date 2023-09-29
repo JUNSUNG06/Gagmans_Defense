@@ -27,5 +27,6 @@ public abstract class GameUI
     public virtual void Hide() 
     {
         container.style.display = DisplayStyle.None;
+        UIManager.Instance.isUIOpen = false;
     }
 }
