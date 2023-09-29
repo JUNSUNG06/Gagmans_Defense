@@ -7,13 +7,14 @@ public class InventoryUI : GameUI
 {
     private PlayerInventory inventory;
 
-    private List<VisualElement> slotList;
+    private List<ItemSlot> slotList;
 
     public InventoryUI(TemplateContainer container) : base(container)
     {
         inventory = TestPlayer.Instance.GetComponent<PlayerInventory>();
 
-        slotList = root.Query<VisualElement>(className: "i_slot").ToList();
+        slotList = root.Query<ItemSlot>().ToList();
+        Debug.Log(slotList.Count);
     }
 
     public override void Show()
@@ -28,7 +29,7 @@ public class InventoryUI : GameUI
 
         for(int i = 0; i < items.Count; i++)
         {
-            slotList[i].Q("image").style.backgroundImage = new StyleBackground(items[i].Info.image);
+            slotList[i].SetItem(items[i]);
         }
     }
 }

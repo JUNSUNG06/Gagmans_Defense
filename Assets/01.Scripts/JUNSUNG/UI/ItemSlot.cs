@@ -17,16 +17,6 @@ public class ItemSlot : VisualElement
     private VisualElement image;
     private Item item;
 
-    public Item MyItem
-    {
-        get { return item; }
-        set
-        {
-            item = value;
-            image.style.backgroundImage = new StyleBackground(item.Info.image);
-        }
-    }
-
     public ItemSlot()
     {
         styleSheets.Add(Resources.Load<StyleSheet>($"StyleSheets/{styleResource}"));
@@ -36,6 +26,19 @@ public class ItemSlot : VisualElement
         baseElem.AddToClassList("i_slot");
 
         image = new VisualElement();
+        image.name = "image";
         baseElem.Add(image);
+    }
+
+    public void SetItem(Item _item)
+    {
+        item = _item;
+        image.style.backgroundImage = new StyleBackground(item.Info.image);
+        Debug.Log(item.Info.image);
+    }
+
+    public Item GetItem()
+    {
+        return item;
     }
 }

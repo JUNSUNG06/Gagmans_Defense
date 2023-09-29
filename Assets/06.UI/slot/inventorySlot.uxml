@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/06.UI/Window/inventory.uss?fileID=7433441132597879392&amp;guid=6233510cd800d0b42b2afab2823ddb70&amp;type=3#inventory" />
-    <Style src="project://database/Assets/06.UI/slot/ItemSlotStyle.uss?fileID=7433441132597879392&amp;guid=f647165f0c546ef4fbf57d2850c3983a&amp;type=3#ItemSlotStyle" />
+    <Style src="project://database/Assets/Resources/StyleSheets/ItemSlotStyle.uss?fileID=7433441132597879392&amp;guid=f647165f0c546ef4fbf57d2850c3983a&amp;type=3#ItemSlotStyle" />
     <ui:VisualElement name="inventorySlot" class="i_slot">
-        <ui:VisualElement name="image" style="flex-grow: 1;" />
+        <ui:VisualElement name="image" />
     </ui:VisualElement>
 </ui:UXML>
