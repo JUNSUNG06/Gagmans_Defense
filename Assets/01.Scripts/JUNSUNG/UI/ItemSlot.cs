@@ -33,8 +33,11 @@ public class ItemSlot : VisualElement
     public void SetItem(Item _item)
     {
         item = _item;
-        image.style.backgroundImage = new StyleBackground(item.Info.image);
-        Debug.Log(item.Info.image);
+
+        if(item != null)
+            image.style.backgroundImage = new StyleBackground(item.Info.image);
+        else
+            image.style.backgroundImage = null;
     }
 
     public Item GetItem()

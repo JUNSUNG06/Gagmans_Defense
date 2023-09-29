@@ -9,7 +9,7 @@ public class UnitEquipment : UnitComponent
 {
     private Dictionary<EquipmentType, Equipment> equipments = new Dictionary<EquipmentType, Equipment>();
 
-    public Action<EquipmentType, Sprite, Direction> OnEquipChageVisual { get; set; }
+    public Action<EquipmentType, Sprite> OnEquipChageVisual { get; set; }
     public UnityEvent<StatusSO, bool> OnEquipChageStatus;
 
     public override void Init(UnitController _controller)
@@ -22,7 +22,7 @@ public class UnitEquipment : UnitComponent
         //테스트 코드
         if(Input.GetKeyDown(KeyCode.E)) 
         {
-            ChangeEquipment(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet), Direction.None);
+            ChangeEquipment(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -31,7 +31,15 @@ public class UnitEquipment : UnitComponent
         }
     }
 
-    public Equipment ChangeEquipment(Equipment equip, Direction dir)
+    public Equipment GetEquip(EquipmentType type)
+    {
+        if (equipments.TryGetValue(type, out Equipment equip))
+            return equipments[type];
+        else
+            return null;
+    }
+
+    public Equipment ChangeEquipment(Equipment equip)
     {
         EquipmentSO info = equip.Info as EquipmentSO;
 
@@ -43,7 +51,7 @@ public class UnitEquipment : UnitComponent
             OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
         OnEquipChageStatus?.Invoke(info.status, true);
 
-        OnEquipChageVisual?.Invoke(info.equipType, info.image, dir);
+        OnEquipChageVisual?.Invoke(info.equipType, info.image);
 
         return beforeEquip;
     }
@@ -59,7 +67,7 @@ public class UnitEquipment : UnitComponent
 
         OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
 
-        OnEquipChageVisual?.Invoke(type, null, Direction.None);
+        OnEquipChageVisual?.Invoke(type, null);
 
         return beforeEquip;
     }

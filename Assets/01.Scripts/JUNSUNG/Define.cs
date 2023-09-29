@@ -30,11 +30,11 @@ public enum StatusType
 
 public enum EquipmentType
 {
-    Helmet,  //hair
+    Helmet = 0,  //hair
     Armor,  //armor
     Back,  //back
-    Weapon,  //weapon
-    Shield  //weapon
+    RightWeapon,  //weapon
+    LeftWeapon  //weapon
 }
 
 public enum Direction

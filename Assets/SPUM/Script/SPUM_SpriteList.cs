@@ -176,59 +176,45 @@ public class SPUM_SpriteList : UnitComponent
     }
     #endregion
 
-    public void ChangeSprite(EquipmentType type, Sprite image, Direction dir)
+    public void ChangeSprite(EquipmentType type, Sprite image)
     {
-        if (type == EquipmentType.Weapon || type == EquipmentType.Shield)
+        switch (type)
         {
-            int idx = 0;
+            case EquipmentType.Helmet:
+                _hairList[1].sprite = image;
+                break;
+            case EquipmentType.Armor:
+                {
+                    Sprite[] images = Resources.LoadAll<Sprite>(name);
 
-            if (dir == Direction.Left)
-                idx += 2;
-
-            switch (type)
-            {
-                case EquipmentType.Weapon:
-                    _weaponList[idx].sprite = image;
-                    break;
-                case EquipmentType.Shield:
-                    _weaponList[idx + 1].sprite = image;
-                    break;
-            }
-        }
-        else
-        {
-            switch (type)
-            {
-                case EquipmentType.Helmet:
-                    _hairList[1].sprite = image;
-                    break;
-                case EquipmentType.Armor:
+                    for (int i = 0; i < images.Length; i++)
                     {
-                        Sprite[] images = Resources.LoadAll<Sprite>(name);
-
-                        for (int i = 0; i < images.Length; i++)
+                        switch (images[i].name)
                         {
-                            switch (images[i].name)
-                            {
-                                case "Body":
-                                    _armorList[0].sprite = images[i];
-                                    break;
+                            case "Body":
+                                _armorList[0].sprite = images[i];
+                                break;
 
-                                case "Left":
-                                    _armorList[1].sprite = images[i];
-                                    break;
+                            case "Left":
+                                _armorList[1].sprite = images[i];
+                                break;
 
-                                case "Right":
-                                    _armorList[2].sprite = images[i];
-                                    break;
-                            }
+                            case "Right":
+                                _armorList[2].sprite = images[i];
+                                break;
                         }
                     }
-                    break;
-                case EquipmentType.Back:
-                    _backList[0].sprite = image;
-                    break;
-            }
+                }
+                break;
+            case EquipmentType.Back:
+                _backList[0].sprite = image;
+                break;
+            case EquipmentType.RightWeapon:
+                _weaponList[0].sprite = image;
+                break;
+            case EquipmentType.LeftWeapon:
+                _weaponList[2].sprite = image;
+                break;
         }
     }
 }
