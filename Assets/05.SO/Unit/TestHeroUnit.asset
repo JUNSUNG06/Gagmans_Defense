@@ -15,3 +15,6 @@ MonoBehaviour:
   unitName: TestUnit
   unit: {fileID: 519589767454401345, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
+  startingEquips:
+  - type: 0
+    name: Test_Helmet

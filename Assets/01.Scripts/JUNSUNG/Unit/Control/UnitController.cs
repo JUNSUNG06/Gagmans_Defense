@@ -19,10 +19,11 @@ public class UnitController : MonoBehaviour
     private UnitStatus status;
     private UnitHealth health;
     private UnitEquipment equipment;
-    private SPUM_SpriteList spriteList;
+    
     [SerializeField]
     private Transform target;
 
+    public UnitSO info;
     public UnitStateMachine StateMachine => stateMachine;
     public UnitMovement Movement => movement;
     public UnitAttack Attack => attack;
@@ -44,23 +45,29 @@ public class UnitController : MonoBehaviour
 
     public UnitType Type;
 
-    public void Init()
+    public void Init(UnitSO info)
     {
+        this.info = info;
+
         stateMachine = GetComponent<UnitStateMachine>();
         stateMachine.Init(this);
+        
         movement = GetComponent<UnitMovement>();
         movement.Init(this);
+        
         attack = GetComponent<UnitAttack>();
         attack.Init(this);
+        
         anim = transform.Find("Visual/UnitRoot").AddComponent<UnitAnimation>();
         anim.Init(this);
+        
         status = GetComponent<UnitStatus>();
         status.Init(this);
+
         health = GetComponent<UnitHealth>();
         health.Init(this);
+
         equipment = GetComponent<UnitEquipment>();
         equipment.Init(this);
-        spriteList = transform.Find("Visual/UnitRoot/Root").GetComponent<SPUM_SpriteList>();
-        spriteList.Init(this);
     }
 }

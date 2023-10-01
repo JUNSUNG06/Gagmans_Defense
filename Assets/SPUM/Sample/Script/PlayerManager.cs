@@ -76,7 +76,7 @@ public class PlayerManager : MonoBehaviour
         UnitController tObjST = ttObj.GetComponent<UnitController>();
 
         _playerList.Add(tObjST);
-        ttObj.GetComponent<UnitController>().Init();
+        ttObj.GetComponent<UnitController>().Init(unitSO);
         ttObj.transform.position = position;
     }
 }

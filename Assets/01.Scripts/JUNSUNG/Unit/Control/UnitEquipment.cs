@@ -12,9 +12,19 @@ public class UnitEquipment : UnitComponent
     public Action<EquipmentType, Sprite> OnEquipChageVisual { get; set; }
     public UnityEvent<StatusSO, bool> OnEquipChageStatus;
 
+    private SPUM_SpriteList spriteList;
+
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
+
+        spriteList = transform.Find("Visual/UnitRoot/Root").GetComponent<SPUM_SpriteList>();
+        spriteList.Init(controller);
+
+        foreach (var startingEquip in controller.info.startingEquips)
+        {
+            ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.name, startingEquip.type));
+        }
     }
 
     protected override void UnitUpdate()
