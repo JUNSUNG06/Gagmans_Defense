@@ -1958,7 +1958,10 @@ public class SPUM_Manager : MonoBehaviour
             foreach (FileInfo fileInfo in fileInf)
             {
                 string path = unitPath + fileInfo.Name;
+                Debug.Log(path);
                 GameObject prefab = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
+                Debug.Log(prefab);
+                Debug.Log(prefab.GetComponent<SPUM_Prefabs>());
                 //데이터 싱크 부분
                 SPUM_Prefabs tST = prefab.GetComponent<SPUM_Prefabs>();
                 // Debug.Log(tST._version);
