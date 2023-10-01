@@ -443,21 +443,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11b11817daa5435f92b04440958b38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabObj: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
+  SoldierList: {fileID: 0}
+  HeroList: {fileID: 11400000, guid: ac4ca9c632737924e80ae440f13b1a1d, type: 2}
+  EnemyList: {fileID: 0}
+  unitBase: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
   _savedUnitList:
   - {fileID: 519589767454401345, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
   _startPos: {x: 0, y: -2.5}
   _addPos: {x: 1.5, y: 2.5}
   _columnNum: 5
   _playerList: []
-  _nowObj: {fileID: 0}
   _playerObjCircle: {fileID: 148904907}
   _goalObjCircle: {fileID: 1395584150}
-  _camera: {fileID: 1106009835}
-  _generate: 0
-  _bg: {fileID: 47125295}
-  _screenShot: 0
-  _screenShotSize: 2
 --- !u!4 &473165777
 Transform:
   m_ObjectHideFlags: 0
@@ -487,6 +484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Unit: {fileID: 0}
   player: {fileID: 0}
+  doubleClickInterval: 0.3
 --- !u!114 &473165779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +580,7 @@ MonoBehaviour:
   unitUI: {fileID: 9197481963319205126, guid: c3f98d7edb11f26479f20318ba149237, type: 3}
   trainingUI: {fileID: 9197481963319205126, guid: 978077b0e0dd7a14f9466b5378ea9e97, type: 3}
   pubUI: {fileID: 9197481963319205126, guid: ea98a75ddf0bdf246b92329db8f938df, type: 3}
+  isUIOpen: 0
 --- !u!114 &535339316
 MonoBehaviour:
   m_ObjectHideFlags: 0

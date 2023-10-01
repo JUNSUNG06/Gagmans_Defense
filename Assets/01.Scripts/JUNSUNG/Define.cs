@@ -14,6 +14,7 @@ public enum UnitStateType
 public enum UnitType
 {
     Soldier,
+    Hero,
     Enemy,
 }
 
