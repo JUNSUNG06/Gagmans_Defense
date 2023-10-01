@@ -10,15 +10,15 @@ public class PlayerManager : MonoBehaviour
 
     [Space]
     public UnitController unitBase;
-    public List<GameObject> _savedUnitList = new List<GameObject>();
-    public Vector2 _startPos;
-    public Vector2 _addPos;
-    public int _columnNum;
+    //public List<GameObject> _savedUnitList = new List<GameObject>();
+    //public Vector2 _startPos;
+    //public Vector2 _addPos;
+    //public int _columnNum;
 
     //public Transform _playerPool;
     public List<UnitController> _playerList = new List<UnitController>();
-    public Transform _playerObjCircle;
-    public Transform _goalObjCircle;
+    //public Transform _playerObjCircle;
+    //public Transform _goalObjCircle;
 
     void Start()
     {
@@ -30,11 +30,14 @@ public class PlayerManager : MonoBehaviour
     private void Init()
     {
         _playerList.Clear();
-        _savedUnitList.Clear();
 
-        var saveArray = Resources.LoadAll<GameObject>("SPUM/SPUM_Units");
+        #region
+        //_savedUnitList.Clear();
 
-        _savedUnitList.AddRange(saveArray);
+        //var saveArray = Resources.LoadAll<GameObject>("SPUM/SPUM_Units");
+
+        //_savedUnitList.AddRange(saveArray);
+        #endregion
     }
 
     public void SpawnUnit(UnitType type, string name, Vector3 position)
