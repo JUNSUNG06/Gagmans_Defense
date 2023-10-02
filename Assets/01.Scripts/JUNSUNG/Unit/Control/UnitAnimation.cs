@@ -17,10 +17,11 @@ public class UnitAnimation : UnitComponent
     private readonly int skillHash = Animator.StringToHash("skill");
     private readonly int stunHash = Animator.StringToHash("stun");
 
-    public override void Init(UnitController _controller)
+    public void Init(UnitController _controller, RuntimeAnimatorController animContorller)
     {
-        base.Init(_controller);
+        Init(_controller);
         anim = GetComponent<Animator>();
+        anim.runtimeAnimatorController = animContorller;
     }
 
     public void SetRunAnimation(bool active)

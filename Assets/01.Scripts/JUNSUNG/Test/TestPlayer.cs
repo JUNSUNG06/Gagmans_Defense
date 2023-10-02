@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TestPlayer : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TestPlayer : MonoBehaviour
 
     public UnitController Unit;
     public GameObject player;
+
+    public UnityEvent<UnitController> OnUnitSelect;
 
     public float doubleClickInterval = 0.3f;
     private float lastClickTime = 0;
@@ -40,6 +43,7 @@ public class TestPlayer : MonoBehaviour
                         }
 
                         Unit = unit;
+                        OnUnitSelect?.Invoke(unit);
                         lastClickTime = Time.time;
                     }
                     else if(unit.Type == UnitType.Enemy)

@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
   m_Name: TestHeroUnit
   m_EditorClassIdentifier: 
+  unitType: 1
   unitName: TestUnit
   unit: {fileID: 4416530876144524062, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - type: 0
     name: Test_Helmet
+  animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}

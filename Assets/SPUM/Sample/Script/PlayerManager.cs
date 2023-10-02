@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     public UnitListSO SoldierList;
     public UnitListSO HeroList;
     public UnitListSO EnemyList;
+    public float unitSize;
 
     [Space]
     public UnitController unitBase;
@@ -15,8 +16,8 @@ public class PlayerManager : MonoBehaviour
     //public Vector2 _addPos;
     //public int _columnNum;
 
-    //public Transform _playerPool;
     public List<UnitController> _playerList = new List<UnitController>();
+    //public Transform _playerPool;
     //public Transform _playerObjCircle;
     //public Transform _goalObjCircle;
 
@@ -68,7 +69,7 @@ public class PlayerManager : MonoBehaviour
         GameObject tObj = Instantiate(unitSO.unit) as GameObject;
         tObj.gameObject.name = "Visual";
         tObj.transform.SetParent(ttObj.transform);
-        tObj.transform.localScale = new Vector3(1, 1, 1);
+        tObj.transform.localScale = Vector3.one * unitSize;
         tObj.transform.localPosition = Vector3.zero;
 
         ttObj.name = unitSO.unitName;

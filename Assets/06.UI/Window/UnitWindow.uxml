@@ -8,8 +8,8 @@
             <ui:Label text="Unit" display-tooltip-when-elided="true" name="text" />
         </ui:VisualElement>
         <ui:VisualElement name="contents" class="w_contents">
-            <ui:VisualElement name="unitImage" style="height: 100%; width: 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); padding-left: 100px; padding-right: 100px; padding-top: 100px; padding-bottom: 100px;">
-                <ui:VisualElement name="image" style="flex-grow: 1; background-color: rgb(255, 255, 255);" />
+            <ui:VisualElement name="unitImage" style="height: 100%; width: 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); align-items: center; justify-content: center;">
+                <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 500px; height: 500px;" />
             </ui:VisualElement>
             <ui:VisualElement name="equipmentWindow" style="height: 100%; width: 50%; align-items: center; justify-content: center;">
                 <ItemSlot name="helmetSlot" />

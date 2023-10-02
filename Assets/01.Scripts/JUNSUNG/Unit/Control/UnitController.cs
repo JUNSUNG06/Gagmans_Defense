@@ -59,7 +59,7 @@ public class UnitController : MonoBehaviour
         attack.Init(this);
         
         anim = transform.Find("Visual/UnitRoot").AddComponent<UnitAnimation>();
-        anim.Init(this);
+        anim.Init(this, info.animator);
         
         status = GetComponent<UnitStatus>();
         status.Init(this);

@@ -12,7 +12,7 @@ public class UnitEquipment : UnitComponent
     public Action<EquipmentType, Sprite> OnEquipChageVisual { get; set; }
     public UnityEvent<StatusSO, bool> OnEquipChageStatus;
 
-    private SPUM_SpriteList spriteList;
+    public SPUM_SpriteList spriteList;
 
     public override void Init(UnitController _controller)
     {
