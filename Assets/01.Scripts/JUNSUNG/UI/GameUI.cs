@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public abstract class GameUI
 {
-    protected TemplateContainer container;
+    public TemplateContainer container;
     protected VisualElement root;
 
     public GameUI(TemplateContainer _container)
@@ -22,6 +23,9 @@ public abstract class GameUI
     public virtual void Show() 
     {
         container.style.display = DisplayStyle.Flex;
+        container.BringToFront();
+        UIManager.Instance.CurrentUI = this;
+        UIManager.Instance.isUIOpen = true;
     }
 
     public virtual void Hide() 

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TestPlayer : MonoBehaviour
 {
@@ -11,7 +8,7 @@ public class TestPlayer : MonoBehaviour
     public UnitController Unit;
     public GameObject player;
 
-    public UnityEvent<UnitController> OnUnitSelect;
+    public Action<UnitController> OnUnitSelect;
 
     public float doubleClickInterval = 0.3f;
     private float lastClickTime = 0;
@@ -39,7 +36,7 @@ public class TestPlayer : MonoBehaviour
                     {
                         if(Unit == unit && lastClickTime + doubleClickInterval > Time.time)
                         {
-                            UIManager.Instance.Show(typeof(UnitUI));    
+                            UIManager.Instance.UI[typeof(UnitUI)].Show();    
                         }
 
                         Unit = unit;
@@ -68,5 +65,10 @@ public class TestPlayer : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void IvokeOnUnitSelectAction()
+    {
+        OnUnitSelect?.Invoke(Unit);
     }
 }

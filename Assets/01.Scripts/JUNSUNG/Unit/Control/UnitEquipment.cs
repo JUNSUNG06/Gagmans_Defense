@@ -75,8 +75,8 @@ public class UnitEquipment : UnitComponent
 
         equipments[type] = null;
 
+        PlayerInventory.Instance.AddItem(beforeEquip);
         OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
-
         OnEquipChageVisual?.Invoke(type, null);
 
         return beforeEquip;

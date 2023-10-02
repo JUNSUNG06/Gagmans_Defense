@@ -7,6 +7,6 @@ public class PubUI : GameUI
 {
     public PubUI(TemplateContainer container) : base(container)
     {
-
+        container.name = "pub";
     }
 }

@@ -14,13 +14,26 @@ public enum InvenSortType
 
 public class PlayerInventory : MonoBehaviour
 {
+    public static PlayerInventory Instance;
+
     private Dictionary<ItemType, List<Item>> inven = new Dictionary<ItemType, List<Item>>();
     private List<Item> equipInven = new List<Item>();
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
         inven.Add(ItemType.Equipment, equipInven);
         AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
+        AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
+        AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
+        AddItem(new Equipment(ItemType.Equipment, "Test_Weapon", EquipmentType.RightWeapon));
     }
 
     public void AddItem(Item item)
@@ -49,13 +62,23 @@ public class PlayerInventory : MonoBehaviour
         switch (sortType)
         {
             case InvenSortType.Name:
-                result = equipInven.OrderBy(x => x.Info.itemName).ToList();
+                result = target.OrderBy(x => x.Info.itemName).ToList();
                 break;
             case InvenSortType.None:
-                result = equipInven;
+                result = target;
                 break;
         }
 
         return result;
+    }
+
+    public List<Item> GetEqiuInvenByType(EquipmentType type)
+    {
+        List<Item> list = equipInven.FindAll(x => x.GetInfo<EquipmentSO>().equipType == type);
+
+        foreach (var e in list)
+            Debug.Log(e);
+
+        return list;
     }
 }

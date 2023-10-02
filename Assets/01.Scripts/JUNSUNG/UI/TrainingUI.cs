@@ -7,6 +7,6 @@ public class TrainingUI : GameUI
 {
     public TrainingUI(TemplateContainer container) : base(container)
     {
-
+        container.name = "training";
     }
 }

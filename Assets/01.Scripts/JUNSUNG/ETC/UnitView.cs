@@ -7,6 +7,11 @@ public class UnitView : MonoBehaviour
 {
     public SPUM_SpriteList mySpriteList;
 
+    private void Start()
+    {
+        TestPlayer.Instance.OnUnitSelect += SetImage;
+    }
+
     public void SetImage(UnitController target)
     {
         SPUM_SpriteList _target = target.Equipment.spriteList;

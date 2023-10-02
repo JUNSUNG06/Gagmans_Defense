@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b2be6d63b3eb84e8a45245ab68f5d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mySpriteList: {fileID: 0}
+  mySpriteList: {fileID: 1803183329163128430}
 --- !u!1 &428200794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2256,6 +2256,9 @@ MonoBehaviour:
   - type: 0
     equipSOList:
     - {fileID: 11400000, guid: a4ed27cf8edba1d45a1f3fa1dd1ad198, type: 2}
+  - type: 3
+    equipSOList:
+    - {fileID: 11400000, guid: 7f87877149f308445b9af116820a622f, type: 2}
   ingerdientList: []
 --- !u!1 &1262643955
 GameObject:

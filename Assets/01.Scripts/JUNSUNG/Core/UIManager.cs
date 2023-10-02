@@ -1,6 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,7 +12,10 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     private Dictionary<Type, GameUI> uiDictionary = new Dictionary<Type, GameUI>();
-    public GameUI currentUI;
+    public Dictionary<Type, GameUI> UI => uiDictionary;
+    private GameUI currentUI;
+    public GameUI CurrentUI { get => currentUI; set => currentUI = value; }
+
     private UIDocument document;
     private VisualElement root;
 
@@ -54,33 +60,29 @@ public class UIManager : MonoBehaviour
         pub.Hide();
     }
 
+    private void Start()
+    {
+        UnitUI unitUi = UI[typeof(UnitUI)] as UnitUI;
+        TestPlayer.Instance.OnUnitSelect += unitUi.Show;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I)) 
         {
-            Show(typeof(InventoryUI));
-        }
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            Show(typeof(UnitUI));
+            Hide();
+            UI[typeof(InventoryUI)].Show();
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Show(typeof(TrainingUI));
+            Hide();
+            UI[typeof(TrainingUI)].Show();
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Show(typeof(PubUI));
+            Hide();
+            UI[typeof(PubUI)].Show();
         }
-    }
-
-    public void Show(Type type)
-    {
-        Hide();
-
-        currentUI = uiDictionary[type];
-        currentUI.Show();
-        isUIOpen = true;
     }
 
     public void Hide()

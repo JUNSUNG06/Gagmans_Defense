@@ -78,6 +78,11 @@ public class Item
     {
         type = _type;
     }
+
+    public T GetInfo<T>() where T : ItemSO
+    {
+        return info as T;
+    }
 }
 
 [System.Serializable]
