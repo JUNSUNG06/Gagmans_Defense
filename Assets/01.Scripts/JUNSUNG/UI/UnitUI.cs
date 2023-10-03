@@ -12,7 +12,7 @@ public class UnitUI : GameUI
     public UnitUI(TemplateContainer container) : base(container)
     {
         slot = root.Query<ItemSlot>().ToList();
-        InventoryUI ui = UIManager.Instance.UI[typeof(InventoryUI)] as InventoryUI;
+        EquipChangeUI ui = UIManager.Instance.UI[typeof(EquipChangeUI)] as EquipChangeUI;
         container.name = "unit";
 
         root.Q<ItemSlot>("helmetSlot").RegisterCallback<ClickEvent>(e =>

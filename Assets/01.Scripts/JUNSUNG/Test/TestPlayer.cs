@@ -67,7 +67,7 @@ public class TestPlayer : MonoBehaviour
         }
     }
 
-    public void IvokeOnUnitSelectAction()
+    public void InvokeOnUnitSelectAction()
     {
         OnUnitSelect?.Invoke(Unit);
     }

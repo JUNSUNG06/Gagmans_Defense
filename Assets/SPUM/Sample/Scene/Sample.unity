@@ -829,21 +829,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Unit: {fileID: 0}
   player: {fileID: 0}
-  OnUnitSelect:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 228610204}
-        m_TargetAssemblyTypeName: UnitView, Assembly-CSharp
-        m_MethodName: SetImage
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   doubleClickInterval: 0.3
 --- !u!114 &473165779
 MonoBehaviour:
@@ -1108,6 +1093,7 @@ MonoBehaviour:
   unitUI: {fileID: 9197481963319205126, guid: c3f98d7edb11f26479f20318ba149237, type: 3}
   trainingUI: {fileID: 9197481963319205126, guid: 978077b0e0dd7a14f9466b5378ea9e97, type: 3}
   pubUI: {fileID: 9197481963319205126, guid: ea98a75ddf0bdf246b92329db8f938df, type: 3}
+  equipChangeUI: {fileID: 9197481963319205126, guid: 6e5202fbc619ec440b6d1bf0d1f88cd3, type: 3}
   isUIOpen: 0
 --- !u!114 &535339316
 MonoBehaviour:

@@ -31,6 +31,9 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset pubUI;
     private PubUI pub;
 
+    public VisualTreeAsset equipChangeUI;
+    private EquipChangeUI equipChange;
+
     public bool isUIOpen = false;
 
     private void Awake()
@@ -47,10 +50,6 @@ public class UIManager : MonoBehaviour
         uiDictionary.Add(typeof(InventoryUI), inventory);
         inventory.Hide();
 
-        unit = new UnitUI(CreateWIndowUI(unitUI));
-        uiDictionary.Add(typeof(UnitUI), unit);
-        unit.Hide();
-
         training = new TrainingUI(CreateWIndowUI(trainingUI));
         uiDictionary.Add(typeof(TrainingUI), training);
         training.Hide();
@@ -58,6 +57,14 @@ public class UIManager : MonoBehaviour
         pub = new PubUI(CreateWIndowUI(pubUI));
         uiDictionary.Add(typeof(PubUI), pub);
         pub.Hide();
+
+        equipChange = new EquipChangeUI(CreateWIndowUI(equipChangeUI));
+        uiDictionary.Add(typeof(EquipChangeUI), equipChange);
+        equipChange.Hide();
+
+        unit = new UnitUI(CreateWIndowUI(unitUI));
+        uiDictionary.Add(typeof(UnitUI), unit);
+        unit.Hide();
     }
 
     private void Start()
