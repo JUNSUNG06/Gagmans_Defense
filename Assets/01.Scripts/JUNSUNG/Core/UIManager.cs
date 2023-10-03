@@ -12,7 +12,6 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     private Dictionary<Type, GameUI> uiDictionary = new Dictionary<Type, GameUI>();
-    public Dictionary<Type, GameUI> UI => uiDictionary;
     private GameUI currentUI;
     public GameUI CurrentUI { get => currentUI; set => currentUI = value; }
 
@@ -67,28 +66,28 @@ public class UIManager : MonoBehaviour
         unit.Hide();
     }
 
-    private void Start()
-    {
-        UnitUI unitUi = UI[typeof(UnitUI)] as UnitUI;
-        TestPlayer.Instance.OnUnitSelect += unitUi.Show;
-    }
+    //private void Start()
+    //{
+    //    UnitUI unitUi = UI[typeof(UnitUI)] as UnitUI;
+    //    TestPlayer.Instance.OnUnitSelect += unitUi.Show;
+    //}
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.I)) 
         {
             Hide();
-            UI[typeof(InventoryUI)].Show();
+            uiDictionary[typeof(InventoryUI)].Show();
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
             Hide();
-            UI[typeof(TrainingUI)].Show();
+            uiDictionary[typeof(TrainingUI)].Show();
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             Hide();
-            UI[typeof(PubUI)].Show();
+            uiDictionary[typeof(PubUI)].Show();
         }
     }
 
@@ -100,6 +99,11 @@ public class UIManager : MonoBehaviour
         }
 
         isUIOpen = false;
+    }
+
+    public T GetUI<T>() where T : GameUI
+    {
+        return uiDictionary[typeof(T)] as T;
     }
 
     private TemplateContainer CreateWIndowUI(VisualTreeAsset ui)

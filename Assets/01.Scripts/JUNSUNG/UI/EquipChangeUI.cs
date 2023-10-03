@@ -14,6 +14,7 @@ public class EquipChangeUI : GameUI
     {
         container.name = "equip change";
         slotList = root.Query<ItemSlot>().ToList();
+        TestPlayer testPlayer = TestPlayer.Instance;
 
         foreach (var s in slotList)
         {
@@ -23,15 +24,16 @@ public class EquipChangeUI : GameUI
 
                 if (item == null)
                 {
-                    TestPlayer.Instance.Unit.Equipment.ReleaseEquipment(selectEquipType);
+                    testPlayer.Unit.Equipment.ReleaseEquipment(selectEquipType);
                 }
                 else
                 {
-                    TestPlayer.Instance.Unit.Equipment.ChangeEquipment(item);
+                    testPlayer.Unit.Equipment.ChangeEquipment(item);
                     PlayerInventory.Instance.RemoveItem(item);
                 }
 
-                TestPlayer.Instance.InvokeOnUnitSelectAction();
+                UIManager.Instance.GetUI<UnitUI>().Show(testPlayer.Unit);
+                testPlayer.InvokeOnUnitSelectAction();
 
                 Hide();
             });

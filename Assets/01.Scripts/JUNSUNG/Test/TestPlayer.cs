@@ -8,7 +8,7 @@ public class TestPlayer : MonoBehaviour
     public UnitController Unit;
     public GameObject player;
 
-    public Action<UnitController> OnUnitSelect;
+    public Action<UnitController> OnUnitSelect { get; set; }
 
     public float doubleClickInterval = 0.3f;
     private float lastClickTime = 0;
@@ -32,18 +32,18 @@ public class TestPlayer : MonoBehaviour
             {
                 if (hit.transform.TryGetComponent<UnitController>(out UnitController unit))
                 {
-                    if(unit.Type == UnitType.Soldier)
+                    if(unit.info.unitType == UnitType.Hero || unit.info.unitType == UnitType.Soldier)
                     {
-                        if(Unit == unit && lastClickTime + doubleClickInterval > Time.time)
+                        if(Unit == unit && unit.info.unitType == UnitType.Hero && lastClickTime + doubleClickInterval > Time.time)
                         {
-                            UIManager.Instance.UI[typeof(UnitUI)].Show();    
+                            UIManager.Instance.GetUI<UnitUI>().Show(Unit);
                         }
 
                         Unit = unit;
                         OnUnitSelect?.Invoke(unit);
                         lastClickTime = Time.time;
                     }
-                    else if(unit.Type == UnitType.Enemy)
+                    else if(unit.info.unitType == UnitType.Enemy)
                     {
                         if(Unit != null)
                         {
