@@ -34,11 +34,11 @@ public class TestPlayer : MonoBehaviour
                 {
                     if(unit.info.unitType == UnitType.Hero || unit.info.unitType == UnitType.Soldier)
                     {
-                        if(Unit == unit && unit.info.unitType == UnitType.Hero && lastClickTime + doubleClickInterval > Time.time)
+                        if(Unit == unit  && lastClickTime + doubleClickInterval > Time.time && 
+                            (unit.info.unitType == UnitType.Hero || unit.info.unitType == UnitType.Soldier))
                         {
                             UIManager.Instance.GetUI<UnitUI>().Show(Unit);
                         }
-
                         Unit = unit;
                         OnUnitSelect?.Invoke(unit);
                         lastClickTime = Time.time;

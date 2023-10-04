@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/06.UI/Window/window.uss?fileID=7433441132597879392&amp;guid=b4a1ba0a2a1c28f44b90d7391fc715fd&amp;type=3#window" />
+    <Style src="project://database/Assets/06.UI/slot/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <ui:VisualElement name="window" class="window">
+        <ui:VisualElement name="background" class="w_background" />
+        <ui:VisualElement name="contents" class="w_contents">
+            <ui:VisualElement name="unitImage" style="height: 100%; width: 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); align-items: center; justify-content: center;">
+                <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 500px; height: 500px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

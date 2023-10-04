@@ -11,21 +11,15 @@ public class PlayerManager : MonoBehaviour
 
     [Space]
     public UnitController unitBase;
-    //public List<GameObject> _savedUnitList = new List<GameObject>();
-    //public Vector2 _startPos;
-    //public Vector2 _addPos;
-    //public int _columnNum;
-
+    public UnitController enemyBase;
     public List<UnitController> _playerList = new List<UnitController>();
-    //public Transform _playerPool;
-    //public Transform _playerObjCircle;
-    //public Transform _goalObjCircle;
 
     void Start()
     {
         Init();
 
-        SpawnUnit(UnitType.Hero, "TestUnit", Vector3.zero);
+        SpawnUnit(UnitType.Hero, "TestUnit", new Vector3(5, 0, 0));
+        SpawnUnit(UnitType.Enemy, "TestEnemy", new Vector3(-5, 0, 0));
     }
 
     private void Init()
@@ -62,7 +56,13 @@ public class PlayerManager : MonoBehaviour
         if(unitSO == null) 
             return;
 
-        GameObject ttObj = Instantiate(unitBase.gameObject) as GameObject;
+        GameObject ttObj;
+
+        if(unitSO.unitType == UnitType.Enemy)
+            ttObj = Instantiate(enemyBase.gameObject) as GameObject;
+        else
+            ttObj = Instantiate(unitBase.gameObject) as GameObject;
+
         ttObj.transform.SetParent(transform);
         ttObj.transform.localScale = new Vector3(1, 1, 1);
 
