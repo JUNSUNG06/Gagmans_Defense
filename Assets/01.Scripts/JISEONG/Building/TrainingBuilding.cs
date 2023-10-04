@@ -66,4 +66,9 @@ public class TrainingBuilding : BaseBuilding
     {
         StopAllCoroutines();
     }
+
+    public override void OnClicked()
+    {
+        UIManager.Instance.GetUI<TrainingUI>().Show();
+    }
 }

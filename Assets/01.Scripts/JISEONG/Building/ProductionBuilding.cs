@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductionBuilding : BaseBuilding, IClickable, IDamageable
+public class ProductionBuilding : BaseBuilding, IDamageable
 {
     public void GetDamaged(float damage, out bool isKill)
     {
         isKill = true;
     }
 
-    public void OnClicked()
+    public override void OnClicked()
     {
         
     }

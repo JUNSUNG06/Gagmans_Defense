@@ -8,7 +8,10 @@
             <ui:Label text="Pub" display-tooltip-when-elided="true" name="text" />
         </ui:VisualElement>
         <ui:VisualElement name="contents" class="w_contents">
-            <ui:Instance template="Slot" name="Slot" />
+            <ui:Instance template="Slot" name="Slot">
+                <AttributeOverrides element-name="timer" title="00:00" />
+                <AttributeOverrides element-name="buyBtn" text="300" />
+            </ui:Instance>
             <ui:Instance template="Slot" name="Slot" />
             <ui:Instance template="Slot" name="Slot" />
             <ui:Instance template="Slot" name="Slot" />
