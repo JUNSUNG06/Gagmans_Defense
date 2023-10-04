@@ -56,12 +56,8 @@ public class PlayerManager : MonoBehaviour
         if(unitSO == null) 
             return;
 
-        GameObject ttObj;
-
-        if(unitSO.unitType == UnitType.Enemy)
-            ttObj = Instantiate(enemyBase.gameObject) as GameObject;
-        else
-            ttObj = Instantiate(unitBase.gameObject) as GameObject;
+        Debug.Log(unitSO.controller);
+        UnitController ttObj = Instantiate(unitSO.controller);
 
         ttObj.transform.SetParent(transform);
         ttObj.transform.localScale = new Vector3(1, 1, 1);
@@ -74,10 +70,10 @@ public class PlayerManager : MonoBehaviour
 
         ttObj.name = unitSO.unitName;
 
-        UnitController tObjST = ttObj.GetComponent<UnitController>();
+        //UnitController tObjST = ttObj.GetComponent<UnitController>();
 
-        _playerList.Add(tObjST);
-        ttObj.GetComponent<UnitController>().Init(unitSO);
+        _playerList.Add(ttObj);
         ttObj.transform.position = position;
+        ttObj.GetComponent<UnitController>().Init(unitSO);
     }
 }

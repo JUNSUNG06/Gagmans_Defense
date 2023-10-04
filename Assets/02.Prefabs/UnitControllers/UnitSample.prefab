@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 1
-  distance: 0.5
+  distance: 0.1
 --- !u!1 &2121179681554426878
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 2
+  distance: 1
 --- !u!114 &2827744385761960330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 2
+  distance: 1
 --- !u!114 &5625302928201234907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1082,4 +1082,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 1
-  distance: 4
+  distance: 1
