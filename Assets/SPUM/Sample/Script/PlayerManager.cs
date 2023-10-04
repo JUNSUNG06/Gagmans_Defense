@@ -70,8 +70,6 @@ public class PlayerManager : MonoBehaviour
 
         ttObj.name = unitSO.unitName;
 
-        //UnitController tObjST = ttObj.GetComponent<UnitController>();
-
         _playerList.Add(ttObj);
         ttObj.transform.position = position;
         ttObj.GetComponent<UnitController>().Init(unitSO);
