@@ -43,8 +43,6 @@ public class UnitController : MonoBehaviour
         }
     }
 
-    public UnitType Type;
-
     public void Init(UnitSO info)
     {
         this.info = info;

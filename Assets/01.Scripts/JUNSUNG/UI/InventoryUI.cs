@@ -7,7 +7,6 @@ using UnityEngine.UIElements;
 
 public class InventoryUI : GameUI
 {
-    private PlayerInventory inventory;
 
     private List<ItemSlot> slotList;
 
@@ -16,31 +15,8 @@ public class InventoryUI : GameUI
 
     public InventoryUI(TemplateContainer container) : base(container)
     {
-        inventory = TestPlayer.Instance.GetComponent<PlayerInventory>();
         container.name = "inventory";
         slotList = root.Query<ItemSlot>().ToList();
-
-        foreach(var s in slotList)
-        {
-            s.RegisterCallback<ClickEvent>(e =>
-            {
-                Equipment item = s.GetItem() as Equipment;
-
-                if(item == null)
-                {
-                    TestPlayer.Instance.Unit.Equipment.ReleaseEquipment(selectEquipType);
-                }
-                else
-                {
-                    TestPlayer.Instance.Unit.Equipment.ChangeEquipment(item);
-                    PlayerInventory.Instance.RemoveItem(item);
-                }
-
-                TestPlayer.Instance.IvokeOnUnitSelectAction();
-
-                Hide();
-            });
-        }
     }
 
     public void Show(List<Item> items)

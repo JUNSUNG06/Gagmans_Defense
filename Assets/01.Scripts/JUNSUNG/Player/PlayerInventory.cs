@@ -74,6 +74,7 @@ public class PlayerInventory : MonoBehaviour
 
     public List<Item> GetEqiuInvenByType(EquipmentType type)
     {
+        Debug.Log(equipInven.Count);
         List<Item> list = equipInven.FindAll(x => x.GetInfo<EquipmentSO>().equipType == type);
 
         foreach (var e in list)
