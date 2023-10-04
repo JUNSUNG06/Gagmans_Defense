@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProductionBuilding : MonoBehaviour
+public class ProductionBuilding : BaseBuilding, IClickable, IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
+    public void GetDamaged(float damage, out bool isKill)
+    {
+        isKill = true;
+    }
+
+    public void OnClicked()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void StopWorking()
+    {
+        
+    }
+
+    public override void Upgrade()
     {
         
     }
