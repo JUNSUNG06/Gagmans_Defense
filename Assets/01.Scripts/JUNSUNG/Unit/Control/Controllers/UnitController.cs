@@ -38,12 +38,14 @@ public class UnitController : MonoBehaviour
         {
             target = value;
 
-            if(target != null)
+            if (target != null)
                 Movement.SetTargetPos(target.position);
+            else
+                movement.Stop();
         }
     }
 
-    public void Init(UnitSO info)
+    public virtual void Init(UnitSO info, Transform target)
     {
         this.info = info;
 
@@ -67,5 +69,7 @@ public class UnitController : MonoBehaviour
 
         equipment = GetComponent<UnitEquipment>();
         equipment.Init(this);
+
+        Target = target;
     }
 }

@@ -22,6 +22,7 @@ public class PlayerManager : MonoBehaviour
         SpawnUnit(UnitType.Enemy, "TestEnemy", new Vector3(-5, 0, 0));
     }
 
+
     private void Init()
     {
         _playerList.Clear();
@@ -72,6 +73,6 @@ public class PlayerManager : MonoBehaviour
 
         _playerList.Add(ttObj);
         ttObj.transform.position = position;
-        ttObj.GetComponent<UnitController>().Init(unitSO);
+        ttObj.GetComponent<UnitController>().Init(unitSO, null);
     }
 }

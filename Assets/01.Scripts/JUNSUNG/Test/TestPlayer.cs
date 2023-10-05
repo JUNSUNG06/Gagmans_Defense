@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TestPlayer : MonoBehaviour
@@ -34,11 +36,11 @@ public class TestPlayer : MonoBehaviour
                 {
                     if(unit.info.unitType == UnitType.Hero || unit.info.unitType == UnitType.Soldier)
                     {
-                        if(Unit == unit  && lastClickTime + doubleClickInterval > Time.time && 
-                            (unit.info.unitType == UnitType.Hero || unit.info.unitType == UnitType.Soldier))
+                        if(Unit == unit  && lastClickTime + doubleClickInterval > Time.time && unit.info.unitType == UnitType.Hero)
                         {
                             UIManager.Instance.GetUI<UnitUI>().Show(Unit);
                         }
+
                         Unit = unit;
                         OnUnitSelect?.Invoke(unit);
                         lastClickTime = Time.time;
