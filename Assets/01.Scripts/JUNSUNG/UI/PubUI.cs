@@ -19,11 +19,12 @@ public class PubUI : GameUI
 
     public void SettingSlot(int index, int cost)
     {
-        slotList[index].Q<Button>("buyBtn").RegisterCallback<ClickEvent>(e =>
-        {
-
-        });
+        slotList[index].Q<Button>("buyBtn").RegisterCallback<ClickEvent>(Test);
         slotList[index].Q<Button>("buyBtn").text = cost.ToString();
-        //slotList[index].Q<VisualElement>("image").style. = image; 이미지 어떻게 바꿀지 물어봐야함
+        //slotList[index].Q<VisualElement>("image").style.backgroundImage = image; //이미지 어떻게 바꿀지 물어봐야함
+    }
+    public void Test(ClickEvent e)
+    {
+
     }
 }

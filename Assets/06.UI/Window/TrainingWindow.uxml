@@ -2,6 +2,7 @@
     <ui:Template name="Slot" src="project://database/Assets/06.UI/slot/Slot.uxml?fileID=9197481963319205126&amp;guid=6c9030f94698c7e4c82b44614cca38d7&amp;type=3#Slot" />
     <Style src="project://database/Assets/06.UI/Window/window.uss?fileID=7433441132597879392&amp;guid=b4a1ba0a2a1c28f44b90d7391fc715fd&amp;type=3#window" />
     <Style src="project://database/Assets/06.UI/slot/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
+    <Style src="project://database/Assets/Resources/StyleSheets/ItemSlotStyle.uss?fileID=7433441132597879392&amp;guid=f647165f0c546ef4fbf57d2850c3983a&amp;type=3#ItemSlotStyle" />
     <ui:VisualElement name="window" class="window">
         <ui:VisualElement name="background" class="w_background" />
         <ui:VisualElement name="title" class="w_title">
