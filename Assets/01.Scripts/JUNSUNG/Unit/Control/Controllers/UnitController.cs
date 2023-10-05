@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitStatus))]
 [RequireComponent(typeof(UnitHealth))]
 [RequireComponent(typeof(UnitEquipment))]
+[RequireComponent(typeof(UnitPassive))]
 
 public class UnitController : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class UnitController : MonoBehaviour
     private UnitStatus status;
     private UnitHealth health;
     private UnitEquipment equipment;
+    private UnitPassive passive;
     
     [SerializeField]
     private Transform target;
@@ -31,6 +33,7 @@ public class UnitController : MonoBehaviour
     public UnitStatus Stat => status;
     public UnitHealth Health => health;
     public UnitEquipment Equipment => equipment;
+    public UnitPassive Passive => passive;
     public Transform Target 
     { 
         get => target; 
@@ -69,6 +72,9 @@ public class UnitController : MonoBehaviour
 
         equipment = GetComponent<UnitEquipment>();
         equipment.Init(this);
+
+        passive = GetComponent<UnitPassive>();
+        passive.Init(this);
 
         Target = target;
     }
