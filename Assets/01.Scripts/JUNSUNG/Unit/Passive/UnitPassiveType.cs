@@ -5,12 +5,14 @@ using UnityEngine;
 public abstract class UnitPassiveType : MonoBehaviour
 {
     protected UnitController controller;
-    protected List<UnitDecision> decisions;
+    protected List<UnitDecision> decisions = new List<UnitDecision>();
 
     public virtual void Init(UnitController _controller)
     {
         controller = _controller;
         GetComponents<UnitDecision>(decisions);
+        for (int i = 0; i < decisions.Count; i++)
+            decisions[i].Init(controller);
     }
 
     public abstract void Passive();

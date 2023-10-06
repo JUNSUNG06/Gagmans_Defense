@@ -15,5 +15,4 @@ public abstract class UnitDecision : MonoBehaviour
         controller = _controller;
     }
     public abstract bool Decision();
-    public virtual void UpdateDecision() { }
 }

@@ -20,7 +20,6 @@ public class UnitMovement : UnitComponent, IAffectedStatus
     {
         base.Init(_controller);
         targetPos = transform.position;
-        Debug.Log(transform.position);
         visual = transform.Find("Visual").transform;
     }
 

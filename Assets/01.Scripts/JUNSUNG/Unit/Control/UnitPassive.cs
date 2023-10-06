@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class UnitPassive : UnitComponent
 {
-    private List<UnitPassiveType> passives;
+    private List<UnitPassiveType> passives = new List<UnitPassiveType>();
 
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
-        transform.Find("PassiveContainer").GetComponents<UnitPassiveType>(passives);
+        Transform container = transform.Find("PassiveContainer");
+
+        foreach(Transform child in container)
+        {
+            if(child.TryGetComponent<UnitPassiveType>(out UnitPassiveType passive))
+            {
+                passives.Add(passive);
+                passive.Init(controller);
+            }
+        }
     }
 
     protected override void UnitUpdate()
@@ -17,7 +26,10 @@ public class UnitPassive : UnitComponent
         for(int i = 0; i < passives.Count; ++i)
         {
             if (passives[i].CanActivePassive())
+            {
+                Debug.Log(1);
                 passives[i].Passive();
+            }
         }
     }
 }

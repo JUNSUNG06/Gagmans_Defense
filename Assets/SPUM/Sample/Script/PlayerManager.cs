@@ -70,6 +70,7 @@ public class PlayerManager : MonoBehaviour
         tObj.transform.localPosition = Vector3.zero;
 
         ttObj.name = unitSO.unitName;
+        ttObj.gameObject.layer = LayerMask.NameToLayer(unitSO.unitType.ToString());
 
         _playerList.Add(ttObj);
         ttObj.transform.position = position;
