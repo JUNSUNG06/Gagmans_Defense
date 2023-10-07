@@ -18,6 +18,6 @@ public class UnitSO : ScriptableObject
     public GameObject unit;
     public UnitController controller;
     public StatusSO status;
-    public List<StartingEquip> startingEquips = new List<StartingEquip>();
+    public List<EquipmentSO> startingEquips = new List<EquipmentSO>();
     public RuntimeAnimatorController animator;
 }

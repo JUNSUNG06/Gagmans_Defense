@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
+  m_Name: Devil_Infantry
+  m_EditorClassIdentifier: 
+  unitType: 2
+  unitName: Devil_Infantry
+  unit: {fileID: 6619453776035296107, guid: 2b80c970902455f4080bb2bc7b9e00cf, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
+  status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
+  startingEquips:
+  - type: 0
+    name: 
+  - type: 3
+    name: 
+  - type: 4
+    name: 
+  animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}

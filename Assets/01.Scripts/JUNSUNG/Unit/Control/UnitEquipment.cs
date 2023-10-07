@@ -23,7 +23,7 @@ public class UnitEquipment : UnitComponent
 
         foreach (var startingEquip in controller.info.startingEquips)
         {
-            ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.name, startingEquip.type));
+            ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.itemName, startingEquip.equipType));
         }
     }
 

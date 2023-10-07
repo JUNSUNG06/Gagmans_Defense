@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c736d763dd9eab346a69facc2e7b6d9e, type: 3}
-  m_Name: RedGoblinArmor
+  m_Name: DevilArmor
   m_EditorClassIdentifier: 
   itemName: RedGoblinArmor
   image: {fileID: 2063926097333013154, guid: 49278b333c23b464fbe87f4618639aa0, type: 3}
