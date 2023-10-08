@@ -57,7 +57,6 @@ public class PlayerManager : MonoBehaviour
         if(unitSO == null) 
             return;
 
-        Debug.Log(unitSO.controller);
         UnitController ttObj = Instantiate(unitSO.controller);
 
         ttObj.transform.SetParent(transform);

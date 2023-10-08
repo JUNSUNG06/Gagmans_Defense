@@ -18,6 +18,5 @@ MonoBehaviour:
   controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
-  - type: 3
-    name: Test_Weapon
+  - {fileID: 11400000, guid: 4e83fd08188667442892876b60bbc3ae, type: 2}
   animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}

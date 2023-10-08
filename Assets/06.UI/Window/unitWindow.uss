@@ -3,3 +3,7 @@
     height: 75px;
     background-image: url('project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&Btn/Box_Profile.png?fileID=2800000&guid=d049099c702c94379ab5445f1cd246b2&type=3#Box_Profile');
 }
+
+.s_statusLabel {
+    font-size: 20px;
+}

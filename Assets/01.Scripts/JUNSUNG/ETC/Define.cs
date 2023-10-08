@@ -20,7 +20,7 @@ public enum UnitType
 
 public enum StatusType
 {
-    AttackPower,
+    AttackPower = 0,
     AttackSpee,
     Defense,
     Health,
