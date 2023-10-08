@@ -26,4 +26,9 @@ public class SubUnitUI : GameUI
 
         Show();
     }
+
+    public override void Show()
+    {
+        container.style.display = DisplayStyle.Flex;
+    }
 }

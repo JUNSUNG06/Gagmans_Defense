@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
     {
         Init();
 
-        SpawnUnit(UnitType.Hero, "TestUnit", new Vector3(5, 0, 0));
+        SpawnUnit(UnitType.Hero, "Lancer", new Vector3(5, 0, 0));
         SpawnUnit(UnitType.Enemy, "TestEnemy", new Vector3(-5, 0, 0));
     }
 
