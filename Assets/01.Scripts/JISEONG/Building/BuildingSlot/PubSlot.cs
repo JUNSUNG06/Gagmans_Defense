@@ -11,22 +11,22 @@ public class PubSlot
     private int drawTime;
     private int currentTime;
     private float checkTime;
+
+    private PubSlotUI pubSlotUI;
+    public PubSlot(PubSlotUI slotUI, List<UnitSO> unitSOs, int _drawTime)
+    {
+        pubSlotUI = slotUI;
+        checkTime = 1f;
+        slotDatas = unitSOs;
+        drawTime = _drawTime;
+        DrawSlotData();
+    }
     private void DrawSlotData() 
     {
         int selectIndex = Random.Range(0, slotDatas.Count);
         currentSlotData = slotDatas[selectIndex];
         currentTime = drawTime;
-    }
-    public PubSlot()
-    {
-
-    }
-    public void Start(List<UnitSO> unitSOs, int _drawTime)
-    {
-        checkTime = 1f;
-        slotDatas = unitSOs;
-        drawTime = _drawTime;
-        DrawSlotData();
+        pubSlotUI.SettingBtn(currentSlotData.unitCost);
     }
     public void Update()
     {
@@ -35,6 +35,7 @@ public class PubSlot
         {
             currentTime--;
             checkTime = 1f;
+            pubSlotUI.SettingTimer(currentTime);
             if(currentTime <= 0)
             {
                 currentTime = drawTime;

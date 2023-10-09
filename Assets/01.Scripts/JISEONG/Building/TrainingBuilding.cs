@@ -10,9 +10,6 @@ public class TrainingBuilding : BaseBuilding
     [SerializeField] private Transform unitbeginningTrm; // 훈련한 후 처음으로 걸어갈 위치
     private Queue<TrainingSlotDataSO> trainingQueue = new Queue<TrainingSlotDataSO>();
     private bool isWork;
-
-    private int currentLevel; 
-    private int maxLevel;
     private void Start()
     {
         currentLevel = buildingDataSO.minBuildingLevel;

@@ -1,30 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PubUI : GameUI
 {
-    private List<VisualElement> slotList;
+    public List<PubSlotUI> slotList;
     public PubUI(TemplateContainer container) : base(container)
     {
         container.name = "pub";
-        slotList = root.Query("Slot").ToList();
-    }
-
-    public void SettingTimer(int index, int time)
-    {
-        slotList[index].Q<ProgressBar>("timer").title = $"{(time / 60)}:{time % 60}";
-    }
-
-    public void SettingSlot(int index, int cost)
-    {
-        slotList[index].Q<Button>("buyBtn").RegisterCallback<ClickEvent>(Test);
-        slotList[index].Q<Button>("buyBtn").text = cost.ToString();
-        //slotList[index].Q<VisualElement>("image").style.backgroundImage = image; //이미지 어떻게 바꿀지 물어봐야함
-    }
-    public void Test(ClickEvent e)
-    {
-
+        var visualElements = root.Query("PubSlotUI").ToList();
+        slotList = visualElements.Select(ve => ve as PubSlotUI).Where(ve => ve != null).ToList();
     }
 }
