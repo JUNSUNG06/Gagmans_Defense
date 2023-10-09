@@ -19,7 +19,7 @@ MonoBehaviour:
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 4c099bc48b2f6dd48b4f5f31c1470dab, type: 2}
-  - {fileID: 11400000, guid: d540d365d08ff6b40a15e8d912181d18, type: 2}
+  - {fileID: 11400000, guid: 28273b5df8f2e3545afef4926428c306, type: 2}
   - {fileID: 11400000, guid: 40c251913cd8c8243a8ae16eed01a99b, type: 2}
   - {fileID: 11400000, guid: bbdb95d343d82654a81ac5262dab2396, type: 2}
   - {fileID: 11400000, guid: 2158c150f146ec6428882253c1adad0b, type: 2}
