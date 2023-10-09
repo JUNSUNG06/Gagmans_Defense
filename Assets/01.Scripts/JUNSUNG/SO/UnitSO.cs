@@ -13,6 +13,7 @@ public class StartingEquip
 [CreateAssetMenu(menuName = "SO/UnitSO")]
 public class UnitSO : ScriptableObject
 {
+    public int unitCost;
     public UnitType unitType;
     public string unitName;
     public GameObject unit;

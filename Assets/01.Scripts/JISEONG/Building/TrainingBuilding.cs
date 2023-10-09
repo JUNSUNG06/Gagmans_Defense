@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class TrainingBuilding : BaseBuilding
 {
+    
+    [SerializeField] private Transform unitMakeTrm; // 훈련소 문 위치
+    [SerializeField] private Transform unitbeginningTrm; // 훈련한 후 처음으로 걸어갈 위치
     private Queue<TrainingSlotDataSO> trainingQueue = new Queue<TrainingSlotDataSO>();
     private bool isWork;
-
-    private int currentLevel;
-    private int maxLevel;
     private void Start()
     {
         currentLevel = buildingDataSO.minBuildingLevel;
@@ -49,7 +49,6 @@ public class TrainingBuilding : BaseBuilding
         }
     }
 
-
     public override void Upgrade()
     {
         currentLevel++;
@@ -63,5 +62,10 @@ public class TrainingBuilding : BaseBuilding
     public override void StopWorking()
     {
         StopAllCoroutines();
+    }
+
+    public override void OnClicked()
+    {
+        UIManager.Instance.GetUI<TrainingUI>().Show();
     }
 }
