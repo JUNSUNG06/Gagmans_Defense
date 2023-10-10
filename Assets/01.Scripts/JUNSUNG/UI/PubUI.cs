@@ -10,7 +10,6 @@ public class PubUI : GameUI
     public PubUI(TemplateContainer container) : base(container)
     {
         container.name = "pub";
-        var visualElements = root.Query("PubSlotUI").ToList();
-        slotList = visualElements.Select(ve => ve as PubSlotUI).Where(ve => ve != null).ToList();
+        slotList = root.Query<PubSlotUI>("PubSlotUI").ToList();
     }
 }

@@ -35,7 +35,7 @@ public class PubSlot
         {
             currentTime--;
             checkTime = 1f;
-            pubSlotUI.SettingTimer(currentTime);
+            pubSlotUI.SettingTimer(currentTime, currentTime / drawTime * 100);
             if(currentTime <= 0)
             {
                 currentTime = drawTime;

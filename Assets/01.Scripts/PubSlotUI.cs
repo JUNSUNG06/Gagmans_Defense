@@ -42,9 +42,10 @@ public class PubSlotUI : VisualElement
         root.Add(timer);
     }
 
-    public void SettingTimer(int time)
+    public void SettingTimer(int time, float percent)
     {
         timer.title = $"{time / 60}:{time % 60}";
+        timer.value = percent;
     }
 
     public void SettingBtn(int cost)
