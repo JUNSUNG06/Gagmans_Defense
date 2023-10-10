@@ -1,18 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ItemSOContainer : MonoBehaviour
 {
     public static ItemSOContainer Instance;
 
+    private string equipPath = "EquipSO/Equipment/";
+
     private Dictionary<EquipmentType, List<EquipmentSO>> equipDictionary = new Dictionary<EquipmentType, List<EquipmentSO>>();
     private Dictionary<string, IngredientSO> ingredientDictionary = new Dictionary<string, IngredientSO>();
 
-    [SerializeField]
-    private List<EquipList> equipList = new List<EquipList>();
-    [SerializeField]
-    private List<IngredientSO> ingerdientList = new List<IngredientSO>();
 
     private void Awake()
     {
@@ -21,14 +21,9 @@ public class ItemSOContainer : MonoBehaviour
         else
             Destroy(gameObject);
 
-        foreach(EquipList v in equipList)
+        foreach(EquipmentType type in Enum.GetValues(typeof(EquipmentType)))
         {
-            equipDictionary[v.type] = v.equipSOList;
-        }
-
-        foreach(IngredientSO v in ingerdientList)
-        {
-            ingredientDictionary[v.itemName] = v;
+            equipDictionary[type] = Resources.LoadAll<EquipmentSO>($"{equipPath}{type}").ToList();
         }
     }
 

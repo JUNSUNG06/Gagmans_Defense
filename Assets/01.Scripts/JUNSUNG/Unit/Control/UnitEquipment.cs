@@ -9,7 +9,7 @@ public class UnitEquipment : UnitComponent
 {
     private Dictionary<EquipmentType, Equipment> equipments = new Dictionary<EquipmentType, Equipment>();
 
-    public Action<EquipmentType, Sprite> OnEquipChageVisual { get; set; }
+    public Action<EquipmentType, EquipmentSO> OnEquipChageVisual { get; set; }
     public UnityEvent<StatusSO, bool> OnEquipChageStatus;
 
     public SPUM_SpriteList spriteList;
@@ -23,7 +23,7 @@ public class UnitEquipment : UnitComponent
 
         foreach (var startingEquip in controller.info.startingEquips)
         {
-            ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.name, startingEquip.type));
+            ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.itemName, startingEquip.equipType));
         }
     }
 
@@ -61,7 +61,7 @@ public class UnitEquipment : UnitComponent
             OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
         OnEquipChageStatus?.Invoke(info.status, true);
 
-        OnEquipChageVisual?.Invoke(info.equipType, info.image);
+        OnEquipChageVisual?.Invoke(info.equipType, info);
 
         return beforeEquip;
     }

@@ -7,4 +7,5 @@ public class EquipmentSO : ItemSO
 {
     public StatusSO status;
     public EquipmentType equipType;
+    public string path;
 }

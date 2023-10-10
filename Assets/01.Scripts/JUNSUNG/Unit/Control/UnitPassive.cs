@@ -27,7 +27,6 @@ public class UnitPassive : UnitComponent
         {
             if (passives[i].CanActivePassive())
             {
-                Debug.Log(1);
                 passives[i].Passive();
             }
         }

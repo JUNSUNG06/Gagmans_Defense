@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset unitUI;
     private UnitUI unit;
 
+    public VisualTreeAsset subUnitUI;
+    private SubUnitUI subUnit;
+
     public VisualTreeAsset trainingUI;
     private TrainingUI training;
 
@@ -45,32 +48,30 @@ public class UIManager : MonoBehaviour
         document = GetComponent<UIDocument>();
         root = document.rootVisualElement.Q<VisualElement>("root");
         
-        inventory = new InventoryUI(CreateWIndowUI(inventoryUI));
+        inventory = new InventoryUI(CreateWindowUI(inventoryUI));
         uiDictionary.Add(typeof(InventoryUI), inventory);
         inventory.Hide();
 
-        training = new TrainingUI(CreateWIndowUI(trainingUI));
+        training = new TrainingUI(CreateWindowUI(trainingUI));
         uiDictionary.Add(typeof(TrainingUI), training);
         training.Hide();
 
-        pub = new PubUI(CreateWIndowUI(pubUI));
+        pub = new PubUI(CreateWindowUI(pubUI));
         uiDictionary.Add(typeof(PubUI), pub);
         pub.Hide();
 
-        equipChange = new EquipChangeUI(CreateWIndowUI(equipChangeUI));
+        equipChange = new EquipChangeUI(CreateWindowUI(equipChangeUI));
         uiDictionary.Add(typeof(EquipChangeUI), equipChange);
         equipChange.Hide();
 
-        unit = new UnitUI(CreateWIndowUI(unitUI));
+        unit = new UnitUI(CreateWindowUI(unitUI));
         uiDictionary.Add(typeof(UnitUI), unit);
         unit.Hide();
-    }
 
-    //private void Start()
-    //{
-    //    UnitUI unitUi = UI[typeof(UnitUI)] as UnitUI;
-    //    TestPlayer.Instance.OnUnitSelect += unitUi.Show;
-    //}
+        subUnit = new SubUnitUI(CreateWindowUI(subUnitUI));
+        uiDictionary.Add(typeof(SubUnitUI), subUnit);
+        subUnit.Hide();
+    }
 
     private void Update()
     {
@@ -106,7 +107,7 @@ public class UIManager : MonoBehaviour
         return uiDictionary[typeof(T)] as T;
     }
 
-    private TemplateContainer CreateWIndowUI(VisualTreeAsset ui)
+    private TemplateContainer CreateWindowUI(VisualTreeAsset ui)
     {
         TemplateContainer inventoryTemp = ui.Instantiate();
         inventoryTemp.style.width = Length.Percent(100);

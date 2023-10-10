@@ -52,7 +52,6 @@ public class UnitStatus : UnitComponent
         foreach(Status stat in statSO.StatusInfo)
         {
             ChangeStatus(stat.Type, stat.Value * sign);
-            Debug.Log(statusDictionary[stat.Type]);
         }
     }
 }

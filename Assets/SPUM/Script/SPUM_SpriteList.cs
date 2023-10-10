@@ -176,8 +176,10 @@ public class SPUM_SpriteList : UnitComponent
     }
     #endregion
 
-    public void ChangeSprite(EquipmentType type, Sprite image)
+    public void ChangeSprite(EquipmentType type, EquipmentSO info)
     {
+        Sprite image = info == null ? null : info.image;
+
         switch (type)
         {
             case EquipmentType.Helmet:
@@ -185,24 +187,38 @@ public class SPUM_SpriteList : UnitComponent
                 break;
             case EquipmentType.Armor:
                 {
-                    Sprite[] images = Resources.LoadAll<Sprite>(name);
-
-                    for (int i = 0; i < images.Length; i++)
+                    if(info != null)
                     {
-                        switch (images[i].name)
+                        Object[] tObj = Resources.LoadAll<Sprite>(info.path);
+
+                        _armorList[0].sprite = null;
+                        _armorList[1].sprite = null;
+                        _armorList[2].sprite = null;
+
+                        for (var i = 0; i < tObj.Length; i++)
                         {
-                            case "Body":
-                                _armorList[0].sprite = images[i];
-                                break;
+                            switch (tObj[i].name)
+                            {
+                                case "Body":
+                                    _armorList[0].sprite = tObj[i] as Sprite;
+                                    break;
 
-                            case "Left":
-                                _armorList[1].sprite = images[i];
-                                break;
+                                case "Left":
+                                    _armorList[1].sprite = tObj[i] as Sprite;
+                                    break;
 
-                            case "Right":
-                                _armorList[2].sprite = images[i];
-                                break;
+                                case "Right":
+                                    _armorList[2].sprite = tObj[i] as Sprite;
+                                    break;
+
+                            }
                         }
+                    }
+                    else
+                    {
+                        _armorList[0].sprite = null;
+                        _armorList[1].sprite = null;
+                        _armorList[2].sprite = null;
                     }
                 }
                 break;
@@ -213,7 +229,7 @@ public class SPUM_SpriteList : UnitComponent
                 _weaponList[0].sprite = image;
                 break;
             case EquipmentType.LeftWeapon:
-                _weaponList[2].sprite = image;
+                _weaponList[3].sprite = image;
                 break;
         }
     }

@@ -15,7 +15,6 @@ public class FindTarget : UnitPassiveType
         
         if(cols.Length > 0)
         {
-            Debug.Log("asdasd");    
             controller.Target = FindNearestTarget(cols);
         }
     }
