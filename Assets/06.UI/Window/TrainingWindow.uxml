@@ -2,13 +2,15 @@
     <Style src="project://database/Assets/06.UI/Window/window.uss?fileID=7433441132597879392&amp;guid=b4a1ba0a2a1c28f44b90d7391fc715fd&amp;type=3#window" />
     <Style src="project://database/Assets/Resources/StyleSheets/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
     <Style src="project://database/Assets/Resources/StyleSheets/ItemSlotStyle.uss?fileID=7433441132597879392&amp;guid=f647165f0c546ef4fbf57d2850c3983a&amp;type=3#ItemSlotStyle" />
-    <ui:VisualElement name="window" class="window" style="height: 774px; width: 728px;">
+    <Style src="project://database/Assets/06.UI/Window/inventory.uss?fileID=7433441132597879392&amp;guid=6233510cd800d0b42b2afab2823ddb70&amp;type=3#inventory" />
+    <Style src="project://database/Assets/Resources/StyleSheets/progressBar.uss?fileID=7433441132597879392&amp;guid=998d9952e115cbb448b5c0d1fc818ca6&amp;type=3#progressBar" />
+    <ui:VisualElement name="window" class="window" style="height: 714px; width: 990px; flex-direction: column;">
         <ui:VisualElement name="background" class="w_background" />
         <ui:VisualElement name="title" class="w_title">
             <ui:Label text="Training" display-tooltip-when-elided="true" name="text" />
         </ui:VisualElement>
-        <ui:VisualElement name="contents" class="w_contents" style="flex-direction: column; padding-bottom: 20px;">
-            <ui:VisualElement name="Slot" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+        <ui:VisualElement name="contents" class="w_contents" style="flex-direction: row; padding-bottom: 20px; justify-content: space-around;">
+            <ui:VisualElement name="Slot" style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 70%;">
                 <TrainingSlotUI />
                 <TrainingSlotUI />
                 <TrainingSlotUI />
@@ -16,7 +18,8 @@
                 <TrainingSlotUI />
                 <TrainingSlotUI />
             </ui:VisualElement>
-            <ui:ProgressBar value="22" title="my-progress" name="timer" style="width: 100%;" />
+            <ui:ScrollView name="view" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" class="i_view" style="width: 150px; flex-grow: 0; height: 100%;" />
+            <VerticalProgressBar style="height: 100%;" />
         </ui:VisualElement>
         <ui:Button display-tooltip-when-elided="true" name="closeBtn" class="w_btn" style="background-color: rgb(202, 0, 0); position: absolute; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&amp;guid=d82c8cc2aaf6b4c80999cfe184bdfd90&amp;type=3#Spum_Icon98&apos;); translate: -50% 50%; left: 100%;" />
     </ui:VisualElement>
