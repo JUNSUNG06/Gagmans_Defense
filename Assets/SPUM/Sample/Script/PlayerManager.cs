@@ -33,7 +33,6 @@ public class PlayerManager : MonoBehaviour
         SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
     }
 
-
     private void Init()
     {
         _playerList.Clear();

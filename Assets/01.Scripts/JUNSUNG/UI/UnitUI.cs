@@ -17,27 +17,27 @@ public class UnitUI : GameUI
 
         root.Q<ItemSlot>("helmetSlot").RegisterCallback<ClickEvent>(e =>
         {
-            ui.Show(PlayerInventory.Instance.GetEqiuInvenByType(EquipmentType.Helmet));
+            ui.Show(EquipmentType.Helmet);
         });
 
         root.Q<ItemSlot>("armorSlot").RegisterCallback<ClickEvent>(e =>
         {
-            ui.Show(PlayerInventory.Instance.GetEqiuInvenByType(EquipmentType.Armor));
+            ui.Show(EquipmentType.Armor);
         });
 
         root.Q<ItemSlot>("backSlot").RegisterCallback<ClickEvent>(e =>
         {
-            ui.Show(PlayerInventory.Instance.GetEqiuInvenByType(EquipmentType.Back));
+            ui.Show(EquipmentType.Back);
         });
 
         root.Q<ItemSlot>("rightWeaponSlot").RegisterCallback<ClickEvent>(e =>
         {
-            ui.Show(PlayerInventory.Instance.GetEqiuInvenByType(EquipmentType.RightWeapon));
+            ui.Show(EquipmentType.RightWeapon);
         });
 
         root.Q<ItemSlot>("leftWeaponSlot").RegisterCallback<ClickEvent>(e =>
         {
-            ui.Show(PlayerInventory.Instance.GetEqiuInvenByType(EquipmentType.LeftWeapon));
+            ui.Show(EquipmentType.LeftWeapon);
         });
     }
 
