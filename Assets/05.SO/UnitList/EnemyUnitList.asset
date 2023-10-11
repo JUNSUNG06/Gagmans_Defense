@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81ec474c5cff3ce448b606377d12c46c, type: 3}
   m_Name: EnemyUnitList
   m_EditorClassIdentifier: 
-  units:
-  - {fileID: 11400000, guid: d406abd7b68d5d441a64db070478baba, type: 2}
+  units: []

@@ -18,8 +18,12 @@ public class PlayerManager : MonoBehaviour
     {
         Init();
 
-        SpawnUnit(UnitType.Hero, "Lancer", new Vector3(5, 0, 0));
-        SpawnUnit(UnitType.Enemy, "TestEnemy", new Vector3(-5, 0, 0));
+        SpawnUnit(UnitType.Soldier, "AxSoldier", new Vector3(0, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Knight", new Vector3(2, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Wizard", new Vector3(4, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Healer", new Vector3(6, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Archer", new Vector3(8, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
     }
 
 

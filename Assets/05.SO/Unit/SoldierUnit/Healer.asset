@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
-  m_Name: TestEnemyUnit
+  m_Name: Healer
   m_EditorClassIdentifier: 
-  unitType: 2
-  unitName: TestEnemy
-  unit: {fileID: 5488116983772774036, guid: 1968328db2bc122409483142d52e1f1e, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
+  unitCost: 100
+  unitType: 0
+  unitName: Healer
+  unit: {fileID: 8448433314290977275, guid: a61f7deea0ae4cf4caa2c1b0b673a658, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
-  - {fileID: 11400000, guid: 4e83fd08188667442892876b60bbc3ae, type: 2}
-  animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}
+  - {fileID: 11400000, guid: 66be310e6474e3647828170bb737662a, type: 2}
+  - {fileID: 11400000, guid: e210289f67b68f646b7e722ae157447c, type: 2}
+  animator: {fileID: 9100000, guid: 28f8cbf5f05b23c4ba977b50e912cd62, type: 2}

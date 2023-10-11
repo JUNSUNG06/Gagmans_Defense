@@ -38,7 +38,7 @@ public class TestPlayer : MonoBehaviour
                     {
                         UIManager.Instance.GetUI<SubUnitUI>().Show(unit);
                         
-                        if (Unit == unit  && lastClickTime + doubleClickInterval > Time.time && unit.info.unitType == UnitType.Hero)
+                        if (Unit == unit  && lastClickTime + doubleClickInterval > Time.time && unit.info.unitType == UnitType.Soldier)
                         {
                             UIManager.Instance.GetUI<SubUnitUI>().Hide();
                             UIManager.Instance.GetUI<UnitUI>().Show(Unit);

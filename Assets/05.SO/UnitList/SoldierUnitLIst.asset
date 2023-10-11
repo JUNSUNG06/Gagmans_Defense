@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: SoldierUnitLIst
   m_EditorClassIdentifier: 
   units:
-  - {fileID: 11400000, guid: a7cb785f85350534085a4f5ee95d5a77, type: 2}
+  - {fileID: 11400000, guid: d307cbe08800f4a449ff614ecc73bf8f, type: 2}
+  - {fileID: 11400000, guid: 302b4b5d3fb55384a86786ffd92da9e1, type: 2}
+  - {fileID: 11400000, guid: 257e316e8e7661a41811d9f96c372b4b, type: 2}
+  - {fileID: 11400000, guid: 6643a13dca3eacf42bdfe5cb7875546b, type: 2}
+  - {fileID: 11400000, guid: 046fc01e2a860484084ea2bb883f9889, type: 2}
+  - {fileID: 11400000, guid: c06f8db101122c4418f8dd37389b5f90, type: 2}

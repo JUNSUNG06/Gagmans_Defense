@@ -5,17 +5,16 @@ using System.Reflection;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PubSlotUI : VisualElement
+public class TrainingSlotUI : VisualElement
 {
     private const string styleResource = "slot";
-    public new class UxmlFactory : UxmlFactory<PubSlotUI> { }
+    public new class UxmlFactory : UxmlFactory<TrainingSlotUI> { }
 
     private Button button;
     private VisualElement image;
     private VisualElement root;
-    private ProgressBar timer;
 
-    public PubSlotUI()
+    public TrainingSlotUI()
     {
         styleSheets.Add(Resources.Load<StyleSheet>($"StyleSheets/{styleResource}"));
 
@@ -37,17 +36,6 @@ public class PubSlotUI : VisualElement
         button.name = "buyBtn";
         button.AddToClassList("s_btn");
         root.Add(button);
-
-        timer = new ProgressBar();
-        timer.name = "timer";
-        timer.AddToClassList("s_timer");
-        root.Add(timer);
-    }
-
-    public void SettingTimer(int time, float percent)
-    {
-        timer.title = $"{time / 60}:{time % 60}";
-        timer.value = percent;
     }
 
     public void SettingBtn(int cost)

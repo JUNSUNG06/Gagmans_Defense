@@ -5,6 +5,8 @@ using UnityEngine.UIElements;
 
 public class FollowMouse : MonoBehaviour
 {
+    public bool allowFollow = false;
+
     public Vector2 CameraSize = new Vector2(16, 9);
     public float FollowZoneOffset = 0.7f;
     public float Speed = 5f;
@@ -22,6 +24,9 @@ public class FollowMouse : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (UIManager.Instance.isUIOpen || !allowFollow)
+            return;
+
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         distanceFromCam = mousePos - cam.transform.position;
 

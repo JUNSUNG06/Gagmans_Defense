@@ -2773,7 +2773,7 @@ GameObject:
   - component: {fileID: 7725720880400225939}
   - component: {fileID: 8452460918678745413}
   m_Layer: 5
-  m_Name: RedGoblin
+  m_Name: Devil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

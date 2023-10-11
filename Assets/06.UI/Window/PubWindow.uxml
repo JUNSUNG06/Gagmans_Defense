@@ -1,21 +1,21 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/06.UI/Window/window.uss?fileID=7433441132597879392&amp;guid=b4a1ba0a2a1c28f44b90d7391fc715fd&amp;type=3#window" />
     <Style src="project://database/Assets/Resources/StyleSheets/slot.uss?fileID=7433441132597879392&amp;guid=eca935677f023e74ea69411f61ba3c53&amp;type=3#slot" />
-    <ui:VisualElement name="window" class="window">
+    <ui:VisualElement name="window" class="window" style="height: 774px; width: 728px;">
         <ui:VisualElement name="background" class="w_background" />
         <ui:VisualElement name="title" class="w_title">
             <ui:Label text="Pub" display-tooltip-when-elided="true" name="text" />
         </ui:VisualElement>
-        <ui:VisualElement name="contents" class="w_contents">
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
-            <PubSlotUI />
+        <ui:VisualElement name="contents" class="w_contents" style="flex-direction: column; padding-bottom: 0;">
+            <ui:VisualElement name="Slot" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                <PubSlotUI />
+                <PubSlotUI />
+                <PubSlotUI />
+                <PubSlotUI />
+                <PubSlotUI />
+                <PubSlotUI />
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:Button display-tooltip-when-elided="true" name="closeBtn" class="w_btn" style="background-color: rgb(202, 0, 0); position: absolute; left: 100%; translate: -50% 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&amp;guid=d82c8cc2aaf6b4c80999cfe184bdfd90&amp;type=3#Spum_Icon98&apos;);" />
+        <ui:Button display-tooltip-when-elided="true" name="closeBtn" class="w_btn" style="background-color: rgb(202, 0, 0); position: absolute; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&amp;guid=d82c8cc2aaf6b4c80999cfe184bdfd90&amp;type=3#Spum_Icon98&apos;); translate: -50% 50%; left: 100%;" />
     </ui:VisualElement>
 </ui:UXML>
