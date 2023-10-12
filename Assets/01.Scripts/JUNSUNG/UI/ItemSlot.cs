@@ -30,6 +30,11 @@ public class ItemSlot : VisualElement
         baseElem.Add(image);
     }
 
+    public void SetImage(Sprite _image)
+    {
+        image.style.backgroundImage = new StyleBackground(_image);
+    }
+
     public void SetItem(Item _item)
     {
         item = _item;
