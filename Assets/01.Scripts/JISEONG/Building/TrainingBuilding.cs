@@ -48,7 +48,7 @@ public class TrainingBuilding : BaseBuilding
             {
                 UnitSO unit = queue.Dequeue();
                 ui.RemoveWaitSlot();
-                PlayerManager.Instance.SpawnUnit(unit.unitType, unit.unitName, unitMakeTrm.position);
+                UnitManager.Instance.SpawnUnit(unit.unitType, unit.unitName, unitMakeTrm.position);
                 currentTime = 0f;
             }
 

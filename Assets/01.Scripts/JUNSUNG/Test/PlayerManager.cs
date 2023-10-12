@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
                     units.Clear();
                     OnUnitSelect?.Invoke(unit);
                     units.Add(unit);
-                    UIManager.Instance.GetUI<SubUnitUI>().Show(unit);
+                    UIManager.Instance.GetUI<SubUnitUI>().Show(units[0]);
                 }
             }
             else //유닛이나 건물이 아니면 선택상자를 그리기 시작해야함
