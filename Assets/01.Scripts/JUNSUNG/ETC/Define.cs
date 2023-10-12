@@ -21,7 +21,7 @@ public enum UnitType
 public enum StatusType
 {
     AttackPower = 0,
-    AttackSpee,
+    AttackSpeed,
     Defense,
     Health,
     CriticalProb,
