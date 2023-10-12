@@ -21,4 +21,5 @@ public class UnitSO : ScriptableObject
     public StatusSO status;
     public List<EquipmentSO> startingEquips = new List<EquipmentSO>();
     public RuntimeAnimatorController animator;
+    public Sprite profile;
 }

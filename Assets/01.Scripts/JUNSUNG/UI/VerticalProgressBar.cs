@@ -20,7 +20,7 @@ public class VerticalProgressBar : VisualElement
         }
     }
 
-    public float Percent { get; set; } = 0;
+    public float Percent { get; set; }
 
     private VisualElement progressBar;
     private VisualElement background;
@@ -45,6 +45,7 @@ public class VerticalProgressBar : VisualElement
 
     public void SetPercent(float value)
     {
-        percentBar.style.height = Length.Percent(value);
+        Percent = Mathf.Clamp(value, 0, 100);
+        percentBar.style.height = Length.Percent(Percent);
     }
 }

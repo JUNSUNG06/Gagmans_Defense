@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public static PlayerManager Instance;
+
     //public UnitListSO SoldierList;
     //public UnitListSO HeroList;
     //public UnitListSO EnemyList;
@@ -21,10 +23,18 @@ public class PlayerManager : MonoBehaviour
     public UnitController enemyBase;
     public List<UnitController> _playerList = new List<UnitController>();
 
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(Instance);
+
+        Init();
+    }
+
     void Start()
     {
-        Init();
-
         SpawnUnit(UnitType.Soldier, "AxSoldier", new Vector3(0, 0, 0));
         SpawnUnit(UnitType.Soldier, "Knight", new Vector3(2, 0, 0));
         SpawnUnit(UnitType.Soldier, "Wizard", new Vector3(4, 0, 0));
