@@ -48,7 +48,9 @@ public class TestPlayer : MonoBehaviour
 
             if (hit.transform.TryGetComponent<IClickable>(out IClickable clickable)) // 인터페이스 존재하면 클릭 가능한 물체 (건물, 유닛) 몬스터 X
             {
+                Debug.Log(clickable);
                 clickable.OnClicked(); // 이걸 실행하면 건물은 UI가 뜨고 유닛은 자신이 선택되었을 때 선택된 표시가 떠야함 어째서 유닛은 이걸 상속받지 아니한가???
+ 
                 if (hit.transform.TryGetComponent<UnitController>(out UnitController unit)) // 만약 선택된게 유닛이라면 추후 움직임을 위해 담아줘야함
                 {
                     foreach (UnitController _unit in units)
