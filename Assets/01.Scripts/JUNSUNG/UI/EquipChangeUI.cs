@@ -40,13 +40,15 @@ public class EquipChangeUI : GameUI
         }
     }
 
-    public void Show(List<Item> items)
+    public void Show(EquipmentType type)
     {
         Show();
 
-        if(items.Count > 0)
+        List<Item> items = PlayerInventory.Instance.GetEqiuInvenByType(type);
+        selectEquipType = type;
+
+        if (items.Count > 0)
         {
-            selectEquipType = items[0].GetInfo<EquipmentSO>().equipType;
             SetSlot(items);
         }
         else

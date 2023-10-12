@@ -30,16 +30,16 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         inven.Add(ItemType.Equipment, equipInven);
-        AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
-        AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
-        AddItem(new Equipment(ItemType.Equipment, "Test_Helmet", EquipmentType.Helmet));
-        AddItem(new Equipment(ItemType.Equipment, "Test_Weapon", EquipmentType.RightWeapon));
+        AddItem(new Equipment(ItemType.Equipment, "InfantryHelmet", EquipmentType.Helmet));
     }
 
     public void AddItem(Item item)
     {
-        if(item is Equipment)
-            equipInven.Add((Equipment)item);
+        if(item.Info != null)
+        {
+            if (item is Equipment)
+                equipInven.Add((Equipment)item);
+        }
     }
 
     public void RemoveItem(Item item)

@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c736d763dd9eab346a69facc2e7b6d9e, type: 3}
   m_Name: DevilLance
   m_EditorClassIdentifier: 
-  itemName: RedGoblinLance
+  itemName: DevilLance
   image: {fileID: 21300000, guid: bb71197c3cd5f4dc09e7b129399d0048, type: 3}
   type: 0
   status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
   equipType: 3
+  path: 

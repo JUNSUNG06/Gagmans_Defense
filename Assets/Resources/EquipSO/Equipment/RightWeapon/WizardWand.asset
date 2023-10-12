@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c736d763dd9eab346a69facc2e7b6d9e, type: 3}
-  m_Name: DevilShield
+  m_Name: WizardWand
   m_EditorClassIdentifier: 
-  itemName: DevilShield
-  image: {fileID: 21300000, guid: e03eed09328f2413d8a7cf2a8e5d1b94, type: 3}
+  itemName: WizardWand
+  image: {fileID: 21300000, guid: 21f5ccff960047e4b94543b71b2f795b, type: 3}
   type: 0
   status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
-  equipType: 4
+  equipType: 3
   path: 

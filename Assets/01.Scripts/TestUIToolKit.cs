@@ -9,6 +9,6 @@ public class TestUIToolKit : VisualElement
 
     public TestUIToolKit()
     {
-        Debug.Log("CREATE");
+        //Debug.Log("CREATE");
     }
 }

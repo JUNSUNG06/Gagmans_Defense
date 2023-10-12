@@ -1,12 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public UnitListSO SoldierList;
-    public UnitListSO HeroList;
-    public UnitListSO EnemyList;
+    //public UnitListSO SoldierList;
+    //public UnitListSO HeroList;
+    //public UnitListSO EnemyList;
+
+    private List<UnitSO> soldierList;
+    private List<UnitSO> heroList;
+    private List<UnitSO> enemyList;
+
     public float unitSize;
 
     [Space]
@@ -18,39 +25,44 @@ public class PlayerManager : MonoBehaviour
     {
         Init();
 
-        SpawnUnit(UnitType.Hero, "Lancer", new Vector3(4, 2, 0));
-        SpawnUnit(UnitType.Hero, "Lancer", new Vector3(5, 0, 0));
-        SpawnUnit(UnitType.Enemy, "TestEnemy", new Vector3(-5, 0, 0));
+        SpawnUnit(UnitType.Soldier, "AxSoldier", new Vector3(0, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Knight", new Vector3(2, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Wizard", new Vector3(4, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Healer", new Vector3(6, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Archer", new Vector3(8, 0, 0));
+        SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
     }
-
 
     private void Init()
     {
         _playerList.Clear();
 
-        #region
-        //_savedUnitList.Clear();
-
-        //var saveArray = Resources.LoadAll<GameObject>("SPUM/SPUM_Units");
-
-        //_savedUnitList.AddRange(saveArray);
-        #endregion
+        soldierList = Resources.LoadAll<UnitSO>($"UnitSO/SoldierUnit").ToList();
+        heroList = Resources.LoadAll<UnitSO>($"UnitSO/HeroUnit").ToList();
+        enemyList = Resources.LoadAll<UnitSO>($"UnitSO/EnemyUnit").ToList();
     }
 
     public void SpawnUnit(UnitType type, string name, Vector3 position)
     {
+        UnitSO unit = null;
+
         switch (type)
         {
             case UnitType.Soldier:
-                CreateUnit(SoldierList.GetUnit(name), position);
+                unit = soldierList.Find(x => x.unitName == name);
                 break;
             case UnitType.Hero:
-                CreateUnit(HeroList.GetUnit(name), position);
+                unit = heroList.Find(x => x.unitName == name);
                 break;
             case UnitType.Enemy:
-                CreateUnit(EnemyList.GetUnit(name), position);
+                unit = enemyList.Find(x => x.unitName == name);
                 break;
         }
+
+        if (unit == null)
+            Debug.Log("없는 유닛");
+        else
+            CreateUnit(unit, position);
     }
 
     private void CreateUnit(UnitSO unitSO, Vector3 position)
