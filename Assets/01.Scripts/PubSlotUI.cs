@@ -43,10 +43,16 @@ public class PubSlotUI : VisualElement
         timer.AddToClassList("s_timer");
         root.Add(timer);
     }
-
-    public void SettingTimer(int time, float percent)
+    public void Setting(Action action)
+    {
+        button.RegisterCallback<ClickEvent>(e => action?.Invoke());
+    }
+    public void SettingTimerText(int time)
     {
         timer.title = $"{time / 60}:{time % 60}";
+    }
+    public void SettingProgressBar(float percent)
+    {
         timer.value = percent;
     }
 
