@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,48 +6,64 @@ using UnityEngine.Events;
 
 public class TrainingBuilding : BaseBuilding
 {
-    
     [SerializeField] private Transform unitMakeTrm; // 훈련소 문 위치
     [SerializeField] private Transform unitbeginningTrm; // 훈련한 후 처음으로 걸어갈 위치
-    private Queue<TrainingSlotDataSO> trainingQueue = new Queue<TrainingSlotDataSO>();
-    private bool isWork;
+
+    private TrainingUI ui;
+    [SerializeField]
+    private float spawnTime = 3f;
+    private float currentTime = 0f;
+    private Queue<UnitSO> queue;
+
+    public Action<UnitSO> OnBuyEvent;
+
+    public int waitingCount => queue.Count;
+    public bool IsWork => queue.Count > 0;
+
+    [SerializeField]
+    private List<UnitSO> slotInfo = new List<UnitSO>();
     private void Start()
     {
+        queue = new Queue<UnitSO>();
         currentLevel = buildingDataSO.minBuildingLevel;
         Upgrade();
-        isWork = false;
-    }
-    public void RegistrationUnit(TrainingSlotDataSO data) // 유닛 등록
-    {
-        trainingQueue.Enqueue(data);
-        if (isWork == false) 
+
+        ui = UIManager.Instance.GetUI<TrainingUI>();
+
+        OnBuyEvent += RegistrationUnit;
+
+        for (int i = 0; i < ui.slotCount; i++)
         {
-            isWork = true;
-            StartCoroutine(TrainingUnit());
+            ui.slots[i].SetSlot(i, OnBuyEvent, slotInfo[i]);
         }
     }
 
-    private IEnumerator TrainingUnit()
+    private void Update()
     {
-        float currentTime = 0;
-        while (true)
+        if (waitingCount > 0)
         {
-            if (trainingQueue.Count < 1) // 더 이상 훈련할 유닛이 없다면 중단
-            {
-                isWork = false;
-                break;
-            }
-            if (currentTime >= trainingQueue.Peek().trainingTime) //큐에 들어있는 첫번째 요소에 접근해서 처리 
-            {
-                TrainingSlotDataSO unitData = trainingQueue.Dequeue();
-                //trainingCost 빼줘야함
-                //traingUnit 생성해야함
-                currentTime = 0;
-            }
-
             currentTime += Time.deltaTime;
-            yield return null;
+
+            if (currentTime >= spawnTime)
+            {
+                UnitSO unit = queue.Dequeue();
+                ui.RemoveWaitSlot();
+                PlayerManager.Instance.SpawnUnit(unit.unitType, unit.unitName, unitMakeTrm.position);
+                currentTime = 0f;
+            }
+
+            ui.SetProgress(currentTime / spawnTime * 100);
         }
+    }
+
+    public void RegistrationUnit(UnitSO unit) // 유닛 등록
+    {
+        if (PlayerWallet.Instance.Money < unit.unitCost)
+            return;
+
+        PlayerWallet.Instance.Money -= unit.unitCost;
+        queue.Enqueue(unit);
+        ui.CreateWaitSlot(unit.profile);
     }
 
     public override void Upgrade()
@@ -66,6 +83,6 @@ public class TrainingBuilding : BaseBuilding
 
     public override void OnClicked()
     {
-        UIManager.Instance.GetUI<TrainingUI>().Show();
+        ui.Show();
     }
 }
