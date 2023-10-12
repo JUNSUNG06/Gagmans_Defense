@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class TestPlayer : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
-    public static TestPlayer Instance;
+    public static PlayerManager Instance;
 
     public UnitController Unit;
     public GameObject player;
 
     public Action<UnitController> OnUnitSelect { get; set; }
+    public Action<UnitController> OnUnitRelease { get; set; }
 
     public float doubleClickInterval = 0.3f;
     private float lastClickTime = 0;
@@ -25,6 +26,8 @@ public class TestPlayer : MonoBehaviour
     public Transform selectBox;
     private Vector3 startMousePos;
     private Vector3 endMousePos;
+
+    
     private void Awake()
     {
         if (Instance == null)
@@ -41,10 +44,9 @@ public class TestPlayer : MonoBehaviour
 
     private void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.Mouse0)) // 마우스 좌클릭시 클릭된 레이어가 클릭 인터페이스가 있는지 확인하고 클릭 인터페이스 실행
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
 
             if (hit.transform.TryGetComponent<IClickable>(out IClickable clickable)) // 인터페이스 존재하면 클릭 가능한 물체 (건물, 유닛) 몬스터 X
             {
@@ -58,6 +60,12 @@ public class TestPlayer : MonoBehaviour
                             //여기서 유닛 인벤토리가 떠야함
                         }
                     }
+                    foreach(UnitController _unit in units)
+                    {
+                        OnUnitRelease?.Invoke(_unit);
+                    }
+                    units.Clear();
+                    OnUnitSelect?.Invoke(unit);
                     units.Add(unit);
                 }
             }
@@ -67,6 +75,7 @@ public class TestPlayer : MonoBehaviour
                 selectBox.position = startMousePos;
                 selectBox.gameObject.SetActive(true);
             }
+            Debug.Log(startMousePos);
         }
         else if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -78,13 +87,21 @@ public class TestPlayer : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
+            
             if (startMousePos.sqrMagnitude > 0)
             {
+                foreach(UnitController releaseUnit in units)
+                {
+                    OnUnitRelease?.Invoke(releaseUnit);
+                }
+                units.Clear();
                 Collider2D[] hits = Physics2D.OverlapAreaAll(startMousePos, endMousePos,selectBoxLayer);
                 
                 foreach(Collider2D unit in hits)
                 {
-                    units.Add(unit.transform.GetComponent<UnitController>());
+                    UnitController _unit = unit.transform.GetComponent<UnitController>();
+                    OnUnitSelect?.Invoke(_unit);
+                    units.Add(_unit);
                 }
 
                 startMousePos = Vector3.zero;
@@ -95,7 +112,7 @@ public class TestPlayer : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
 
-            if (hit.transform.gameObject.layer == groundLayer)
+            if ((1 << hit.transform.gameObject.layer | groundLayer) == groundLayer)
             {
                 foreach (UnitController unit in units)
                 {

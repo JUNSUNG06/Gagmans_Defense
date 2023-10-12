@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class UnitManager : MonoBehaviour
 {
     public static PlayerManager Instance;
 
@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     private List<UnitSO> enemyList;
 
     public float unitSize;
+    public Color slectedColor;
+    public Color unSlectedColor;
 
     [Space]
     public UnitController unitBase;
@@ -41,6 +43,10 @@ public class PlayerManager : MonoBehaviour
         SpawnUnit(UnitType.Soldier, "Healer", new Vector3(6, 0, 0));
         SpawnUnit(UnitType.Soldier, "Archer", new Vector3(8, 0, 0));
         SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
+
+        Debug.Log(PlayerManager.Instance);
+        PlayerManager.Instance.OnUnitSelect += ChangeUnitShadowSelect;
+        PlayerManager.Instance.OnUnitRelease += ChangeUnitShadowUnSelect;
     }
 
     private void Init()
@@ -97,5 +103,15 @@ public class PlayerManager : MonoBehaviour
         _playerList.Add(ttObj);
         ttObj.transform.position = position;
         ttObj.GetComponent<UnitController>().Init(unitSO, null);
+    }
+
+    private void ChangeUnitShadowSelect(UnitController unit)
+    {
+        unit.ChangeShadowColor(slectedColor);
+    }
+
+    private void ChangeUnitShadowUnSelect(UnitController unit)
+    {
+        unit.ChangeShadowColor(unSlectedColor);
     }
 }

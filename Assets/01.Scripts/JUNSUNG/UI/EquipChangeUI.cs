@@ -14,7 +14,7 @@ public class EquipChangeUI : GameUI
     {
         container.name = "equip change";
         slotList = root.Query<ItemSlot>().ToList();
-        TestPlayer testPlayer = TestPlayer.Instance;
+        PlayerManager testPlayer = PlayerManager.Instance;
 
         foreach (var s in slotList)
         {

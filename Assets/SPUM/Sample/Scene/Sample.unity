@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 47125296}
   - component: {fileID: 47125297}
   - component: {fileID: 47125298}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -930,6 +930,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitSize: 1.5
+  slectedColor: {r: 0.6, g: 1, b: 0.61960787, a: 0.6666667}
+  unSlectedColor: {r: 0, g: 0, b: 0, a: 0.627451}
   unitBase: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
   enemyBase: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
   _playerList: []
@@ -944,7 +946,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 901686806}
   m_Father: {fileID: 531203998}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -957,7 +960,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 473165775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7299c5a6a64bc6b41898ae066600c863, type: 3}
+  m_Script: {fileID: 11500000, guid: e1676640c6858de4e9f708a30e5b240d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Unit: {fileID: 0}
@@ -965,7 +968,7 @@ MonoBehaviour:
   doubleClickInterval: 0.3
   groundLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2176
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -1951,14 +1954,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901686805}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 394, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1214389767}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 473165777}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &945600393
 GameObject:
