@@ -43,7 +43,7 @@ public class Training : MonoBehaviour, IClickable
             {
                 UnitSO unit = queue.Dequeue();
                 ui.RemoveWaitSlot();
-                PlayerManager.Instance.SpawnUnit(unit.unitType, unit.unitName, spawnTrm.position);
+                UnitManager.Instance.SpawnUnit(unit.unitType, unit.unitName, spawnTrm.position);
                 currentTime = 0f;
             }
 

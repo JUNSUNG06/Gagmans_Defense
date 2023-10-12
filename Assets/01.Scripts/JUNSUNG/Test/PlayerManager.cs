@@ -58,6 +58,9 @@ public class PlayerManager : MonoBehaviour
                         if (unit == _unit && unit.info.unitType == UnitType.Soldier) //클릭한 유닛이 리스트에 있다면 선택하고 또 누른거니깐 더블클릭 작용
                         {
                             //여기서 유닛 인벤토리가 떠야함
+                            UIManager.Instance.GetUI<SubUnitUI>().Hide();
+
+                            UIManager.Instance.GetUI<UnitUI>().Show(unit);
                         }
                     }
                     foreach(UnitController _unit in units)
@@ -67,13 +70,16 @@ public class PlayerManager : MonoBehaviour
                     units.Clear();
                     OnUnitSelect?.Invoke(unit);
                     units.Add(unit);
+                    UIManager.Instance.GetUI<SubUnitUI>().Show(unit);
                 }
             }
             else //유닛이나 건물이 아니면 선택상자를 그리기 시작해야함
             {
                 startMousePos = GetWorldMousePos();
                 selectBox.position = startMousePos;
+                selectBox.localScale = Vector3.zero;
                 selectBox.gameObject.SetActive(true);
+                UIManager.Instance.GetUI<SubUnitUI>().Hide();
             }
             Debug.Log(startMousePos);
         }

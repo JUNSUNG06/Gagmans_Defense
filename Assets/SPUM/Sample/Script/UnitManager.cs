@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class UnitManager : MonoBehaviour
 {
-    public static PlayerManager Instance;
+    public static UnitManager Instance;
 
     //public UnitListSO SoldierList;
     //public UnitListSO HeroList;
