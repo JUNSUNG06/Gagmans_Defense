@@ -9,7 +9,7 @@ public class UnitView : MonoBehaviour
 
     private void Start()
     {
-        TestPlayer.Instance.OnUnitSelect += SetImage;
+        PlayerManager.Instance.OnUnitSelect += SetImage;
     }
 
     public void SetImage(UnitController target)

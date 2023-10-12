@@ -11,7 +11,7 @@ using UnityEngine;
 [RequireComponent(typeof(UnitEquipment))]
 [RequireComponent(typeof(UnitPassive))]
 
-public class UnitController : MonoBehaviour
+public class UnitController : MonoBehaviour, IClickable
 {
     private UnitStateMachine stateMachine;
     private UnitMovement movement;
@@ -21,7 +21,9 @@ public class UnitController : MonoBehaviour
     private UnitHealth health;
     private UnitEquipment equipment;
     private UnitPassive passive;
-    
+
+    private SpriteRenderer shadow;
+
     [SerializeField]
     private Transform target;
 
@@ -76,6 +78,18 @@ public class UnitController : MonoBehaviour
         passive = GetComponent<UnitPassive>();
         passive.Init(this);
 
+        shadow = transform.Find("Visual/UnitRoot/Shadow/Shadow").GetComponent<SpriteRenderer>();
+
         Target = target;
+    }
+
+    public void ChangeShadowColor(Color color)
+    {
+        shadow.color = color;
+    }
+
+    public void OnClicked()
+    {
+        
     }
 }
