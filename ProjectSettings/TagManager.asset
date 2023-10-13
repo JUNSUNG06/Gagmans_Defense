@@ -16,7 +16,7 @@ TagManager:
   - Hero
   - Soldier
   - Enemy
-  - 
+  - Building
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Building
+    uniqueID: 3148663933
     locked: 0

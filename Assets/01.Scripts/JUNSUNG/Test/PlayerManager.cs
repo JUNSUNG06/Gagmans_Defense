@@ -120,6 +120,9 @@ public class PlayerManager : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
 
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
+                return;
+
             if ((1 << hit.transform.gameObject.layer | groundLayer) == groundLayer)
             {
                 foreach (UnitController unit in units)

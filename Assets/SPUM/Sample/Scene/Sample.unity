@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: 380190292}
   - component: {fileID: 380190295}
   - component: {fileID: 380190294}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TrainingBuilding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,8 +736,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1146303363
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 821290482, guid: 92a60474774c1b24fbf7d3c9fb1f959f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1420,8 +1420,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 580546283}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Layer: 11
+  m_Name: SpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2397,10 +2397,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da934c5532acc54b839e21de67a28da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allowFollow: 0
+  allowFollow: 1
   CameraSize: {x: 16, y: 9}
   FollowZoneOffset: 0.6
-  Speed: 2.5
+  Speed: 1
 --- !u!4 &1137047432
 Transform:
   m_ObjectHideFlags: 0
