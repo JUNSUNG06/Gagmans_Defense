@@ -29,12 +29,22 @@ public class ItemSOContainer : MonoBehaviour
 
     public EquipmentSO GetEquipSO(EquipmentType type, string equipName)
     {
-        if(equipDictionary[type].Find(x => x.itemName == equipName) == null)
+        if (type == EquipmentType.Pant)
+        {
+            Debug.Log(equipDictionary[type][0].itemName);
+            Debug.Log(equipName);
+            Debug.Log(equipDictionary[type].Find(x => x.itemName == equipName));
+        }
+
+        EquipmentSO equip = equipDictionary[type].Find(x => x.itemName == equipName);
+
+        if(equip == null)
         {
             Debug.Log("없는 아이템");
             return null;
         }    
-        return equipDictionary[type].Find(x => x.itemName == equipName);
+
+        return equip;
     }
 
     public IngredientSO GetIngredientSO(string name)

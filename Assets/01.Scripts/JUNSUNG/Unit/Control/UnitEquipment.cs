@@ -21,6 +21,9 @@ public class UnitEquipment : UnitComponent
         spriteList = transform.Find("Visual/UnitRoot/Root").GetComponent<SPUM_SpriteList>();
         spriteList.Init(controller);
 
+        foreach (var t in equipments.Keys)
+            Debug.Log(t);
+
         foreach (var startingEquip in controller.info.startingEquips)
         {
             ChangeEquipment(new Equipment(ItemType.Equipment, startingEquip.itemName, startingEquip.equipType));

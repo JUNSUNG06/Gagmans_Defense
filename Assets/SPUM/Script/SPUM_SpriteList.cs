@@ -222,6 +222,37 @@ public class SPUM_SpriteList : UnitComponent
                     }
                 }
                 break;
+            case EquipmentType.Pant:
+                {
+                    if (info != null)
+                    {
+                        Object[] tObj = Resources.LoadAll<Sprite>(info.path);
+
+                        _pantList[0].sprite = null;
+                        _pantList[1].sprite = null;
+
+                        for (var i = 0; i < tObj.Length; i++)
+                        {
+                            switch (tObj[i].name)
+                            {
+                                case "Left":
+                                    _pantList[0].sprite = tObj[i] as Sprite;
+                                    break;
+
+                                case "Right":
+                                    _pantList[1].sprite = tObj[i] as Sprite;
+                                    break;
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        _pantList[0].sprite = null;
+                        _pantList[1].sprite = null;
+                    }
+                }
+                break;
             case EquipmentType.Back:
                 _backList[0].sprite = image;
                 break;

@@ -34,6 +34,7 @@ public enum EquipmentType
     Helmet = 0,  //hair
     Armor,  //armor
     Back,  //back
+    Pant,
     RightWeapon,  //weapon
     LeftWeapon  //weapon
 }
@@ -103,6 +104,8 @@ public class Equipment : Item
     public Equipment(ItemType _type, string _name, EquipmentType _equipType) : base(_type, _name)
     {
         info = ItemSOContainer.Instance.GetEquipSO(_equipType, _name) as EquipmentSO;
+        if(!info)
+            Debug.Log(_name);
         rank = 1;
     }
 }
