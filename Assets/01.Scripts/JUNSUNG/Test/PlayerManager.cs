@@ -136,6 +136,7 @@ public class PlayerManager : MonoBehaviour
                 }
             }
         }
+        #region Æó±â
         //if (Input.GetMouseButtonDown(0) && !UIManager.Instance.isUIOpen)
         //{
         //    bool findUnit = false;
@@ -181,6 +182,7 @@ public class PlayerManager : MonoBehaviour
         //        }
         //    }
         //}
+        #endregion
     }
 
     public void InvokeOnUnitSelectAction()

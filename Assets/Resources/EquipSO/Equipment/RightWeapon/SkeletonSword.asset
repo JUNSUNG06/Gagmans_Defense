@@ -16,4 +16,5 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: df96032537d4c482e9b20c674c73dc45, type: 3}
   type: 0
   status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
-  equipType: 3
+  equipType: 4
+  path: 
