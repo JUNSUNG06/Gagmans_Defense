@@ -51,7 +51,6 @@ public class PlayerManager : MonoBehaviour
 
             if (hit.transform.TryGetComponent<IClickable>(out IClickable clickable)) // 인터페이스 존재하면 클릭 가능한 물체 (건물, 유닛) 몬스터 X
             {
-                Debug.Log(clickable);
                 clickable.OnClicked(); // 이걸 실행하면 건물은 UI가 뜨고 유닛은 자신이 선택되었을 때 선택된 표시가 떠야함 어째서 유닛은 이걸 상속받지 아니한가???
  
                 if (hit.transform.TryGetComponent<UnitController>(out UnitController unit)) // 만약 선택된게 유닛이라면 추후 움직임을 위해 담아줘야함
@@ -83,7 +82,6 @@ public class PlayerManager : MonoBehaviour
                 selectBox.localScale = Vector3.zero;
                 selectBox.gameObject.SetActive(true);
                 canDrawSelectBox = true;
-                UIManager.Instance.GetUI<SubUnitUI>().Hide();
             }
         }
         else if (Input.GetKey(KeyCode.Mouse0))
@@ -96,8 +94,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            
-            if (startMousePos.sqrMagnitude > 0)
+            if (startMousePos.sqrMagnitude > 0 && canDrawSelectBox)
             {
                 foreach(UnitController releaseUnit in units)
                 {
@@ -115,6 +112,7 @@ public class PlayerManager : MonoBehaviour
 
                 startMousePos = Vector3.zero;
                 selectBox.gameObject.SetActive(false);
+                UIManager.Instance.GetUI<SubUnitUI>().Hide();
             }
         }
         if (Input.GetKeyDown(KeyCode.Mouse1)) // 마우스 우클릭시 선택된 유닛들이 움직여야함

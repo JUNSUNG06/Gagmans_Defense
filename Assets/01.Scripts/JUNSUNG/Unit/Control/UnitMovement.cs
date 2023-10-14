@@ -36,7 +36,7 @@ public class UnitMovement : UnitComponent, IAffectedStatus
         movable = value;
     }
 
-    public void SetTargetPos(Vector3 pos)
+    public void SetTargetPos(Vector2 pos)
     {
         targetPos = pos;
         moveDir = (targetPos - (Vector2)transform.position).normalized;
