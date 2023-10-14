@@ -29,13 +29,6 @@ public class ItemSOContainer : MonoBehaviour
 
     public EquipmentSO GetEquipSO(EquipmentType type, string equipName)
     {
-        if (type == EquipmentType.Pant)
-        {
-            Debug.Log(equipDictionary[type][0].itemName);
-            Debug.Log(equipName);
-            Debug.Log(equipDictionary[type].Find(x => x.itemName == equipName));
-        }
-
         EquipmentSO equip = equipDictionary[type].Find(x => x.itemName == equipName);
 
         if(equip == null)

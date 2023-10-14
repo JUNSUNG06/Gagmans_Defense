@@ -25,6 +25,12 @@ public class UnitManager : MonoBehaviour
     public UnitController enemyBase;
     public List<UnitController> _playerList = new List<UnitController>();
 
+    [Space]
+    public GameObject minimapRender;
+    public Color heroColor;
+    public Color soldierColor;
+    public Color enemyColor;
+
     private void Awake()
     {
         if (Instance == null)
@@ -61,27 +67,31 @@ public class UnitManager : MonoBehaviour
     public void SpawnUnit(UnitType type, string name, Vector3 position)
     {
         UnitSO unit = null;
+        Color minimpaColor = default;
 
         switch (type)
         {
             case UnitType.Soldier:
                 unit = soldierList.Find(x => x.unitName == name);
+                minimpaColor = soldierColor;
                 break;
             case UnitType.Hero:
                 unit = heroList.Find(x => x.unitName == name);
+                minimpaColor = heroColor;
                 break;
             case UnitType.Enemy:
                 unit = enemyList.Find(x => x.unitName == name);
+                minimpaColor = enemyColor;
                 break;
         }
 
         if (unit == null)
             Debug.Log("없는 유닛");
         else
-            CreateUnit(unit, position);
+            CreateUnit(unit, position, minimpaColor);
     }
 
-    private void CreateUnit(UnitSO unitSO, Vector3 position)
+    private void CreateUnit(UnitSO unitSO, Vector3 position, Color minimapColor)
     {
         if(unitSO == null) 
             return;
@@ -96,6 +106,10 @@ public class UnitManager : MonoBehaviour
         tObj.transform.SetParent(ttObj.transform);
         tObj.transform.localScale = Vector3.one * unitSize;
         tObj.transform.localPosition = Vector3.zero;
+
+        GameObject _minimapRender = Instantiate(minimapRender);
+        _minimapRender.GetComponent<SpriteRenderer>().color = minimapColor;
+        _minimapRender.transform.SetParent(ttObj.transform);
 
         ttObj.name = unitSO.unitName;
         ttObj.gameObject.layer = LayerMask.NameToLayer(unitSO.unitType.ToString());

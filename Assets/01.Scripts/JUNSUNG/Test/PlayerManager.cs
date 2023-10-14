@@ -27,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     private Vector3 startMousePos;
     private Vector3 endMousePos;
 
+    public bool canDrawSelectBox = false;
     
     private void Awake()
     {
@@ -81,13 +82,13 @@ public class PlayerManager : MonoBehaviour
                 selectBox.position = startMousePos;
                 selectBox.localScale = Vector3.zero;
                 selectBox.gameObject.SetActive(true);
+                canDrawSelectBox = true;
                 UIManager.Instance.GetUI<SubUnitUI>().Hide();
             }
-            Debug.Log(startMousePos);
         }
         else if (Input.GetKey(KeyCode.Mouse0))
         {
-            if (startMousePos.sqrMagnitude > 0)
+            if (startMousePos.sqrMagnitude > 0 && canDrawSelectBox)
             {
                 endMousePos = GetWorldMousePos();
                 selectBox.transform.localScale = new Vector3(endMousePos.x - startMousePos.x, endMousePos.y - startMousePos.y, 0);

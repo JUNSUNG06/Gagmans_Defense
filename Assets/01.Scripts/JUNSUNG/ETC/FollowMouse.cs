@@ -28,7 +28,7 @@ public class FollowMouse : MonoBehaviour
             return;
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        distanceFromCam = mousePos - cam.transform.position;
+        distanceFromCam = mousePos - transform.position;
 
         if(distanceFromCam.x > followZone.x || distanceFromCam.y > followZone.y
             || distanceFromCam.x < -followZone.x || distanceFromCam.y < -followZone.y)
