@@ -25,6 +25,9 @@ public class EquipChangeUI : GameUI
                 if (item == null)
                 {
                     testPlayer.Unit.Equipment.ReleaseEquipment(selectEquipType);
+                    Debug.Log(testPlayer);
+                    Debug.Log(testPlayer.Unit);
+                    Debug.Log(testPlayer);
                 }
                 else
                 {

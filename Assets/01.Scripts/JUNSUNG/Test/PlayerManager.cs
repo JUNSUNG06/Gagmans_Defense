@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) // 마우스 좌클릭시 클릭된 레이어가 클릭 인터페이스가 있는지 확인하고 클릭 인터페이스 실행
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !UIManager.Instance.isUIOpen) // 마우스 좌클릭시 클릭된 레이어가 클릭 인터페이스가 있는지 확인하고 클릭 인터페이스 실행
         {
             RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
 
@@ -59,6 +59,7 @@ public class PlayerManager : MonoBehaviour
                     {
                         if (unit == _unit && unit.info.unitType == UnitType.Soldier) //클릭한 유닛이 리스트에 있다면 선택하고 또 누른거니깐 더블클릭 작용
                         {
+                            Unit = unit;
                             //여기서 유닛 인벤토리가 떠야함
                             UIManager.Instance.GetUI<SubUnitUI>().Hide();
 
@@ -70,6 +71,7 @@ public class PlayerManager : MonoBehaviour
                         OnUnitRelease?.Invoke(_unit);
                     }
                     units.Clear();
+                    Unit = unit;
                     OnUnitSelect?.Invoke(unit);
                     units.Add(unit);
                     UIManager.Instance.GetUI<SubUnitUI>().Show(units[0]);
@@ -101,6 +103,7 @@ public class PlayerManager : MonoBehaviour
                     OnUnitRelease?.Invoke(releaseUnit);
                 }
                 units.Clear();
+                Unit = null;
                 Collider2D[] hits = Physics2D.OverlapAreaAll(startMousePos, endMousePos,selectBoxLayer);
                 
                 foreach(Collider2D unit in hits)
