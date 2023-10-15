@@ -10,14 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
-  m_Name: GreenGoblin
+  m_Name: DarkElf_Ax
   m_EditorClassIdentifier: 
   unitCost: 0
   unitType: 2
-  unitName: GreenGoblin
-  unit: {fileID: 1822597944663723089, guid: 9e72e262293508b4fbdd0763cfd7d226, type: 3}
+  unitName: DarkElf_Ax
+  unit: {fileID: 8503411852122653335, guid: 8f990ec2690ed6949b14d14a83d5c834, type: 3}
   controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
-  startingEquips: []
+  startingEquips:
+  - {fileID: 11400000, guid: 9a06e7e84da17c843ba8b0e79c2ed884, type: 2}
+  - {fileID: 11400000, guid: 6584ef9d6e2596d4caf42ef126878230, type: 2}
+  - {fileID: 11400000, guid: 9ba3977c5f4a3b342aeb789da151c83b, type: 2}
+  - {fileID: 11400000, guid: 014619247517fda4e8931beb119f2827, type: 2}
   animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}
   profile: {fileID: 0}

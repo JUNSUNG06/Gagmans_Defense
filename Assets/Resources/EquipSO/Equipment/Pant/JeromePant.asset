@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c736d763dd9eab346a69facc2e7b6d9e, type: 3}
-  m_Name: TestPant
+  m_Name: JeromePant
   m_EditorClassIdentifier: 
-  itemName: TestPant
-  image: {fileID: 8616813021583795274, guid: 4f4d6264408da453a8511876ebec8ae3, type: 3}
+  itemName: JeromePant
+  image: {fileID: -62334307996113135, guid: 587b38fd5c4704149bbd82af833c8544, type: 3}
   type: 0
   status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
   equipType: 3
-  path: SPUM/SPUM_Sprites/Items/3_Pant/Foot_1
+  path: SPUM/SPUM_Sprites/Packages/Ver300/3_Pant/New_Pant_01
