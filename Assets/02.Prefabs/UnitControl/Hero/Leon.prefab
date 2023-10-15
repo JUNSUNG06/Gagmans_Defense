@@ -1026,9 +1026,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230436640236124860}
-  - component: {fileID: 1970941913058645961}
+  - component: {fileID: 5891414070189257878}
   m_Layer: 0
-  m_Name: SingleMeleeAttack
+  m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,7 +1050,7 @@ Transform:
   m_Father: {fileID: 5717168859014915195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1970941913058645961
+--- !u!114 &5891414070189257878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1059,13 +1059,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 7250448006947005966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ecc0d0c39cd9d4486c2027461435e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f258496eabfdf64487a1b61de7d6e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isCritical: 0
   damageWeight: 0
   coolTimeWeight: 0
   criticalProbWeight: 0
+  buffTime: 10
+  buffCnt: 0
+  buffAmount: 110
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0
