@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NormalMeleeAttack : UnitAttackType
+public class SingleMeleeAttack : UnitAttackType
 {
-
-    //생성 위치 설정해야함
     public override void Attack()
     {
         base.Attack();

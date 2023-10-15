@@ -42,4 +42,20 @@ public class UnitStatus : UnitComponent
         statusDictionary[type] = Mathf.Max(1, statusDictionary[type]);
         OnStatusChange?.Invoke(type, statusDictionary[type]);
     }
+
+    public void Buff(StatusType type, int percent, float time)
+    {
+        StartCoroutine(BuffCo(type, percent, time));
+    }
+
+    private IEnumerator BuffCo(StatusType type, int percent, float time)
+    {
+        int originValue = GetStatus(type);
+        int changeAmount = originValue * (percent / 100) - originValue;
+        statusDictionary[type] += changeAmount;
+
+        yield return new WaitForSeconds(time);
+
+        statusDictionary[type] -= changeAmount;
+    }
 }
