@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
   m_Name: Lancer
   m_EditorClassIdentifier: 
+  unitCost: 0
   unitType: 1
   unitName: Lancer
   unit: {fileID: 4416530876144524062, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
@@ -24,3 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bbdb95d343d82654a81ac5262dab2396, type: 2}
   - {fileID: 11400000, guid: 2158c150f146ec6428882253c1adad0b, type: 2}
   animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}
+  profile: {fileID: 21300000, guid: dff36ceb25ed2a544a961a37d0a47d79, type: 3}

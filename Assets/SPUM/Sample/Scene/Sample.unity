@@ -723,7 +723,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &380190292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -968,8 +968,8 @@ MonoBehaviour:
   enemyBase: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
   _playerList: []
   minimapRender: {fileID: 504502109931394981, guid: 2e9e318347d962145a253bc374d003bb, type: 3}
-  heroColor: {r: 0.083303645, g: 0.13490698, b: 0.8490566, a: 1}
-  soldierColor: {r: 0.06388391, g: 0.9150943, b: 0.074834384, a: 1}
+  heroColor: {r: 0.1254902, g: 0.09411765, b: 0.09411765, a: 1}
+  soldierColor: {r: 0.0627451, g: 0.9137255, b: 0.07450981, a: 1}
   enemyColor: {r: 0.8773585, g: 0.102634355, b: 0.102634355, a: 1}
 --- !u!4 &473165777
 Transform:

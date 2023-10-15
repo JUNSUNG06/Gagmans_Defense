@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c736d763dd9eab346a69facc2e7b6d9e, type: 3}
   m_Name: WizardPant
   m_EditorClassIdentifier: 
-  itemName: 
-  image: {fileID: 0}
+  itemName: WizardPant
+  image: {fileID: 7509469182213787861, guid: 87b1dd3b66e72434d9247bb64db74d2a, type: 3}
   type: 0
-  status: {fileID: 0}
-  equipType: 0
-  path: 
+  status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
+  equipType: 3
+  path: SPUM/SPUM_Sprites/Packages/Ver300/3_Pant/New_Pant_03
