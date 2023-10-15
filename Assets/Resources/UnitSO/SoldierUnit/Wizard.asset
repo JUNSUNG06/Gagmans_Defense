@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 0
   unitName: Wizard
   unit: {fileID: 4416530876144524062, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 661e9afe9853b274f9af00f3017c32c1, type: 3}
+  controller: {fileID: 8639978475856885343, guid: a651ffdf30e792544be23655ea3d726e, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 813ae38d3b05d704692a98c0b1a7b826, type: 2}

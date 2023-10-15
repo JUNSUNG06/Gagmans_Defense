@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: Devil_Elite
   unit: {fileID: 6619453776035296107, guid: 2b80c970902455f4080bb2bc7b9e00cf, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 9c466cc301be9794893f4a00423359ad, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 225ff3418d40c494481a7d43b98c899c, type: 2}

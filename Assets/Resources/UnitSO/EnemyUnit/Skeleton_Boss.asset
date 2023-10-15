@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: Skeleton_Boss
   unit: {fileID: 5488116983772774036, guid: 1968328db2bc122409483142d52e1f1e, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 617db115471f7c743bf2e2afc0919f1d, type: 3}
+  controller: {fileID: 8639978475856885343, guid: bf0f25d7e0225f74b86fcd703a218099, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 225ff3418d40c494481a7d43b98c899c, type: 2}

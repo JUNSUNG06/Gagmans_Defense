@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: Skeleton_Infantry
   unit: {fileID: 5488116983772774036, guid: 1968328db2bc122409483142d52e1f1e, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 45c957a1cc8d1314cbd83233b59e7745, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 3fe32ee730d5bdd4c8a7ff09c334427c, type: 2}

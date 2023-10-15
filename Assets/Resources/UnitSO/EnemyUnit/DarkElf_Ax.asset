@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: DarkElf_Ax
   unit: {fileID: 8503411852122653335, guid: 8f990ec2690ed6949b14d14a83d5c834, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 4cd705fa4314a92478b5c3f338e8d401, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 9a06e7e84da17c843ba8b0e79c2ed884, type: 2}

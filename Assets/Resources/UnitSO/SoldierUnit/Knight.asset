@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 0
   unitName: Knight
   unit: {fileID: 4416530876144524062, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 85d20270168be21448df5716e9b09963, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 88227788ca40b2947b083f0b387eb3ad, type: 2}

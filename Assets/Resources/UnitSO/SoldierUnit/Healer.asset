@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 0
   unitName: Healer
   unit: {fileID: 8448433314290977275, guid: a61f7deea0ae4cf4caa2c1b0b673a658, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 352ca1a9515756342961287f5039cf50, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 66be310e6474e3647828170bb737662a, type: 2}

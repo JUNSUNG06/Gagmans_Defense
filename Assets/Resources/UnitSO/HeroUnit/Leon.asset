@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 1
   unitName: Leon
   unit: {fileID: 2869737554697991111, guid: ec6a048e2af1be241b1455af15af8e91, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 1c5510d406c20274a9fbe07c13bbb624, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 510faded648156b459738c5a33473218, type: 2}

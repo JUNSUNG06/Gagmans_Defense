@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 1
   unitName: Jerome
   unit: {fileID: 4416530876144524062, guid: ff4876af98ba03845be87c3289d9a123, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 4fd99ad1026eb4676b6ed98658f868a9, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 72a23801c01e9b9498b65cbbc51cc4f1, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 9a06e7e84da17c843ba8b0e79c2ed884, type: 2}

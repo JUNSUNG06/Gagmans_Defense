@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: DarkElf_Archer
   unit: {fileID: 8503411852122653335, guid: 8f990ec2690ed6949b14d14a83d5c834, type: 3}
-  controller: {fileID: 8639978475856885343, guid: eae2a31019bce2e4c985d3b9edc0be07, type: 3}
+  controller: {fileID: 8639978475856885343, guid: a5e2da58698a5e64e870a7a465d41a0c, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: 0994cb525398eb44fbec82ed74ad47db, type: 2}
