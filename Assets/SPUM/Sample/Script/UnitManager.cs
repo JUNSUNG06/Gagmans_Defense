@@ -8,10 +8,6 @@ public class UnitManager : MonoBehaviour
 {
     public static UnitManager Instance;
 
-    //public UnitListSO SoldierList;
-    //public UnitListSO HeroList;
-    //public UnitListSO EnemyList;
-
     private List<UnitSO> soldierList;
     private List<UnitSO> heroList;
     private List<UnitSO> enemyList;
@@ -49,6 +45,7 @@ public class UnitManager : MonoBehaviour
         SpawnUnit(UnitType.Soldier, "Healer", new Vector3(6, 0, 0));
         SpawnUnit(UnitType.Soldier, "Archer", new Vector3(8, 0, 0));
         SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
+        SpawnUnit(UnitType.Enemy, "GreenGoblin", new Vector3(-10, 0, 0));
 
         Debug.Log(PlayerManager.Instance);
         PlayerManager.Instance.OnUnitSelect += ChangeUnitShadowSelect;

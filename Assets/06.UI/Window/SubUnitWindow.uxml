@@ -9,12 +9,13 @@
             </ui:VisualElement>
             <ui:VisualElement name="StatusLabelWindow" style="height: 100%; width: 50%; align-items: flex-start; justify-content: space-around; padding-left: 15px;">
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackPowerLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackSpeedLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackCoolLabel" class="s_statusLabel" />
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="DefenseLabel" class="s_statusLabel" />
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="HealthLabel" class="s_statusLabel" />
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="CriticalProbLabel" class="s_statusLabel" />
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="MoveSpeedLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="HealthRecoveryLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryValueLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryTimeLabel" class="s_statusLabel" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

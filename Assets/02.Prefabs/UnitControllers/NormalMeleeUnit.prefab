@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 5867676814310862037}
   - component: {fileID: 7001626349529282260}
   m_Layer: 0
-  m_Name: UnitSample
+  m_Name: NormalMeleeUnit
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c404623d915c168479658b4b6dcb30a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!114 &8408812081612971984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147ffad2e282df44a9a261a30c5478d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StatusInfo: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
 --- !u!114 &6785123530547113644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,7 +1014,7 @@ GameObject:
   - component: {fileID: 5230436640236124860}
   - component: {fileID: 1970941913058645961}
   m_Layer: 0
-  m_Name: TestAttack
+  m_Name: MeleeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,10 +1048,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ecc0d0c39cd9d4486c2027461435e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
-  CoolTime: 3
-  currentCoolTime: 0
-  criticalProb: 0
+  isCritical: 0
+  damageWeight: 0
+  coolTimeWeight: 0
+  criticalProbWeight: 0
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0

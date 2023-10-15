@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1)) // 마우스 우클릭시 선택된 유닛들이 움직여야함
         {
             RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
-
+            
             if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Building"))
                 return;
 
@@ -133,7 +133,7 @@ public class PlayerManager : MonoBehaviour
                     unit.GetComponent<UnitMovement>().SetTargetPos(hit.point);
                 }
             }
-            else if (hit.transform.gameObject.layer == enemyLayer)
+            else if ((1 << hit.transform.gameObject.layer | enemyLayer) == enemyLayer)
             {
                 foreach (UnitController unit in units)
                 {

@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitMovement : UnitComponent, IAffectedStatus
+public class UnitMovement : UnitComponent//, IAffectedStatus
 {
-    private const float DefaultMoveSpeed = 2;
-
-    [SerializeField]
-    private float moveSpeed = 5f;
+    private float MoveSpeed => controller.Stat.GetStatus(StatusType.MoveSpeed);
     private bool movable = true;
     private Vector2 targetPos;
     private Vector2 moveDir;
@@ -52,7 +49,7 @@ public class UnitMovement : UnitComponent, IAffectedStatus
         if (!movable)
             return;
 
-        transform.Translate(moveDir * moveSpeed * Time.deltaTime);
+        transform.Translate(moveDir * MoveSpeed * Time.deltaTime);
     }
 
     public void Stop()
@@ -60,9 +57,9 @@ public class UnitMovement : UnitComponent, IAffectedStatus
         targetPos = transform.position;
     }
 
-    public void OnStatusChange(StatusType type, int value)
-    {
-        if (type == StatusType.MoveSpeed)
-            moveSpeed = DefaultMoveSpeed * value;
-    }
+    //public void OnStatusChange(StatusType type, int value)
+    //{
+    //    if (type == StatusType.MoveSpeed)
+    //        moveSpeed = DefaultMoveSpeed * value;
+    //}
 }

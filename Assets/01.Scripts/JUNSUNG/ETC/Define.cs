@@ -21,12 +21,13 @@ public enum UnitType
 public enum StatusType
 {
     AttackPower = 0,
-    AttackSpeed,
+    AttackCool,
     Defense,
     Health,
     CriticalProb,
     MoveSpeed,
-    HealthRecovery,
+    RecoveryValue,
+    RecoveryTime,
 }
 
 public enum EquipmentType
@@ -57,7 +58,6 @@ public enum ItemType
 public class Status
 {
     public StatusType Type;
-    [Range(0, 5)]
     public int Value;
 }
 

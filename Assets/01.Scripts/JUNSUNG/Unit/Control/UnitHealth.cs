@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
+public class UnitHealth : UnitComponent, IDamageable//, IAffectedStatus
 {
-    private const float DefaultHealth = 100;
-    private const float DefaultHealthRecovery = 5;
-    private const float DefaultDefense = 5;
-
     public bool RecoveryOption;
 
     private bool isDie = false;
@@ -17,11 +13,11 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
     public UnityEvent OnHitEvent;
     public UnityEvent OnDieEvent;
 
-    private float maxHealth;
+    private float MaxHealth => controller.Stat.GetStatus(StatusType.Health);
+    private float RecoveryValue => controller.Stat.GetStatus(StatusType.RecoveryValue);
+    private float RecoveryTime => controller.Stat.GetStatus(StatusType.RecoveryTime);
+    private float Defense => controller.Stat.GetStatus(StatusType.Defense);
     private float currentHealth;
-    private float recoveryHealthValue;
-    private float recoveryCool;
-    private float defense;
 
     private Coroutine recovery;
     private WaitForSeconds recoveryTime;
@@ -30,14 +26,14 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
     {
         base.Init(_controller);
 
-        currentHealth = maxHealth;
-        recoveryTime = new WaitForSeconds(recoveryCool);
+        currentHealth = MaxHealth;
+        recoveryTime = new WaitForSeconds(RecoveryTime);
     }
 
     public void GetDamaged(float damage, out bool isKill)
     {
-        float calcDamage = damage - (damage * 0.01f * defense);
-        currentHealth = Mathf.Clamp(currentHealth - calcDamage, 0, maxHealth);
+        float calcDamage = damage - (damage * 0.01f * Defense);
+        currentHealth = Mathf.Clamp(currentHealth - calcDamage, 0, MaxHealth);
         OnHitEvent?.Invoke();
         Debug.Log(damage);
 
@@ -54,7 +50,7 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
     public void Heal(float value)
     {
         currentHealth += value;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        currentHealth = Mathf.Min(currentHealth, MaxHealth);
     }
 
     private void Die()
@@ -66,7 +62,7 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
 
     private IEnumerator Recovery()
     {
-        Heal(recoveryHealthValue);
+        Heal(RecoveryValue);
         yield return recoveryTime;
     }
 
@@ -81,19 +77,19 @@ public class UnitHealth : UnitComponent, IDamageable, IAffectedStatus
         recovery = null;
     }
 
-    public void OnStatusChange(StatusType type, int value)
-    {
-        switch(type)
-        {
-            case StatusType.Health:
-                maxHealth = DefaultHealth * value;
-                break;
-            case StatusType.HealthRecovery:
-                recoveryHealthValue = DefaultHealthRecovery * value;
-                break;
-            case StatusType.Defense:
-                defense = DefaultDefense * value;
-                break;
-        }
-    }
+    //public void OnStatusChange(StatusType type, int value)
+    //{
+    //    switch(type)
+    //    {
+    //        case StatusType.Health:
+    //            maxHealth = DefaultHealth * value;
+    //            break;
+    //        case StatusType.HealthRecovery:
+    //            recoveryHealthValue = DefaultHealthRecovery * value;
+    //            break;
+    //        case StatusType.Defense:
+    //            defense = DefaultDefense * value;
+    //            break;
+    //    }
+    //}
 }

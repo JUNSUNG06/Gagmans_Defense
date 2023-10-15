@@ -53,6 +53,10 @@ public class UnitController : MonoBehaviour, IClickable
     public virtual void Init(UnitSO info, Transform target)
     {
         this.info = info;
+        gameObject.layer = LayerMask.NameToLayer(info.unitType.ToString());
+
+        status = GetComponent<UnitStatus>();
+        status.Init(this);
 
         stateMachine = GetComponent<UnitStateMachine>();
         stateMachine.Init(this);
@@ -65,9 +69,6 @@ public class UnitController : MonoBehaviour, IClickable
         
         anim = transform.Find("Visual/UnitRoot").AddComponent<UnitAnimation>();
         anim.Init(this, info.animator);
-        
-        status = GetComponent<UnitStatus>();
-        status.Init(this);
 
         health = GetComponent<UnitHealth>();
         health.Init(this);

@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestAttack : UnitAttackType
+public class NormalMeleeAttack : UnitAttackType
 {
+
+    //생성 위치 설정해야함
     public override void Attack()
     {
         base.Attack();
-        
-        if(controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
+
+        float damage = isCritical ? this.damage * 2 : this.damage;
+
+        if (controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
         {
             t.GetDamaged(damage, out bool isKill);
 
@@ -18,5 +22,7 @@ public class TestAttack : UnitAttackType
                 controller.Movement.Stop();
             }
         }
+
+        isCritical = false;
     }
 }

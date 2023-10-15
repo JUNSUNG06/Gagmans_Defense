@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8415f1ce37f0bc94ea6436de18f13663, type: 3}
   m_Name: GreenGoblin
   m_EditorClassIdentifier: 
+  unitCost: 0
   unitType: 2
-  unitName: 
+  unitName: GreenGoblin
   unit: {fileID: 1822597944663723089, guid: 9e72e262293508b4fbdd0763cfd7d226, type: 3}
   controller: {fileID: 8639978475856885343, guid: 5a57d51e128433d4ea0c90af2986d71a, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips: []
   animator: {fileID: 9100000, guid: 7089ceb12e42004488f69cca01dd15e9, type: 2}
+  profile: {fileID: 0}
