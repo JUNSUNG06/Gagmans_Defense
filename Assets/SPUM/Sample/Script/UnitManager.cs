@@ -102,7 +102,7 @@ public class UnitManager : MonoBehaviour
         tObj.gameObject.name = "Visual";
         tObj.transform.SetParent(ttObj.transform);
         tObj.transform.localScale = Vector3.one * unitSize;
-        tObj.transform.localPosition = Vector3.zero;
+        tObj.transform.localPosition = new Vector3(0, -0.5f, 0);
 
         GameObject _minimapRender = Instantiate(minimapRender);
         _minimapRender.GetComponent<SpriteRenderer>().color = minimapColor;

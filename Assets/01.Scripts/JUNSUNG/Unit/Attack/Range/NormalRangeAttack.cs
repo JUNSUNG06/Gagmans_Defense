@@ -6,6 +6,7 @@ public class NormalRangeAttack : UnitAttackType
 {
     public Projectile projectile;
     public LayerMask targetLayer;
+    public Transform fireTrm;
 
     public override void Attack()
     {   
@@ -13,7 +14,8 @@ public class NormalRangeAttack : UnitAttackType
 
         int damage = isCritical ? this.damage * 2 : this.damage;
 
-        Projectile pro = projectile.Create(damage, targetLayer);
+        Projectile pro = projectile.Create(damage, targetLayer, fireTrm.position, 
+            (controller.Target.position - fireTrm.position).normalized);
 
         isCritical = false; 
     }

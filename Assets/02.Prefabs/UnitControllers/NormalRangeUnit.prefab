@@ -239,6 +239,7 @@ Transform:
   - {fileID: 6488660090685881281}
   - {fileID: 5717168859014915195}
   - {fileID: 858495708023782168}
+  - {fileID: 7312158962989214578}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,7 +256,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!50 &2264593362713716660
@@ -562,7 +563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 1
+  distance: 5
 --- !u!114 &2827744385761960330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 5
+  distance: 6
 --- !u!1 &5262979284297794722
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 1
+  distance: 5
 --- !u!114 &5625302928201234907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,6 +975,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5142bfbb33ced184081ea46ad39028ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6801696849694180681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7312158962989214578}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7312158962989214578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6801696849694180681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2264593362713716661}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7211990105210391433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1103,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 1024
+  fireTrm: {fileID: 7312158962989214578}
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,4 +1177,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 1
-  distance: 1
+  distance: 6

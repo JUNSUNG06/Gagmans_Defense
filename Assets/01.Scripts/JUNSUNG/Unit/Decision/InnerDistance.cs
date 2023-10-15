@@ -20,6 +20,6 @@ public class InnerDistance : UnitDecision
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + Vector3.up * 0.5f, distance);
+        Gizmos.DrawWireSphere(transform.position, distance);
     }
 }

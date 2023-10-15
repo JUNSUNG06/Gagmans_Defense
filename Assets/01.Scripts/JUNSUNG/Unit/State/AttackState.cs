@@ -6,7 +6,7 @@ using UnityEngine;
 public class AttackState : UnitState
 {
     private int attackCool;
-    private bool canAttack = false;
+    private bool canAttack = true;
 
     public override void InitState(UnitController _controller)
     {
