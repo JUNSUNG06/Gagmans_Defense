@@ -16,13 +16,15 @@ public class BuffProjectile : Projectile
 {
     public List<Buff> buffList = new List<Buff>();
 
-    public override void AdditiveProcess(Collider2D collision)
+    public override void HieProcess(Transform targetTrm, IDamageable target)
     {
-        if(collision.TryGetComponent<UnitController>(out UnitController target))
+        target.GetDamaged(damage, out bool isKill);
+
+        if(!isKill && targetTrm.TryGetComponent<UnitController>(out UnitController unit))
         {
             foreach(Buff buff in buffList)
             {
-                target.Stat.Buff(buff.type, buff.percent, buff.time);
+                unit.Stat.Buff(buff.type, buff.percent, buff.time);
             }
         }
     }

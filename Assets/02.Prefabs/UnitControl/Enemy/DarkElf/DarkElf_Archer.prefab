@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 5867676814310862037}
   - component: {fileID: 7001626349529282260}
   m_Layer: 0
-  m_Name: Wizard
+  m_Name: DarkElf_Archer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,10 +1066,10 @@ MonoBehaviour:
   damageWeight: 0
   coolTimeWeight: 0
   criticalProbWeight: 0
-  projectile: {fileID: 2595484696116112031, guid: 3a2186919970b89499f8e75b56687ceb, type: 3}
+  projectile: {fileID: 4607369758656766089, guid: 7e1f0ed18f15b9c429a39be9039e3ba5, type: 3}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 768
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0

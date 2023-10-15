@@ -24,12 +24,13 @@ public class Projectile : MonoBehaviour
     {
         if (1 << collision.gameObject.layer == targetLayer && collision.transform.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.GetDamaged(damage, out bool isKill);
-            if(!isKill)
-                AdditiveProcess(collision);
+            HieProcess(collision.transform, target);
             Destroy(gameObject);
         }
     }
 
-    public virtual void AdditiveProcess(Collider2D collision) { }
+    public virtual void HieProcess(Transform targetTrm, IDamageable target) 
+    {
+        target.GetDamaged(damage, out bool isKill);
+    }
 }

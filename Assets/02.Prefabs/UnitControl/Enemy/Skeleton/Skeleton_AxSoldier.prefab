@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &90888583970447298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2147299897955079060}
+  m_Layer: 0
+  m_Name: Decisions
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2147299897955079060
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90888583970447298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8731043048579447068}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &95296132426011948
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +263,7 @@ GameObject:
   - component: {fileID: 5867676814310862037}
   - component: {fileID: 7001626349529282260}
   m_Layer: 0
-  m_Name: Wizard
+  m_Name: Skeleton_AxSoldier
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,6 +460,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efbda680652016429cbab780a7b904b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3055907117231861653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8731043048579447068}
+  - component: {fileID: 1630388174249638278}
+  m_Layer: 0
+  m_Name: SingleMeleeAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8731043048579447068
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3055907117231861653}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2147299897955079060}
+  m_Father: {fileID: 5717168859014915195}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630388174249638278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3055907117231861653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ecc0d0c39cd9d4486c2027461435e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCritical: 0
+  damageWeight: 0
+  coolTimeWeight: 0
+  criticalProbWeight: 0
 --- !u!1 &3847438144788987232
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 5
+  distance: 1
 --- !u!114 &2827744385761960330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3698668475687400093}
+  - component: {fileID: 4807559934816774220}
   m_Layer: 0
   m_Name: Decisions
   m_TagString: Untagged
@@ -771,6 +852,24 @@ Transform:
   m_Father: {fileID: 5230436640236124860}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4807559934816774220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4743983447109628563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0de0749d309f17449bad97b86d62883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reverse: 0
+  range: 5
+  num: 3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 768
 --- !u!1 &5262979284297794722
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 0
-  distance: 5
+  distance: 1
 --- !u!114 &5625302928201234907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -888,6 +987,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5230436640236124860}
+  - {fileID: 8731043048579447068}
   m_Father: {fileID: 2264593362713716661}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1026,9 +1126,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230436640236124860}
-  - component: {fileID: 7586765545073432011}
+  - component: {fileID: 7248524463691038261}
   m_Layer: 0
-  m_Name: SingleRangeAttack
+  m_Name: MultipleMeleeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,7 +1150,7 @@ Transform:
   m_Father: {fileID: 5717168859014915195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7586765545073432011
+--- !u!114 &7248524463691038261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1059,17 +1159,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7250448006947005966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b95f9d9d23f10946a0c2b3374c40dfb, type: 3}
+  m_Script: {fileID: 11500000, guid: aef83bc6816c56448a227c3a8098326a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isCritical: 0
   damageWeight: 0
   coolTimeWeight: 0
   criticalProbWeight: 0
-  projectile: {fileID: 2595484696116112031, guid: 3a2186919970b89499f8e75b56687ceb, type: 3}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 1024
+  attackNum: 5
+  range: 3
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,4 +1241,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reverse: 1
-  distance: 6
+  distance: 1
