@@ -76,9 +76,6 @@ public class PlayerInventory : MonoBehaviour
     {
         List<Item> list = equipInven.FindAll(x => x.GetInfo<EquipmentSO>().equipType == type);
 
-        foreach (var e in list)
-            Debug.Log(e);
-
         return list;
     }
 }

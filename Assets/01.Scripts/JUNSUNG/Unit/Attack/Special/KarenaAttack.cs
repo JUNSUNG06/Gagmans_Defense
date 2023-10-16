@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultipleMeleeAttack : UnitAttackType
+public class KarenaAttack : UnitAttackType
 {
-    public int attackNum;
-    public float range = 3f;
+    [Space]
+    [SerializeField]
+    private float angle;
+    [SerializeField]
+    private float distance;
 
     public override void Attack()
     {
@@ -13,14 +16,13 @@ public class MultipleMeleeAttack : UnitAttackType
 
         float damage = isCritical ? this.damage * 2 : this.damage;
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(controller.Target.position, range);
-        IDamageable t;
-        int cnt = 0;
-        foreach (Collider2D hit in hits )
+        Collider2D[] hits = Physics2D.OverlapCircleAll(controller.Target.position, distance);
+
+        foreach (Collider2D hit in hits)
         {
-            if (hit.TryGetComponent<IDamageable>(out t))
+            float angle = Vector2.Dot(-controller.transform.right, (controller.Target.position - controller.transform.position).normalized) * Mathf.Rad2Deg;
+            if (hit.TryGetComponent<IDamageable>(out IDamageable t) && angle <= this.angle / 2f)
             {
-                cnt++;
                 t.GetDamaged(damage, out bool isKill);
 
                 if (isKill && t == controller.Target.GetComponent<IDamageable>())
@@ -29,9 +31,6 @@ public class MultipleMeleeAttack : UnitAttackType
                     controller.Movement.Stop();
                 }
             }
-
-            if (cnt >= attackNum)
-                break;
         }
 
         isCritical = false;

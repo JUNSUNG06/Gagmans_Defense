@@ -8,16 +8,24 @@
             <ui:Label text="Unit" display-tooltip-when-elided="true" name="text" />
         </ui:VisualElement>
         <ui:VisualElement name="contents" class="w_contents" style="align-items: center;">
-            <ui:VisualElement name="unitImage" style="height: 100%; width: 50%; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); align-items: center; justify-content: center;">
-                <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 500px; height: 500px;" />
+            <ui:VisualElement name="unitImage" style="height: 100%; width: 538px; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); align-items: center; justify-content: center;">
+                <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 400px; height: 400px; top: 65px;" />
+                <ItemSlot name="HelmetSlot" style="position: absolute; top: 85px; left: 125px;" />
+                <ItemSlot name="ArmorSlot" style="position: absolute; top: 230px; left: 65px;" />
+                <ItemSlot name="PantSlot" style="position: absolute; top: 230px; right: 65px;" />
+                <ItemSlot name="RightWeaponSlot" style="position: absolute; top: 395px; left: 65px;" />
+                <ItemSlot name="LeftWeaponSlot" style="position: absolute; top: 395px; right: 65px;" />
+                <ItemSlot name="BackSlot" style="position: absolute; top: 85px; right: 125px;" />
             </ui:VisualElement>
-            <ui:VisualElement name="equipmentWindow" style="height: 481px; width: 50%; align-items: center; justify-content: center; flex-wrap: wrap;">
-                <ItemSlot name="helmetSlot" />
-                <ItemSlot name="armorSlot" />
-                <ItemSlot name="backSlot" />
-                <ItemSlot name="pantSlot" />
-                <ItemSlot name="rightWeaponSlot" />
-                <ItemSlot name="leftWeaponSlot" />
+            <ui:VisualElement name="StatusLabelWindow" style="height: 100%; width: 400px; align-items: flex-start; justify-content: space-around; padding-left: 15px;">
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackPowerLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackCoolLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="DefenseLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="HealthLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="CriticalProbLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="MoveSpeedLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryValueLabel" class="s_statusLabel" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryTimeLabel" class="s_statusLabel" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:Button display-tooltip-when-elided="true" name="closeBtn" class="w_btn red" style="position: absolute; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme2/05_System/Spum_Icon98.png?fileID=2800000&amp;guid=d82c8cc2aaf6b4c80999cfe184bdfd90&amp;type=3#Spum_Icon98&apos;); left: 100%; translate: -50% 50%;" />

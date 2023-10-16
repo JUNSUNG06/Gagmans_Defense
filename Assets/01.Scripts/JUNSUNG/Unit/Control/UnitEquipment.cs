@@ -10,7 +10,7 @@ public class UnitEquipment : UnitComponent
     private Dictionary<EquipmentType, Equipment> equipments = new Dictionary<EquipmentType, Equipment>();
 
     public Action<EquipmentType, EquipmentSO> OnEquipChageVisual { get; set; }
-    public UnityEvent<StatusSO, bool> OnEquipChageStatus;
+    public UnityEvent<StatusSO, bool> OnEquipChageStatus { get; set; }
 
     public SPUM_SpriteList spriteList;
 
@@ -61,7 +61,11 @@ public class UnitEquipment : UnitComponent
         equipments[info.equipType] = equip;
 
         if(beforeEquip != null)
+        {
+            PlayerInventory.Instance.AddItem(beforeEquip);
             OnEquipChageStatus?.Invoke(((EquipmentSO)beforeEquip.Info).status, false);
+        }
+
         OnEquipChageStatus?.Invoke(info.status, true);
 
         OnEquipChageVisual?.Invoke(info.equipType, info);

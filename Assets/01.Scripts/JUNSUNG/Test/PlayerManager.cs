@@ -45,6 +45,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
+        if (UIManager.Instance.isUIOpen)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && !UIManager.Instance.isUIOpen) // 마우스 좌클릭시 클릭된 레이어가 클릭 인터페이스가 있는지 확인하고 클릭 인터페이스 실행
         {
             RaycastHit2D hit = Physics2D.Raycast(GetWorldMousePos(), Vector2.zero);
