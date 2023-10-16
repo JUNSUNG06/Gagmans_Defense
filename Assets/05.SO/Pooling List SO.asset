@@ -23,3 +23,5 @@ MonoBehaviour:
     obj: {fileID: 4355443097383108145, guid: e17f246439109bb4a8b26b389fe111fe, type: 3}
   - CreateCount: 10
     obj: {fileID: 1138054437250229655, guid: 058243687191596429edc3a0188b267d, type: 3}
+  - CreateCount: 10
+    obj: {fileID: 2388992583221714210, guid: 19da92a562f713640b67273ed13f0fd7, type: 3}
