@@ -36,7 +36,7 @@ public class FindTarget : UnitPassiveType
                 distance = curDistance;
             }
         }
-        Debug.Log(target);
+        
         return target;
     }
 }

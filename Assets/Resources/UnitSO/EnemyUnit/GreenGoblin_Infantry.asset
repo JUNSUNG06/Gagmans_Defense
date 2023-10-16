@@ -16,7 +16,7 @@ MonoBehaviour:
   unitType: 2
   unitName: GreenGoblin_Infantry
   unit: {fileID: 1822597944663723089, guid: 9e72e262293508b4fbdd0763cfd7d226, type: 3}
-  controller: {fileID: 8639978475856885343, guid: 5609a1a15dde34b46a80fa33f56ff183, type: 3}
+  controller: {fileID: 8639978475856885343, guid: 978234320e7b2dd4f9ba6a1b2e63440f, type: 3}
   status: {fileID: 11400000, guid: b066baf5fe2638a49acffc0ddf5ca907, type: 2}
   startingEquips:
   - {fileID: 11400000, guid: f8f224d0a5aa25d4da74a8d10534ad1a, type: 2}
