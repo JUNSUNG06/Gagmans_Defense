@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEngine.UI.CanvasScaler;
 
 public class UnitUI : GameUI
 {
     private List<ItemSlot> slot;
+    private List<Label> labelList = new List<Label>();
 
     public UnitUI(TemplateContainer container) : base(container)
     {
@@ -39,10 +41,20 @@ public class UnitUI : GameUI
         {
             ui.Show(EquipmentType.LeftWeapon);
         });
+
+        foreach (var stat in Enum.GetValues(typeof(StatusType)))
+        {
+            labelList.Add(root.Q<Label>($"{stat}Label"));
+        }
     }
 
     public void Show(UnitController _controller)
     {
+        foreach (StatusType stat in Enum.GetValues(typeof(StatusType)))
+        {
+            labelList[(int)stat].text = $"{stat} : {_controller.Stat.GetStatus(stat)}";
+        }
+
         foreach (EquipmentType type in Enum.GetValues(typeof(EquipmentType)))
         {
             slot[(int)type].SetItem(_controller.Equipment.GetEquip(type));
