@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,12 +31,12 @@ public abstract class GameUI
         container.style.display = DisplayStyle.Flex;
         container.BringToFront();
         UIManager.Instance.CurrentUI = this;
-        UIManager.Instance.isUIOpen = true;
+        UIManager.Instance.OpendUI.Add(this);
     }
 
     public virtual void Hide() 
     {
         container.style.display = DisplayStyle.None;
-        UIManager.Instance.isUIOpen = false;
+        UIManager.Instance.OpendUI.Remove(this);
     }
 }

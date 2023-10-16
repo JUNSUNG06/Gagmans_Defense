@@ -24,10 +24,7 @@ public class EquipChangeUI : GameUI
 
                 if (item == null)
                 {
-                    testPlayer.Unit.Equipment.ReleaseEquipment(selectEquipType);
-                    Debug.Log(testPlayer);
-                    Debug.Log(testPlayer.Unit);
-                    Debug.Log(testPlayer);
+                    PlayerManager.Instance.Unit.Equipment.ReleaseEquipment(selectEquipType);
                 }
                 else
                 {
@@ -46,7 +43,6 @@ public class EquipChangeUI : GameUI
     public void Show(EquipmentType type)
     {
         Show();
-
         List<Item> items = PlayerInventory.Instance.GetEqiuInvenByType(type);
         selectEquipType = type;
 

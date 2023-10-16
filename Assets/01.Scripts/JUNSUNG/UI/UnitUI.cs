@@ -17,30 +17,13 @@ public class UnitUI : GameUI
         EquipChangeUI ui = UIManager.Instance.GetUI<EquipChangeUI>();
         container.name = "unit";
 
-        root.Q<ItemSlot>("helmetSlot").RegisterCallback<ClickEvent>(e =>
+        foreach(EquipmentType t in Enum.GetValues(typeof(EquipmentType)))
         {
-            ui.Show(EquipmentType.Helmet);
-        });
-
-        root.Q<ItemSlot>("armorSlot").RegisterCallback<ClickEvent>(e =>
-        {
-            ui.Show(EquipmentType.Armor);
-        });
-
-        root.Q<ItemSlot>("backSlot").RegisterCallback<ClickEvent>(e =>
-        {
-            ui.Show(EquipmentType.Back);
-        });
-
-        root.Q<ItemSlot>("rightWeaponSlot").RegisterCallback<ClickEvent>(e =>
-        {
-            ui.Show(EquipmentType.RightWeapon);
-        });
-
-        root.Q<ItemSlot>("leftWeaponSlot").RegisterCallback<ClickEvent>(e =>
-        {
-            ui.Show(EquipmentType.LeftWeapon);
-        });
+            root.Q<ItemSlot>($"{t}Slot").RegisterCallback<ClickEvent>(e =>
+            {
+                ui.Show(t);
+            });
+        }
 
         foreach (var stat in Enum.GetValues(typeof(StatusType)))
         {

@@ -10,12 +10,12 @@
         <ui:VisualElement name="contents" class="w_contents" style="align-items: center;">
             <ui:VisualElement name="unitImage" style="height: 100%; width: 538px; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/01_Box&amp;Btn/Box_Profile.png?fileID=2800000&amp;guid=d049099c702c94379ab5445f1cd246b2&amp;type=3#Box_Profile&apos;); align-items: center; justify-content: center;">
                 <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 400px; height: 400px; top: 65px;" />
-                <ItemSlot name="helmetSlot" style="position: absolute; top: 85px; left: 125px;" />
-                <ItemSlot name="armorSlot" style="position: absolute; top: 230px; left: 65px;" />
-                <ItemSlot name="pantSlot" style="position: absolute; top: 230px; right: 65px;" />
-                <ItemSlot name="rightWeaponSlot" style="position: absolute; top: 395px; left: 65px;" />
-                <ItemSlot name="leftWeaponSlot" style="position: absolute; top: 395px; right: 65px;" />
-                <ItemSlot name="backSlot" style="position: absolute; top: 85px; right: 125px;" />
+                <ItemSlot name="HelmetSlot" style="position: absolute; top: 85px; left: 125px;" />
+                <ItemSlot name="ArmorSlot" style="position: absolute; top: 230px; left: 65px;" />
+                <ItemSlot name="PantSlot" style="position: absolute; top: 230px; right: 65px;" />
+                <ItemSlot name="RightWeaponSlot" style="position: absolute; top: 395px; left: 65px;" />
+                <ItemSlot name="LeftWeaponSlot" style="position: absolute; top: 395px; right: 65px;" />
+                <ItemSlot name="BackSlot" style="position: absolute; top: 85px; right: 125px;" />
             </ui:VisualElement>
             <ui:VisualElement name="StatusLabelWindow" style="height: 100%; width: 400px; align-items: flex-start; justify-content: space-around; padding-left: 15px;">
                 <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackPowerLabel" class="s_statusLabel" />

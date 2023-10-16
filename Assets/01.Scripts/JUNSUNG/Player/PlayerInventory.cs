@@ -35,6 +35,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
+        Debug.Log(item);
         if(item.Info != null)
         {
             if (item is Equipment)

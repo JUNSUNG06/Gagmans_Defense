@@ -36,7 +36,8 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset equipChangeUI;
     private EquipChangeUI equipChange;
 
-    public bool isUIOpen = false;
+    public List<GameUI> OpendUI = new List<GameUI>();
+    public bool isUIOpen => OpendUI.Count > 0;
 
     private void Awake()
     {
@@ -98,8 +99,6 @@ public class UIManager : MonoBehaviour
         {
             ui.Value.Hide();
         }
-
-        isUIOpen = false;
     }
 
     public T GetUI<T>() where T : GameUI
