@@ -7,7 +7,7 @@
     <ui:VisualElement name="window" class="window" style="height: 714px; width: 990px; flex-direction: column;">
         <ui:VisualElement name="background" class="w_background" />
         <ui:VisualElement name="title" class="w_title">
-            <ui:Label text="Training" display-tooltip-when-elided="true" name="text" />
+            <ui:Label text="Training" display-tooltip-when-elided="true" name="text" style="-unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/NeoDunggeunmoPro-Regular.ttf?fileID=12800000&amp;guid=f263c3c6c6231864d98eefc364d63fa3&amp;type=3#NeoDunggeunmoPro-Regular&apos;);" />
         </ui:VisualElement>
         <ui:VisualElement name="contents" class="w_contents" style="flex-direction: row; padding-bottom: 20px; justify-content: space-around;">
             <ui:VisualElement name="Slot" style="flex-direction: row; flex-wrap: wrap; justify-content: center; width: 70%;">

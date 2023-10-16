@@ -36,6 +36,9 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset equipChangeUI;
     private EquipChangeUI equipChange;
 
+    public VisualTreeAsset playerUI;
+    private PlayerUI player;
+
     public bool isUIOpen = false;
 
     private void Awake()
@@ -71,6 +74,10 @@ public class UIManager : MonoBehaviour
         subUnit = new SubUnitUI(CreateWindowUI(subUnitUI));
         uiDictionary.Add(typeof(SubUnitUI), subUnit);
         subUnit.Hide();
+
+        player = new PlayerUI(CreateWindowUI(playerUI));
+        uiDictionary.Add(typeof(PlayerUI), player);
+        player.Show();
     }
 
     private void Update()

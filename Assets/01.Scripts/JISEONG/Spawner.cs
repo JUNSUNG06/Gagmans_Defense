@@ -23,9 +23,11 @@ public class Spawner : MonoBehaviour
 
     private int stageLevel;
 
+    private PlayerUI playerUI;
     private void Start()
     {
         stageLevel = 0;
+        playerUI = UIManager.Instance.GetUI<PlayerUI>();
         ChangeStage();
     }
     public void SettingStage()
@@ -34,27 +36,29 @@ public class Spawner : MonoBehaviour
         currentEliteUnits = stageInfoSOs[stageLevel].eliteUnits;
         currentBoss = stageInfoSOs[stageLevel].boss;
         
-        float allNormalUnitCnt = 0;
+        int allNormalUnitCnt = 0;
         for(int i = 0; i < currentNormalUnits.Count; i++)
         {
             allNormalUnitCnt += currentNormalUnits[i].unitCnt;
             currentNormalUnitCnt.Add(currentNormalUnits[i].unitCnt);
         }
-        normalUnitWaitTime = stageTime / allNormalUnitCnt;
+        normalUnitWaitTime = stageTime / (float)allNormalUnitCnt;
         
-        float allEliteUnitCnt = 0;
+        int allEliteUnitCnt = 0;
         for(int i = 0; i < currentEliteUnits.Count; i++)
         {
             allEliteUnitCnt += currentEliteUnits[i].unitCnt;
             currentEliteUnitCnt.Add(currentEliteUnits[i].unitCnt);
         }
-        eliteUnitWaitTime = stageTime / allEliteUnitCnt;
+        eliteUnitWaitTime = stageTime / (float)allEliteUnitCnt;
+
+        stageLevel++;
+        playerUI.SettingStage(stageLevel, allNormalUnitCnt, allEliteUnitCnt);
     }
 
     public void ChangeStage()
     {
         SettingStage();
-        stageLevel++;
     }
 
     private void RandomSpawnNormal()
@@ -62,14 +66,28 @@ public class Spawner : MonoBehaviour
         int unitIndex = Random.Range(0, currentNormalUnits.Count);
         int makePosIndex = Random.Range(0, unitMakeTrms.Count);
 
+        currentNormalUnitCnt[unitIndex]--;
         UnitManager.Instance.SpawnUnit(UnitType.Enemy, currentNormalUnits[unitIndex].unit.unitName, unitMakeTrms[makePosIndex].position);
+
+        if(currentNormalUnitCnt[unitIndex] <= 0)
+        {
+            currentNormalUnitCnt.RemoveAt(unitIndex);
+            currentNormalUnits.RemoveAt(unitIndex);
+        }
     }
     private void RandomSpawnElite()
     {
         int unitIndex = Random.Range(0, currentEliteUnits.Count);
         int makePosIndex = Random.Range(0, unitMakeTrms.Count);
 
+        currentEliteUnitCnt[unitIndex]--;
         UnitManager.Instance.SpawnUnit(UnitType.Enemy, currentEliteUnits[unitIndex].unit.unitName, unitMakeTrms[makePosIndex].position);
+
+        if (currentEliteUnitCnt[unitIndex] <= 0)
+        {
+            currentEliteUnitCnt.RemoveAt(unitIndex);
+            currentEliteUnits.RemoveAt(unitIndex);
+        }
     }
 
     private IEnumerator Spawn()
