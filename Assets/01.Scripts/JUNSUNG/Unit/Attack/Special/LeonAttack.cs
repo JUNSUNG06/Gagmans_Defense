@@ -21,6 +21,8 @@ public class LeonAttack : UnitAttackType
 
         if (controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
         {
+            Debug.Log(controller.Visual.rotation.eulerAngles.y == 0);
+            PlayEffect(controller.Target.position, controller.Visual.rotation.eulerAngles.y == 0);
             t.GetDamaged(damage, out bool isKill);
 
             if (isKill)

@@ -36,6 +36,7 @@ public class UnitController : MonoBehaviour, IClickable
     public UnitHealth Health => health;
     public UnitEquipment Equipment => equipment;
     public UnitPassive Passive => passive;
+    public Transform Visual;
     public Transform Target 
     { 
         get => target; 
@@ -54,6 +55,7 @@ public class UnitController : MonoBehaviour, IClickable
     {
         this.info = info;
         gameObject.layer = LayerMask.NameToLayer(info.unitType.ToString());
+        Visual = transform.Find("Visual");
 
         status = GetComponent<UnitStatus>();
         status.Init(this);

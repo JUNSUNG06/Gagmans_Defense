@@ -31,6 +31,7 @@ public class JeromeAttack : UnitAttackType
                 {
                     if(col.TryGetComponent<IDamageable>(out IDamageable d))
                     {
+                        PlayEffect(col.transform.position, true);
                         d.GetDamaged(specialDamage, out bool isKill);
 
                         if(d == t && isKill)

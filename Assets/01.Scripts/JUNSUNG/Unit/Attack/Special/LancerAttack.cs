@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleMeleeAttack : UnitAttackType
+public class LancerAttack : UnitAttackType
 {
     public override void Attack()
     {
@@ -12,11 +12,12 @@ public class SingleMeleeAttack : UnitAttackType
 
         if (controller.Target.TryGetComponent<IDamageable>(out IDamageable t))
         {
-            if (effectName != "")
+            if(effectName != "")
                 PlayEffect(controller.Target.position, controller.Visual.rotation.eulerAngles.y == 0);
+
             t.GetDamaged(damage, out bool isKill);
 
-            if(isKill)
+            if (isKill)
             {
                 controller.Target = null;
                 controller.Movement.Stop();

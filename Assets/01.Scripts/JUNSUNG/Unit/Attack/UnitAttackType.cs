@@ -13,7 +13,10 @@ public abstract class UnitAttackType : MonoBehaviour
     protected float coolTimeWeight;
     [SerializeField]
     protected float criticalProbWeight;
-    
+    [SerializeField]
+    protected string effectName;
+
+
     protected int damage;
     protected float coolTime; 
     protected float currentCoolTime = 0f;
@@ -73,5 +76,11 @@ public abstract class UnitAttackType : MonoBehaviour
         }
 
         CanAttack = true;
+    }
+
+    protected void PlayEffect(Vector2 pos, bool flip)
+    {
+        Effect e = PoolManager.Instance.Pop(effectName, pos) as Effect;
+        e.Flip(flip);
     }
 }

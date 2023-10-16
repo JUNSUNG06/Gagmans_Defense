@@ -207,8 +207,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2799594934380414288}
+  m_Children: []
   m_Father: {fileID: 2264593362713716661}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,7 +232,7 @@ GameObject:
   - component: {fileID: 5867676814310862037}
   - component: {fileID: 7001626349529282260}
   m_Layer: 0
-  m_Name: Jerome
+  m_Name: Lancer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -416,77 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efbda680652016429cbab780a7b904b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3369451178957790265
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2799594934380414288}
-  - component: {fileID: 6875697981956573021}
-  - component: {fileID: 306063391689560428}
-  m_Layer: 0
-  m_Name: RangeBuff
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2799594934380414288
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369451178957790265}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 858495708023782168}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6875697981956573021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369451178957790265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a852ae600248c74ba66954a147ce430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buffList:
-  - type: 3
-    percent: 120
-    time: 3
-  - type: 2
-    percent: 120
-    time: 3
-  buffTime: 3
-  range: 3
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 512
---- !u!114 &306063391689560428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369451178957790265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172aa18044e52e343bafdbf0784f8a31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reverse: 0
-  waitTime: 3
 --- !u!1 &3847438144788987232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,9 +1012,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5230436640236124860}
-  - component: {fileID: 2468990278261406446}
+  - component: {fileID: 8815944474082314720}
   m_Layer: 0
-  m_Name: Attack
+  m_Name: LancerAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1108,7 +1036,7 @@ Transform:
   m_Father: {fileID: 5717168859014915195}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2468990278261406446
+--- !u!114 &8815944474082314720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1117,17 +1045,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 7250448006947005966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b771c33a0713b4d48960e6b5196cf864, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d335171bf32b87429bbd660778767cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isCritical: 0
   damageWeight: 0
   coolTimeWeight: 0
   criticalProbWeight: 0
-  effectName: Effect_JeromeAttack
-  attackCnt: 0
-  specialAttackCnt: 3
-  range: 2.5
+  effectName: Effect_LancerAttack
 --- !u!1 &8263021232742898522
 GameObject:
   m_ObjectHideFlags: 0

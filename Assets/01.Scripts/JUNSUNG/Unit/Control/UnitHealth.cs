@@ -28,6 +28,7 @@ public class UnitHealth : UnitComponent, IDamageable//, IAffectedStatus
 
         currentHealth = MaxHealth;
         recoveryTime = new WaitForSeconds(RecoveryTime);
+        OnHitEvent.AddListener(() => PoolManager.Instance.Pop("HitEffect", transform.position));
     }
 
     public void GetDamaged(float damage, out bool isKill)

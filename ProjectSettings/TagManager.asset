@@ -41,8 +41,14 @@ TagManager:
   - name: Background
     uniqueID: 2198553473
     locked: 0
+  - name: Shadow
+    uniqueID: 3888319075
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 2755216393
     locked: 0
   - name: Building
     uniqueID: 3148663933
