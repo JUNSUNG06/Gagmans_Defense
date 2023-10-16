@@ -40,7 +40,7 @@ public class UnitHealth : UnitComponent, IDamageable//, IAffectedStatus
         if (currentHealth == 0)
         {
             isKill = true;
-            Die();
+            isDie = true;
             return;
         }
 

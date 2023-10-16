@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UnitManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class UnitManager : MonoBehaviour
     [Space]
     public UnitController unitBase;
     public UnitController enemyBase;
-    public List<UnitController> _playerList = new List<UnitController>();
+    public List<UnitController> playerList = new List<UnitController>();
 
     [Space]
     public GameObject minimapRender;
@@ -57,7 +58,7 @@ public class UnitManager : MonoBehaviour
 
     private void Init()
     {
-        _playerList.Clear();
+        playerList.Clear();
 
         soldierList = Resources.LoadAll<UnitSO>($"UnitSO/SoldierUnit").ToList();
         heroList = Resources.LoadAll<UnitSO>($"UnitSO/HeroUnit").ToList();
@@ -114,7 +115,7 @@ public class UnitManager : MonoBehaviour
         ttObj.name = unitSO.unitName;
         ttObj.gameObject.layer = LayerMask.NameToLayer(unitSO.unitType.ToString());
 
-        _playerList.Add(ttObj);
+        playerList.Add(ttObj);
         ttObj.transform.position = position;
         ttObj.GetComponent<UnitController>().Init(unitSO, null);
     }
@@ -126,6 +127,15 @@ public class UnitManager : MonoBehaviour
 
     private void ChangeUnitShadowUnSelect(UnitController unit)
     {
+        Debug.Log(unit);
         unit.ChangeShadowColor(unSlectedColor);
+    }
+
+    public void RemoveUnit(UnitController unit)
+    {
+        playerList.Remove(unit);
+        PlayerManager.Instance.units.Remove(unit);
+        if (PlayerManager.Instance.Unit == unit)
+            PlayerManager.Instance.Unit = null;
     }
 }

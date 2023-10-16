@@ -6,7 +6,7 @@ using UnityEngine;
 public class UnitStateMachine : UnitComponent
 {
     private Dictionary<UnitStateType, UnitState> stateDictionary = new Dictionary<UnitStateType, UnitState>();
-    private UnitStateTransition anyStateTransition;
+    private UnitAnyStateTransition anyStateTransition;
 
     [SerializeField]
     private UnitState currentState;
@@ -21,6 +21,7 @@ public class UnitStateMachine : UnitComponent
     protected override void UnitUpdate()
     {
         currentState?.UpdateState();
+        anyStateTransition.CheckTransitions();
     }   
 
     public void ChangeState(UnitStateType type)
@@ -48,7 +49,9 @@ public class UnitStateMachine : UnitComponent
     private void SetState()
     {
         Transform stateContainer = transform.Find("StateContainer");
+        anyStateTransition = stateContainer.Find("AnyStateTransition").GetComponent<UnitAnyStateTransition>();
 
+        anyStateTransition.Init(controller);
         foreach (UnitStateType stateType in Enum.GetValues(typeof(UnitStateType)))
         {
             Transform stateTrm = stateContainer.Find($"{stateType}State");

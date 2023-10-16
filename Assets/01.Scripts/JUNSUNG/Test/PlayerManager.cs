@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     private float lastClickTime = 0;
 
     //기무지성이 추가한거
-    private List<UnitController> units = new List<UnitController>();
+    public List<UnitController> units = new List<UnitController>();
     public LayerMask groundLayer;
     public LayerMask enemyLayer;
     public LayerMask soliderLayer;
