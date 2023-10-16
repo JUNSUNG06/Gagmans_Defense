@@ -51,7 +51,6 @@ public class UnitManager : MonoBehaviour
         SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
         SpawnUnit(UnitType.Enemy, "GreenGoblin_Infantry", new Vector3(-10, 0, 0));
 
-        Debug.Log(PlayerManager.Instance);
         PlayerManager.Instance.OnUnitSelect += ChangeUnitShadowSelect;
         PlayerManager.Instance.OnUnitRelease += ChangeUnitShadowUnSelect;
     }

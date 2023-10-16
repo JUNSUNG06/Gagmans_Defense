@@ -35,7 +35,6 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        Debug.Log(item);
         if(item.Info != null)
         {
             if (item is Equipment)
@@ -76,9 +75,6 @@ public class PlayerInventory : MonoBehaviour
     public List<Item> GetEqiuInvenByType(EquipmentType type)
     {
         List<Item> list = equipInven.FindAll(x => x.GetInfo<EquipmentSO>().equipType == type);
-
-        foreach (var e in list)
-            Debug.Log(e);
 
         return list;
     }

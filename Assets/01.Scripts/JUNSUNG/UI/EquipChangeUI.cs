@@ -32,6 +32,7 @@ public class EquipChangeUI : GameUI
                     PlayerInventory.Instance.RemoveItem(item);
                 }
 
+                UIManager.Instance.GetUI<UnitUI>().Hide();
                 UIManager.Instance.GetUI<UnitUI>().Show(testPlayer.Unit);
                 testPlayer.InvokeOnUnitSelectAction();
 
