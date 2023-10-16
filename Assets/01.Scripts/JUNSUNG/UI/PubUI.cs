@@ -11,5 +11,6 @@ public class PubUI : GameUI
     {
         container.name = "pub";
         slotList = root.Query<PubSlotUI>("PubSlotUI").ToList();
+        Debug.Log(slotList.Count);
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0361b4c6ce338564cbbe503ff2358a81, type: 3}
+  m_Name: TestPubSlot
+  m_EditorClassIdentifier: 
+  unitSOs:
+  - {fileID: 11400000, guid: 302b4b5d3fb55384a86786ffd92da9e1, type: 2}
+  - {fileID: 11400000, guid: c06f8db101122c4418f8dd37389b5f90, type: 2}
+  - {fileID: 11400000, guid: 257e316e8e7661a41811d9f96c372b4b, type: 2}
+  drawTime: 12
