@@ -40,6 +40,7 @@ public class PubSlot
         currentSlotData = slotDatas[selectIndex];
         currentTime = drawTime;
         pubSlotUI.SettingBtn(currentSlotData.unitCost);
+        pubSlotUI.SettingImage(currentSlotData.profile);
         pubSlotUI.SettingTimerText(currentTime);
     }
 

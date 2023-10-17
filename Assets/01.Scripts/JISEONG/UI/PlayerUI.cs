@@ -44,4 +44,14 @@ public class PlayerUI : GameUI
         normalMaxValue = normalValue;
         eliteMaxValue = eliteValue;
     }
+
+    public override void Show()
+    {
+        container.style.display = DisplayStyle.Flex;
+    }
+
+    public override void Hide()
+    {
+        container.style.display = DisplayStyle.None;
+    }
 }

@@ -96,7 +96,7 @@ public class UIManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Hide();
+            Hide();Debug.Log(123);
             uiDictionary[typeof(PubUI)].Show();
         }
     }

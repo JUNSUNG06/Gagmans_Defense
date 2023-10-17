@@ -17,7 +17,7 @@ public abstract class GameUI
         root = container.Q("window");
         Button closeBtn = root.Q<Button>("closeBtn");
         
-        if(closeBtn != null )
+        if(closeBtn != null)
         {
             closeBtn.RegisterCallback<ClickEvent>(e =>
             {
@@ -32,13 +32,11 @@ public abstract class GameUI
         container.BringToFront();
         UIManager.Instance.CurrentUI = this;
         UIManager.Instance.OpendUI.Add(this);
-        Debug.Log(UIManager.Instance.OpendUI.Count);
     }
 
     public virtual void Hide() 
     {
         container.style.display = DisplayStyle.None;
         UIManager.Instance.OpendUI.Remove(this);
-        Debug.Log(UIManager.Instance.OpendUI.Count);
     }
 }
