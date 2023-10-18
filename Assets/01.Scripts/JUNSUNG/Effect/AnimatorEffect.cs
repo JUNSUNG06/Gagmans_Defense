@@ -8,7 +8,6 @@ public class AnimatorEffect : Effect
 
     private void Awake()
     {
-        Debug.Log(GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length);
         wfs = new WaitForSeconds(GetComponent<Animator>().runtimeAnimatorController.animationClips[0].length);
     }
 

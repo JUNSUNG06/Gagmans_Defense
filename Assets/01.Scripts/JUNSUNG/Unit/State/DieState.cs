@@ -9,7 +9,7 @@ public class DieState : UnitState
         Debug.Log("die");
 
         UnitManager.Instance.RemoveUnit(controller);
-        Destroy(controller.gameObject);
+        controller.Health.Die();
     }
 
     public override void ExitState()

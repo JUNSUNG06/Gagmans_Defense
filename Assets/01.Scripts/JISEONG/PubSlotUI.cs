@@ -19,6 +19,8 @@ public class PubSlotUI : VisualElement
     {
         styleSheets.Add(Resources.Load<StyleSheet>($"StyleSheets/{styleResource}"));
 
+
+
         root = new VisualElement();
         root.name = "root";
         root.AddToClassList("s_root");

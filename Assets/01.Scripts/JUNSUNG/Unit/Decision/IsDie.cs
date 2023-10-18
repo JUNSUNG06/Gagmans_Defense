@@ -10,7 +10,7 @@ public class IsDie : UnitDecision
 
         if (reverse)
             result = !result;
-        Debug.Log(result);
+        
         return result;
     }
 }

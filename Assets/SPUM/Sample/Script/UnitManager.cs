@@ -41,8 +41,8 @@ public class UnitManager : MonoBehaviour
     void Start()
     {
         SpawnUnit(UnitType.Hero, "Jerome", new Vector3(0, 0, 0));
-        SpawnUnit(UnitType.Hero, "Leon", new Vector3(5, 0, 0));
-        SpawnUnit(UnitType.Hero, "Karena", new Vector3(10, 0, 0));
+        //SpawnUnit(UnitType.Hero, "Leon", new Vector3(5, 0, 0));
+        //SpawnUnit(UnitType.Hero, "Karena", new Vector3(10, 0, 0));
         //SpawnUnit(UnitType.Hero, "Lancer", new Vector3(0, 0, 0));
         //SpawnUnit(UnitType.Soldier, "AxSoldier", new Vector3(0, 0, 0));
         //SpawnUnit(UnitType.Soldier, "Knight", new Vector3(2, 0, 0));
@@ -51,7 +51,7 @@ public class UnitManager : MonoBehaviour
         //SpawnUnit(UnitType.Soldier, "Archer", new Vector3(8, 0, 0));
         //SpawnUnit(UnitType.Soldier, "Infantry", new Vector3(10, 0, 0));
         //SpawnUnit(UnitType.Enemy, "Skeleton_Boss", new Vector3(-10, 1, 0));
-        //SpawnUnit(UnitType.Enemy, "GreenGoblin_Infantry", new Vector3(-10, 0, 0));
+        SpawnUnit(UnitType.Enemy, "GreenGoblin_Infantry", new Vector3(-10, 0, 0));
         //SpawnUnit(UnitType.Enemy, "GreenGoblin_Infantry", new Vector3(-10, -1, 0));
 
         PlayerManager.Instance.OnUnitSelect += ChangeUnitShadowSelect;

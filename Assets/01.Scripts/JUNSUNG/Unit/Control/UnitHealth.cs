@@ -22,13 +22,26 @@ public class UnitHealth : UnitComponent, IDamageable//, IAffectedStatus
     private Coroutine recovery;
     private WaitForSeconds recoveryTime;
 
+    private HealthBar healthBar;
+
     public override void Init(UnitController _controller)
     {
         base.Init(_controller);
 
         currentHealth = MaxHealth;
         recoveryTime = new WaitForSeconds(RecoveryTime);
+        healthBar = UIManager.Instance.CreateHealthUI(gameObject);
+
         OnHitEvent.AddListener(() => PoolManager.Instance.Pop("HitEffect", transform.position));
+        OnHitEvent.AddListener(healthBar.Show);
+        OnHitEvent.AddListener(() => healthBar.SetBar(currentHealth / MaxHealth));
+
+        healthBar.SetBar(currentHealth / MaxHealth);
+    }
+
+    private void Update()
+    {
+        healthBar.SetPosition();
     }
 
     public void GetDamaged(float damage, out bool isKill)
@@ -54,10 +67,11 @@ public class UnitHealth : UnitComponent, IDamageable//, IAffectedStatus
         currentHealth = Mathf.Min(currentHealth, MaxHealth);
     }
 
-    private void Die()
+    public void Die()
     {
         isDie = true;
         OnDieEvent?.Invoke();
+        UIManager.Instance.RemoveHealthUI(healthBar);
         Destroy(gameObject);
     }
 

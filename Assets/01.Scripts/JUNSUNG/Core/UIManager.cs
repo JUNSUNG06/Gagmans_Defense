@@ -15,8 +15,9 @@ public class UIManager : MonoBehaviour
     private GameUI currentUI;
     public GameUI CurrentUI { get => currentUI; set => currentUI = value; }
 
-    private UIDocument document;
-    private VisualElement root;
+    #region 윈도우 UI
+    public UIDocument windowDocument;
+    private VisualElement windowRoot;
 
     public VisualTreeAsset inventoryUI;
     private InventoryUI inventory;
@@ -41,7 +42,15 @@ public class UIManager : MonoBehaviour
 
     public List<GameUI> OpendUI = new List<GameUI>();
     public bool isUIOpen => OpendUI.Count > 0;
+    #endregion
 
+    #region 월드 UI
+    [Space]
+    public UIDocument worldDocument;
+    private VisualElement worldRoot;
+
+    private List<HealthBar> healthBars = new();
+    #endregion
 
     private void Awake()
     {
@@ -50,8 +59,8 @@ public class UIManager : MonoBehaviour
         else
             Destroy(gameObject);
 
-        document = GetComponent<UIDocument>();
-        root = document.rootVisualElement.Q<VisualElement>("root");
+        #region 윈도우 UI
+        windowRoot = windowDocument.rootVisualElement.Q<VisualElement>("root");
         
         inventory = new InventoryUI(CreateWindowUI(inventoryUI));
         uiDictionary.Add(typeof(InventoryUI), inventory);
@@ -80,6 +89,11 @@ public class UIManager : MonoBehaviour
         player = new PlayerUI(CreateWindowUI(playerUI));
         uiDictionary.Add(typeof(PlayerUI), player);
         player.Show();
+        #endregion
+
+        #region 월드 UI
+        worldRoot = worldDocument.rootVisualElement.Q<VisualElement>("root");
+        #endregion
     }
 
     private void Update()
@@ -120,8 +134,24 @@ public class UIManager : MonoBehaviour
         inventoryTemp.style.width = Length.Percent(100);
         inventoryTemp.style.height = Length.Percent(100);
         inventoryTemp.style.position = Position.Absolute;
-        root.Add(inventoryTemp);
+        windowRoot.Add(inventoryTemp);
 
         return inventoryTemp;
+    }
+
+    public HealthBar CreateHealthUI(GameObject owner)
+    {
+        HealthBarUI ui = new HealthBarUI();
+        HealthBar bar = new HealthBar(owner, ui);
+        worldRoot.Add(ui);
+        healthBars.Add(bar);
+
+        return bar;
+    }
+
+    public void RemoveHealthUI(HealthBar ui)
+    {
+        healthBars.Remove(ui);
+        worldRoot.Remove(ui.ui);
     }
 }
