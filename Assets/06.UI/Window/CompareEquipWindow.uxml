@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/06.UI/Window/unitWindow.uss?fileID=7433441132597879392&amp;guid=76f4a2574d8487d49911df5f7907c2c1&amp;type=3#unitWindow" />
+    <ui:VisualElement name="window" style="width: 230px; position: absolute; background-image: url(&apos;project://database/Assets/SPUM/Retro%20UI%20Set/1_UI_Images/Theme1/01_UI_Images/02_Box&amp;Btn_White/Box_Basic2.png?fileID=21300000&amp;guid=ff996b4f2744d48d1b844bf2fe4f9204&amp;type=3#Box_Basic2&apos;); padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+        <SideLabel name="AttackPower" />
+        <SideLabel name="AttackCool" />
+        <SideLabel name="Defense" />
+        <SideLabel name="Health" />
+        <SideLabel name="CriticalProb" />
+        <SideLabel name="MoveSpeed" />
+        <SideLabel name="RecoveryValue" />
+        <SideLabel name="RecoveryTime" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -21,7 +21,7 @@ public class SubUnitUI : GameUI
     {
         foreach (StatusType stat in Enum.GetValues(typeof(StatusType)))
         {
-            labelList[(int)stat].text = $"{stat} : {unit.Stat.GetStatus(stat)}";
+            labelList[(int)stat].text = $"{stat.ToString()} : {unit.Stat.GetStatus(stat)}";
         }
 
         Show();

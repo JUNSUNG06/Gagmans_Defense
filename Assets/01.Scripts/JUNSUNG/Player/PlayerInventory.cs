@@ -30,7 +30,7 @@ public class PlayerInventory : MonoBehaviour
     private void Start()
     {
         inven.Add(ItemType.Equipment, equipInven);
-        AddItem(new Equipment(ItemType.Equipment, "InfantryHelmet", EquipmentType.Helmet));
+        //AddItem(new Equipment(ItemType.Equipment, "GreenGoblinHelmet", EquipmentType.Helmet));
     }
 
     public void AddItem(Item item)

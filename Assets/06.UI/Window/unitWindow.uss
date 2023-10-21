@@ -6,4 +6,6 @@
 
 .s_statusLabel {
     font-size: 20px;
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/NeoDunggeunmoPro-Regular.ttf?fileID=12800000&guid=f263c3c6c6231864d98eefc364d63fa3&type=3#NeoDunggeunmoPro-Regular');
+    -unity-font-definition: initial;
 }

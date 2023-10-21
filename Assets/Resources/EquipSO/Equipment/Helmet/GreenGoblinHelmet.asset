@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: GreenGoblinHelmet
   image: {fileID: 21300000, guid: 296fa0f52e1fd47109c6fb6f17968669, type: 3}
   type: 0
-  status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
+  status: {fileID: 11400000, guid: 9ca9ed7199dceb147b12fd5fb4f64672, type: 2}
   equipType: 0
+  path: 

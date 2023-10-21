@@ -9,6 +9,7 @@ public class EquipChangeUI : GameUI
 
     private int invenCount = 0;
     private EquipmentType selectEquipType;
+    private Equipment currentEquip;
 
     public EquipChangeUI(TemplateContainer _container) : base(_container)
     {
@@ -18,6 +19,19 @@ public class EquipChangeUI : GameUI
 
         foreach (var s in slotList)
         {
+            s.RegisterCallback<PointerOverEvent>(e =>
+            {
+                UIManager.Instance.GetUI<CompareEqiupUI>().Show(s.worldTransform.GetPosition().x + 200,
+                    s.worldTransform.GetPosition().y, s.GetItem() as Equipment, currentEquip);
+                //UIManager.Instance.GetUI<CompareEqiupUI>().Show(new StyleLength(0f),
+                //    new StyleLength(0f), s.GetItem() as Equipment, currentEquip);
+            });
+
+            s.RegisterCallback<PointerOutEvent>(e =>
+            {
+                UIManager.Instance.GetUI<CompareEqiupUI>().Hide();
+            });
+
             s.RegisterCallback<ClickEvent>(e =>
             {
                 Equipment item = s.GetItem() as Equipment;
@@ -41,7 +55,15 @@ public class EquipChangeUI : GameUI
         }
     }
 
-    public void Show(EquipmentType type)
+    public void Show(Equipment select, EquipmentType type)
+    {
+        if(select != null)
+            currentEquip = select;
+
+        Show(type);
+    }
+
+    private void Show(EquipmentType type)
     {
         Show();
         List<Item> items = PlayerInventory.Instance.GetEqiuInvenByType(type);

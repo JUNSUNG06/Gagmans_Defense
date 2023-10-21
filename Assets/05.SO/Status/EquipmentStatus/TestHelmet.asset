@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e147097c4f33e04ebb0edbbacc82d03, type: 3}
-  m_Name: TestEquipStatus
+  m_Name: TestHelmet
   m_EditorClassIdentifier: 
   StatusInfo:
   - Type: 0
-    Value: 2
+    Value: 9
   - Type: 1
-    Value: 2
+    Value: 1
   - Type: 2
-    Value: 2
+    Value: 3
   - Type: 3
-    Value: 2
+    Value: 8
   - Type: 4
-    Value: 2
+    Value: 4
   - Type: 5
-    Value: 2
+    Value: 7
   - Type: 6
-    Value: 2
+    Value: 0
   - Type: 7
-    Value: 2
+    Value: 3

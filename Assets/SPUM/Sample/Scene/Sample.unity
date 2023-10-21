@@ -1443,6 +1443,7 @@ MonoBehaviour:
   pubUI: {fileID: 9197481963319205126, guid: ea98a75ddf0bdf246b92329db8f938df, type: 3}
   equipChangeUI: {fileID: 9197481963319205126, guid: 6e5202fbc619ec440b6d1bf0d1f88cd3, type: 3}
   playerUI: {fileID: 9197481963319205126, guid: 37f721f66820e9a4d902e7123be2bc0b, type: 3}
+  compareUI: {fileID: 9197481963319205126, guid: 2cd05ea15dec5ac469df9626b7b87111, type: 3}
   worldDocument: {fileID: 1953369464}
 --- !u!212 &551792036
 SpriteRenderer:
@@ -4400,7 +4401,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 9ff5609da93cc2b4f9c5af4e6d08199e, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: b042854cf8059e643882529ed1bbddc2, type: 3}
-  m_SortingOrder: 20
+  m_SortingOrder: 0
 --- !u!1 &2014090483
 GameObject:
   m_ObjectHideFlags: 0

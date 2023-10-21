@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: AxSoldierHelmet
   image: {fileID: 21300000, guid: 1f8c2d6ce27ef4cdb897e65adb057a03, type: 3}
   type: 0
-  status: {fileID: 11400000, guid: 02336a2378b3d184cb042bfba712b145, type: 2}
+  status: {fileID: 11400000, guid: 8a5f2756dadf0f7488d45f74ad99df0c, type: 2}
   equipType: 0
   path: 

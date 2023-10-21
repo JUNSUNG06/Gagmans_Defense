@@ -40,6 +40,9 @@ public class UIManager : MonoBehaviour
     public VisualTreeAsset playerUI;
     private PlayerUI player;
 
+    public VisualTreeAsset compareUI;
+    private CompareEqiupUI compare;
+
     public List<GameUI> OpendUI = new List<GameUI>();
     public bool isUIOpen => OpendUI.Count > 0;
     #endregion
@@ -85,6 +88,10 @@ public class UIManager : MonoBehaviour
         subUnit = new SubUnitUI(CreateWindowUI(subUnitUI));
         uiDictionary.Add(typeof(SubUnitUI), subUnit);
         subUnit.Hide();
+
+        compare = new CompareEqiupUI(CreateWindowUI(compareUI));
+        uiDictionary.Add(typeof(CompareEqiupUI), compare);
+        compare.Hide();
 
         player = new PlayerUI(CreateWindowUI(playerUI));
         uiDictionary.Add(typeof(PlayerUI), player);

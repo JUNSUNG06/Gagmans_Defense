@@ -8,14 +8,14 @@
                 <ui:VisualElement name="image" style="background-color: rgba(255, 255, 255, 0); background-image: url(&apos;project://database/Assets/UnitViewTexture.renderTexture?fileID=8400000&amp;guid=643ef329b06446148a1b4fe4f6adfe75&amp;type=2#UnitViewTexture&apos;); width: 300px; height: 300px;" />
             </ui:VisualElement>
             <ui:VisualElement name="StatusLabelWindow" style="height: 100%; width: 50%; align-items: flex-start; justify-content: space-around; padding-left: 15px;">
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackPowerLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="AttackCoolLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="DefenseLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="HealthLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="CriticalProbLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="MoveSpeedLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryValueLabel" class="s_statusLabel" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" name="RecoveryTimeLabel" class="s_statusLabel" />
+                <ui:Label text="공격력" display-tooltip-when-elided="true" name="AttackPowerLabel" class="s_statusLabel" />
+                <ui:Label text="공격속도" display-tooltip-when-elided="true" name="AttackCoolLabel" class="s_statusLabel" />
+                <ui:Label text="방어력" display-tooltip-when-elided="true" name="DefenseLabel" class="s_statusLabel" />
+                <ui:Label text="체력" display-tooltip-when-elided="true" name="HealthLabel" class="s_statusLabel" />
+                <ui:Label text="치명타 확률" display-tooltip-when-elided="true" name="CriticalProbLabel" class="s_statusLabel" />
+                <ui:Label text="이동속도" display-tooltip-when-elided="true" name="MoveSpeedLabel" class="s_statusLabel" />
+                <ui:Label text="회복력" display-tooltip-when-elided="true" name="RecoveryValueLabel" class="s_statusLabel" />
+                <ui:Label text="회복시간" display-tooltip-when-elided="true" name="RecoveryTimeLabel" class="s_statusLabel" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

@@ -19,9 +19,11 @@ public class UnitUI : GameUI
 
         foreach(EquipmentType t in Enum.GetValues(typeof(EquipmentType)))
         {
-            root.Q<ItemSlot>($"{t}Slot").RegisterCallback<ClickEvent>(e =>
+            ItemSlot s = root.Q<ItemSlot>($"{t}Slot");
+
+            s.RegisterCallback<ClickEvent>(e =>
             {
-                ui.Show(t);
+                ui.Show(s.GetItem() as Equipment, t);
             });
         }
 

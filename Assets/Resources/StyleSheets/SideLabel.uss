@@ -1,0 +1,28 @@
+.container {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.text {
+    -unity-font-definition: initial;
+    -unity-font: url('project://database/Assets/TextMesh%20Pro/Fonts/NeoDunggeunmoPro-Regular.ttf?fileID=12800000&guid=f263c3c6c6231864d98eefc364d63fa3&type=3#NeoDunggeunmoPro-Regular');
+    font-size: 20px;
+    -unity-text-align: middle-center;
+}
+
+.red {
+    color: rgb(238, 14, 14);
+}
+
+.blue {
+    color: rgb(0, 0, 228);
+}
+
+.left {
+    flex-direction: row;
+}
+
+.gray {
+    color: rgba(113, 109, 109, 255);
+}
